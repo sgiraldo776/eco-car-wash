@@ -56,7 +56,7 @@
                             <td><?php echo $fila['Vlr_Unitario'] ?></td>
                             <td><?php echo $fila['Vlr_Total'] ?></td>
                             <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>">EDITAR</a></td>
-                            <td><a href="eliminar_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>">ELIMINAR</a></td>
+                            <td><a href="eliminar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo'] ?>">ELIMINAR</a></td>
                         </tr>
                         <?php } ?>
                     </table>
