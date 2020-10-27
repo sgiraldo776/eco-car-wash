@@ -8,8 +8,9 @@
     $ins = $conn -> query("INSERT INTO tblservicios_ofertados (Tipo_Servicio, Descripcion, Valor) VALUES ('$Tipo_Servicio', '$Descripcion', '$Valor')");
 
     if ($ins) {
-        echo "Insertado correctamente";
+        echo "<script> 	alert ('Ingresado Correctamente'); </script>";
+        echo "<script> 	location.href='form_servicios.php'; </script>";
     }else{
-        echo "No se pudo insertar el regisrto";
+        echo "<script> alert ('No se ha podido ingresar'); </script>";
     }
 ?>
