@@ -1,0 +1,159 @@
+* {
+    max-width: 100%;
+    margin: 0;
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+label {
+    color: #0D1440;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+}
+
+#navbarNavDropdown {
+    margin-left: 2rem;
+}
+
+
+/* Utilidades */
+
+.btn-color {
+    background-color: #0D1440;
+    color: #ffffff;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.3rem 2rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-color:hover {
+    cursor: pointer;
+    background-color: #1438A6;
+}
+
+
+/* Index */
+
+.navbar {
+    padding: 1rem;
+}
+
+nav img {
+    width: 80%;
+}
+
+@media only screen and (max-width: 992px) {
+    nav img {
+        width: 130%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    nav img {
+        width: 60%;
+    }
+}
+
+.bg-nav {
+    background-color: #0D1440;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #1438A6 !important;
+}
+
+.bg-ind {
+    background-image: url(../img/index-img.jpg);
+    height: 500px;
+    opacity: 0.9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Tarjetas index */
+
+.contenedor {
+    padding: 2rem;
+}
+
+.tar-img {
+    padding: 3rem 3rem 1rem 3rem;
+}
+
+.tarjetas h3 {
+    font-weight: 900;
+    text-align: center;
+    color: #0D1440;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+
+.tarjetas p {
+    text-align: justify;
+    font-size: 0.8;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #0D1440;
+    color: #ffffff;
+    padding: 2rem;
+}
+
+.redes i {
+    color: #ffffff;
+    font-size: 2.6rem;
+}
+
+.contac a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.contac a:hover {
+    color: #1438A6;
+}
+
+.copy:hover {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+/* Formulario Vehiculo */
+
+.bg-img {
+    background-image: url(../img/bg-01.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.form-veh {
+    /* width: 30%; */
+    background-color: #ffffff;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.logo {
+    margin-bottom: 3rem;
+}
