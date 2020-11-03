@@ -22,8 +22,11 @@
 
             }else{
                 $sq3=$conn->query("DELETE FROM tblCliente WHERE id_cliente='$identificacion'");
+                echo "<script> 	alert ('F socio'); </script>";
             }
 
+        }else{
+            echo "<script> 	alert ('F socio x2'); </script>";
         }
 
 

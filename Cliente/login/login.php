@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    require_once "../../conexion.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresar</title>
-</head>
+    $Usuario = $_POST['correo'];
+    $Contraseña = $_POST['contr'];
+    //$Contraseña=hash("sha256", $Contraseña); QUITAR EL COMENTARIO CUANDO EL LOGIN ESTÉ LISTO
 
-<body>
-    <form action="">
-        <label for="">Correo</label>
-        <input type="text">
+    $sel = $conn->query("SELECT * FROM tblusuario WHERE Username='$Usuario' AND Password='$Contraseña'");
 
-        <label for="">Contraseña</label>
-        <input type="password">
-    </form>
-</body>
+    $row = mysqli_fetch_array($sel);
 
-</html>
+    if ($row==TRUE) {
+        echo "Sesion Iniciada, Bienvenido";
+        ///////// FALTA VALIDAR DATOS PARA LA SESION /////////
+    }else{
+        echo "<script> alert('Datos Incorrectos') </script>";
+        echo "<script> location.href='login.php'; </script>";
+    }
+?>
