@@ -5,16 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresar</title>
+
+    <!--importacion boostrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
-<body>
-    <form action="">
-        <label for="">Correo</label>
-        <input type="text">
+<body class="bg-login">
 
-        <label for="">Contraseña</label>
-        <input type="password">
-    </form>
+    <div class="container m-0 p-0 col-12">
+        <div class="form-veh col-12 col-md-6 col-lg-6">
+            <form action="">
+                <div class="logo col-12">
+                    <a href="">
+                        <img src="../../img/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="#">Correo</label>
+                        <input type="email" class="form-control" id="marca">
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="">Contraseña</label>
+                        <input type="password" class="form-control" id="modelo" min="1960" max="2050">
+                    </div>
+                </div>
+
+                <div class="align-items-center text-center">
+                    <button type="submit" class="btn-color">Ingresar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
