@@ -20,31 +20,37 @@
     <div class="container col-12">
         <div class="form-veh col-12 col-md-6 col-lg-6 row">
 
-            <form action="">
+            <form action="ingresar_vehic.php" method="POST">
                 <div class="logo col-12">
                     <a href="">
                         <img src="../../img/logo.png" alt="">
                     </a>
                 </div>
                 <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="#">Placa</label>
+                        <input type="text" class="form-control" id="placa" name="placa">
+                    </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="#">Marca</label>
-                        <input type="text" class="form-control" id="marca">
+                        <input type="text" class="form-control" id="marca" name ="marca">
                     </div>
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="">Modelo</label>
-                        <input type="number" class="form-control" id="modelo" min="1960" max="2050">
+                        <input type="number" class="form-control" id="modelo" name="modelo" min="1960" max="2050">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="#">Color</label>
-                        <input type="text" class="form-control" id="color">
+                        <input type="text" class="form-control" id="color" name="color">
                     </div>
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="">Tipo de vehiculo</label>
-                        <select class="custom-select">
+                        <select class="custom-select" name="tipo" id="tipo">
                         <option selected>--Seleccione una opción--</option>
                         <option value="1">Motocicleta</option>
                         <option value="2">Motocarro</option>
@@ -66,11 +72,11 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="#">Vencimiento del SOAT</label>
-                        <input type="date" class="form-control" id="soat">
+                        <input type="date" class="form-control" id="soat" name="soat">
                     </div>
                     <div class="form-group col-12">
                         <label for="">Vencimiento de la Tecnico Mecanica</label>
-                        <input type="date" class="form-control" id="tecmeca">
+                        <input type="date" class="form-control" id="tecmeca" name="tecmeca">
                     </div>
                 </div>
 
