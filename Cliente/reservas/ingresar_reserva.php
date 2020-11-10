@@ -6,11 +6,11 @@
     }
 
     $servicio=$_POST['servicio'];
-    $placa=$_POST['placa'];
+    $id=$_POST['id'];
     $fecha=$_POST['fecha'];
 
     // $sql=$conn->query("INSERT INTO tblreservas (Id_Reserva, Fecha, Id_Cliente, Tipo_Lavado) VALUES (null, '$fecha', '$_SESSION[Id_Cliente]', '$servicio')");
-    $sql=$conn->query("INSERT INTO tblreservas (Fecha, Id_Cliente, Tipo_Lavado) VALUES ('$fecha', 1, '$servicio')");
+    $sql=$conn->query("INSERT INTO tblreservas (Fecha, Id_Cliente, Tipo_Lavado) VALUES ('$fecha', '$id', '$servicio')");
 
     if ($sql==TRUE){
         echo "<script> 	alert ('Ingresado Correctamente'); </script>";

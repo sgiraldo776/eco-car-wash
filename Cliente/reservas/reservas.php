@@ -33,8 +33,8 @@
                 </select>
             </div>
             <div class="form-group col">
-                <label for="#">Placa</label>
-                <input type="text" class="form-control" id="placa" name="placa">
+                <label for="#">Documento de identidad</label>
+                <input type="text" class="form-control" id="id" name="id">
             </div>
         </div>
         <div class="form-row">
