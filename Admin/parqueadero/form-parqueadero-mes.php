@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group">
                     <label>Fecha de inicio mensualidad</label>
-                    <input class="form-control" type="text" name="hora" value="<?php echo date('Y-m-d', time()-21600);?>" disabled>
+                    <input class="form-control" type="datetime-local" name="hora">
                     <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
                 </div>
                 <input type="submit" class="btn btn-color" value="Registrar">

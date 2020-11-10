@@ -33,7 +33,7 @@
             <h1 class="">Ingresar Vehiculo</h1>
         </div>
         <div>
-            <form action="">
+            <form action="ingr-parqueadero-hra.php" method="post">
                 <div class="form-group">
                     <label>Tipo de Vehiculo</label>
                     <select class="form-control" name="tipo">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label>Hora de Ingreso</label>
-                    <input class="form-control" type="text" name="hora" value="<?php echo date('h:i A', time()-21600);?>" disabled>
+                    <input class="form-control" type="datetime-local" name="hora">
                     <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
                 </div>
                 <input type="submit" class="btn btn-color" value="Registrar">
