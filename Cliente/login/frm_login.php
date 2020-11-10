@@ -22,22 +22,22 @@
 
     <div class="container m-0 p-0 col-12">
         <div class="form-veh col-12 col-md-6 col-lg-6">
-            <form action="">
+            <form action="login.php" method="POST">
                 <div class="logo col-12">
-                    <a href="">
+                    <a href="../../index.php">
                         <img src="../../img/logo.png" alt="">
                     </a>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-12">
-                        <label for="#">Correo</label>
-                        <input type="email" class="form-control" id="marca">
+                        <label for="#">Usuario</label>
+                        <input type="text" class="form-control" name="usuario" id="usuario">
                     </div>
 
                     <div class="form-group col-12">
                         <label for="">Contraseña</label>
-                        <input type="password" class="form-control" id="modelo" min="1960" max="2050">
+                        <input type="password" class="form-control"  name="password" id="password" min="1960" max="2050">
                     </div>
                 </div>
 

@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli('localhost','root','','car_wash','33065');
+$conn = new mysqli('localhost','root','','car_wash');
     // $usuario = "root";
     // $contrasena = "";
     // $servidor = "localhost:8080";
