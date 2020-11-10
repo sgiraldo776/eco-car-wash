@@ -168,3 +168,51 @@ nav a:hover {
     background-size: cover;
     height: 100vh;
 }
+
+
+/* Estilos de los formularios de administrador*/
+
+#sidebar-container {
+    min-height: 100vh;
+    background-color: #009A37;
+}
+
+#sidebar-container img {
+    margin: 1.5rem 0 1rem 0;
+    width: 100rem;
+}
+
+
+
+#sidebar-container .menu {
+    /* width: 20rem; */
+}
+
+.formularios {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.conten-prin {
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    align-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar-enlaces {
+        /* display: none !important; */
+        font-size: 0.6rem;
+        margin-top: 0.6rem !important;
+    }
+}
+
+@media only screen and (max-width: 683px) {
+    .navbar-enlaces {
+        display: none !important;
+    }
+}
+.logo2{
+    width: 100rem;
+}
