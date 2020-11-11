@@ -33,14 +33,10 @@
             <h1 class="">Ingresar Vehiculo Para Mensualidad</h1>
         </div>
         <div>
-            <form action="">
+            <form action="ingr-parqueadero-mes.php" method="POST">
                 <div class="form-group">
-                    <label>Cliente</label>
-                    <select class="form-control" name="tipo">
-                        <option value="Moto" selected disabled>- Seleccione -</option>
-                        <option value="Moto">Paco - 3117657788</option>
-                        <option value="Carro">Carlos - 4455876699</option>
-                    </select>
+                    <label>Nombre Del Cliente</label>
+                    <input type="text" class="form-control" name="cliente">
                 </div>
                 <div class="form-group">
                     <label>Tipo de Vehiculo</label>
@@ -51,6 +47,14 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label>Correo</label>
+                    <input class="form-control" type="email" name="correo">
+                </div>
+                <div class="form-group">
+                    <label>Numero Celular</label>
+                    <input class="form-control" type="tel" name="celular">
+                </div>
+                <div class="form-group">
                     <label>Placa del vehiculo</label>
                     <input class="form-control" type="text" name="placa">
                 </div>
@@ -58,6 +62,10 @@
                     <label>Fecha de inicio mensualidad</label>
                     <input class="form-control" type="datetime-local" name="hora">
                     <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
+                </div>
+                <div class="form-group">
+                    <label>Precio Mensualidad</label>
+                    <input class="form-control" type="number" name="preciomes">
                 </div>
                 <input type="submit" class="btn btn-color" value="Registrar">
             </form>

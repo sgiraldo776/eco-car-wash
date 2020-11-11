@@ -9,7 +9,7 @@
     $placa=$_POST['placa'];
     $hora=$_POST['hora'];
 
-    $sql="INSERT INTO tblparqueadero (placa,tipo_vehiculo,hora_ingreso,hora_salida,precio) VALUES ('$placa', '$tipo', '$hora', null,null)";
+    $sql="INSERT INTO tblparqueadero (placa,tipo_vehiculo,hora_ingreso,hora_salida,precio, Celular, Correo) VALUES ('$placa', '$tipo', '$hora', null,null, null, null)";
     if ($conn->query($sql) === FALSE) {
         echo "<script> alert ('No se ha podido ingresar'); </script>";
     } else {
