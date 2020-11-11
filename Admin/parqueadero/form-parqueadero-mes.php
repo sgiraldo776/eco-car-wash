@@ -1,3 +1,6 @@
+<?php
+    require "../../conexion.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,10 +66,6 @@
                     <input class="form-control" type="datetime-local" name="hora">
                     <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
                 </div>
-                <div class="form-group">
-                    <label>Precio Mensualidad</label>
-                    <input class="form-control" type="number" name="preciomes">
-                </div>
                 <input type="submit" class="btn btn-color" value="Registrar">
             </form>
             <hr>
@@ -74,34 +73,48 @@
                 <thead>
                     <tr>
                         <th scope="col">Cliente</th>
-                        <th scope="col">Tipo vehiculo</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Celular</th>
                         <th scope="col">Placa</th>
-                        <th scope="col">Hora de Ingreso</th>
+                        <th scope="col">Tipo de Vehiculo</th>
+                        <th scope="col">Fecha inicio Mensualidad</th>
+                        <th scope="col">Precio Mensualidad</th>
                         <th scope="col">Estado</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    $sel = $conn->query("SELECT p.Cliente,p.Correo,p.Celular,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=2 OR p.id_parqueo=6");
+
+                    while ($row=$sel->fetch_assoc()) {
+                    ?>
                     <tr>
-                        <td>Paco</td>
-                        <td>Carro</td>
-                        <td>CNK-257</td>
-                        <td>9/11/2020</td>
+                        <td><?php echo $row['Cliente'] ?></td>
+                        <td><?php echo $row['Correo'] ?></td>
+                        <td><?php echo $row['Celular'] ?></td>
+                        <td><?php echo $row['placa'] ?></td>
+                        <td><?php echo $row['tipo_vehiculo'] ?></td>
+                        <td><?php echo $row['hora_ingreso'] ?></td>
+                        <td><?php echo $row['precio'] ?></td>
+                        <?php
+                        $fecha1= new DateTime($row['hora_ingreso']);
+                        $fecha2= new DateTime("now");
+                        $diff = $fecha1->diff($fecha2);
+
+                        if (($diff->days)>30) {
+                        ?>
                         <td><button class="btn btn-danger">Atrasado</button></td>
+                        <?php
+                        }else{
+                        ?>
+                        <td class="text-success">Al Dia</button></td>
+                        <?php
+                        }
+                        ?>
                     </tr>
-                    <tr>
-                        <td>Paco</td>
-                        <td>Carro</td>
-                        <td>CNK-257</td>
-                        <td>9/11/2020</td>
-                        <td class="text-success">Al Dia</td>
-                    </tr>
-                    <tr>
-                        <td>Paco</td>
-                        <td>Carro</td>
-                        <td>CNK-257</td>
-                        <td>9/11/2020</td>
-                        <td class="text-success">Al Dia</td>
-                    </tr>
+                    <?php 
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

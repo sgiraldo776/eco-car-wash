@@ -1,3 +1,6 @@
+<?php
+    require "../../conexion.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,27 +60,27 @@
             <table class="table table-hover table-dark">
                 <thead>
                     <tr>
-                    <th scope="col">Tipo vehiculo</th>
-                    <th scope="col">Placa</th>
-                    <th scope="col">Hora de Ingreso</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Tipo vehiculo</th>
+                        <th scope="col">Hora de Ingreso</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    $sel = $conn->query("SELECT p.placa,p.tipo_vehiculo,p.hora_ingreso FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4");
+
+                    while ($row=$sel->fetch_assoc()) {
+                    ?>
                     <tr>
-                        <td>Carro</td>
-                        <td>CNK-257</td>
-                        <td>3:55 PM</td>
+                        <td><?php echo $row['placa'] ?></td>
+                        <td><?php echo $row['tipo_vehiculo'] ?></td>
+                        <td><?php echo $row['hora_ingreso'] ?></td>
+                        <td><button class="btn btn-success">Retirar Vehiculo</button></td>
                     </tr>
-                    <tr>
-                        <td>Carro</td>
-                        <td>CNK-257</td>
-                        <td>3:55 PM</td>
-                    </tr>
-                    <tr>
-                        <td>Carro</td>
-                        <td>CNK-257</td>
-                        <td>3:55 PM</td>
-                    </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

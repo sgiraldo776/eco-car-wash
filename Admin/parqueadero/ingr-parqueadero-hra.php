@@ -6,14 +6,19 @@
     }
 
     $tipo=$_POST['tipo'];
+    if($tipo=="Moto"){
+        $tipo_parque=4;
+    }elseif ($tipo=="Carro"){
+        $tipo_parque=1;
+    }
     $placa=$_POST['placa'];
     $hora=$_POST['hora'];
 
-    $sql="INSERT INTO tblparqueadero (placa,tipo_vehiculo,hora_ingreso,hora_salida,precio, Celular, Correo) VALUES ('$placa', '$tipo', '$hora', null,null, null, null)";
-    if ($conn->query($sql) === FALSE) {
-        echo "<script> alert ('No se ha podido ingresar'); </script>";
-    } else {
+    $sql= $conn->query ("INSERT INTO tblparqueadero (Cliente,placa,tipo_vehiculo,hora_ingreso,hora_salida, id_parqueo, Correo, Celular) VALUES (null,'$placa', '$tipo', '$hora' ,null, '$tipo_parque', null, null )");
+    if($sql == TRUE){
         echo "<script> 	alert ('Ingresado Correctamente'); </script>";
         echo "<script> 	location.href='form-parqueadero-hra.php'; </script>";
+    } else {
+        echo "<script> alert ('No se ha podido ingresar'); </script>";
     }
 ?>

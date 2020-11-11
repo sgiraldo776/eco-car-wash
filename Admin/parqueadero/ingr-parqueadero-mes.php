@@ -7,13 +7,17 @@
 
     $cliente=$_POST['cliente'];
     $tipo=$_POST['tipo'];
+    if($tipo=="Moto"){
+        $tipo_parque=6;
+    }elseif ($tipo=="Carro"){
+        $tipo_parque=2;
+    }
     $correo=$_POST['correo'];
     $celular=$_POST['celular'];
     $placa=$_POST['placa'];
     $hora=$_POST['hora'];
-    $precio=$_POST['preciomes'];
 
-    $sql= $conn->query ("INSERT INTO tblparqueadero (placa,tipo_vehiculo,hora_ingreso,hora_salida, precio, Celular, Correo) VALUES ('$placa', '$tipo', '$hora' ,null, '$precio', '$celular', '$correo' )");
+    $sql= $conn->query ("INSERT INTO tblparqueadero (Cliente,placa,tipo_vehiculo,hora_ingreso,hora_salida, id_parqueo, Correo, Celular) VALUES ('$cliente','$placa', '$tipo', '$hora' ,null, '$tipo_parque', '$correo', '$celular' )");
     if($sql == TRUE){
         echo "<script> 	alert ('Ingresado Correctamente'); </script>";
         echo "<script> 	location.href='form-parqueadero-mes.php'; </script>";
