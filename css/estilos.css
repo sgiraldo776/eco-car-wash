@@ -40,6 +40,14 @@ h3 {
     background-color: #1438A6;
 }
 
+.btn-invi {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+}
+
 
 /* Index */
 
@@ -64,16 +72,16 @@ nav img {
 }
 
 .bg-nav {
-    background-color: #0D1440;
+    background-color: #1438A6;
 }
 
 nav a {
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
 }
 
 nav a:hover {
-    color: #1438A6 !important;
+    color: #c9c9c9 !important;
 }
 
 .bg-ind {
@@ -85,12 +93,17 @@ nav a:hover {
     background-size: cover;
 }
 
-
-/* Tarjetas index */
-
-.contenedor {
-    padding: 2rem;
+.dropdown-toggle:hover {
+    color: #c9c9c9;
 }
+
+.dropdown-item:hover {
+    background-color: #929292 !important;
+    color: #ffffff;
+}
+
+
+/* Tarjetas conocenos */
 
 .tar-img {
     padding: 3rem 3rem 1rem 3rem;
@@ -113,27 +126,79 @@ nav a:hover {
 /* Footer */
 
 .footer {
-    background-color: #0D1440;
-    color: #ffffff;
     padding: 2rem;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #9d9d9d;
+    background-color: #ffffff;
 }
 
 .redes i {
-    color: #ffffff;
-    font-size: 2.6rem;
+    color: #4D4D4D;
+    font-size: 2rem;
+}
+
+.redes i:hover {
+    color: #1A4AD9;
+    font-size: 2.2rem;
 }
 
 .contac a {
     text-decoration: none;
-    color: #ffffff;
+    color: #4D4D4D;
 }
 
 .contac a:hover {
     color: #1438A6;
+    text-decoration: none;
 }
 
-.copy:hover {
-    text-shadow: 2px 2px 4px #000000;
+.copy {
+    color: #4D4D4D;
+}
+
+
+/* Servicios */
+
+.contenedor-servicios {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10vh auto 10vh auto;
+}
+
+.contenedor-servicios .card {
+    width: 16rem;
+    height: 22rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.contenedor-servicios .card h2 {
+    margin: 1rem 0 1rem 0;
+}
+
+.contenedor-servicios .card:hover {
+    transform: translate(0, -15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Lavados */
+
+.bg-tipos {
+    background-color: #1A4AD9;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 1rem 5rem;
+    margin: 2rem 0 3rem 0;
 }
 
 
@@ -144,7 +209,7 @@ nav a:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .form-veh {

@@ -21,10 +21,10 @@
 <body class="bg-login">
 
     <div class="container m-0 p-0 col-12">
-        <div class="form-veh col-12 col-md-6 col-lg-6">
-            <form action="">
+        <div class="form-veh col-12 col-md-6 col-lg-6 row">
+        <form action="login.php" method="post">
                 <div class="logo col-12">
-                    <a href="">
+                    <a href="../../index.php">
                         <img src="../../img/logo.png" alt="">
                     </a>
                 </div>
@@ -32,12 +32,18 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="#">Correo</label>
-                        <input type="email" class="form-control" id="marca">
+                        <input type="email" class="form-control" name="correo">
                     </div>
 
                     <div class="form-group col-12">
                         <label for="">Contraseña</label>
-                        <input type="password" class="form-control" id="modelo" min="1960" max="2050">
+                        <input type="password" class="form-control" name="contr">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="col-12 text-center">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
                     </div>
                 </div>
 

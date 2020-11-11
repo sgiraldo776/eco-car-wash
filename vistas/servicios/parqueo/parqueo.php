@@ -15,54 +15,49 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../../../css/estilos.css">
 </head>
 
 <body>
 
-    <section class="bg-ind">
-        <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-            <div class="col-sm-3 text-center">
-                <a class="navbar-brand" href="index.php">
-                    <img src="img/logo-bla.png" alt="">
-                </a>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+        <div class="col-sm-3 text-center">
+            <a class="navbar-brand" href="../../../index.php">
+                <img src="../../../img/logo-bla.png" alt="">
+            </a>
+        </div>
 
-            <button class="navbar-toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav hola ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index.php">Inicio</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="vistas/nosotros/nosotros.php">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="vistas/servicios/servicios.php">Servicios</a>
-                    </li>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav hola ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="../../../index.php">Inicio</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../vistas/nosotros/nosotros.php">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../vistas/servicios/servicios.php">Servicios</a>
+                </li>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                             Perfil
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                            <button class="dropdown-item" type="button">Mi Perfil</button>
-                            <button class="dropdown-item" type="button">Mi Vehículo</button>
-                            <button class="dropdown-item" type="button">Reservas</button>
-                            <button class="dropdown-item" type="button">Parqueo</button>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button">Cerrar Sección</button>
-                        </div>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                        <button class="dropdown-item" type="button">Mi Perfil</button>
+                        <button class="dropdown-item" type="button">Mi Vehículo</button>
+                        <button class="dropdown-item" type="button">Reservas</button>
+                        <button class="dropdown-item" type="button">Parqueo</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button">Cerrar Sección</button>
                     </div>
-                </ul>
-            </div>
-        </nav>
-    </section>
+                </div>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="">
-        <br> <br>
-    </section>
 
     <footer class="footer py-4">
         <div class="container">
