@@ -71,7 +71,9 @@
                         </thead>
                         <?php 
                         $sel = $conn ->query("SELECT * FROM tblInsumo_Repuesto ");
+                        $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
+                            $cont++;
                         ?>
                         <tr>
                             <td><?php echo $fila['Id_Insumo'] ?></td>
@@ -81,10 +83,43 @@
                             <td><?php echo $fila['Vlr_Total'] ?></td>
                             <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>">EDITAR</a></td>
                             <td><a href="eliminar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo'] ?>">ELIMINAR</a></td>
+                            <td><button type="button" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
+                            
                         </tr>
+                        <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Salida del Insumo</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                        <div class="modal-body">
+
+
+                                            <form action="restar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo']?>" method="post">
+                                            <label>Codigo</label>
+                                            <input type="text" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
+                                            <label>Nombre Produto</label>
+                                            <input type="text" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
+                                            <label>cantidad vendida</label>
+                                            <input type="text" name="cantidad">
+                                            <button type="submit" class="btn btn-primary">gUardAr</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
                         <?php } ?>
                     </table>
                 </div>
+
+                    
         </div> 
 
         </div>
