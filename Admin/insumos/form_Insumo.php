@@ -61,9 +61,9 @@
         <div class="mt-4">
                     <table class="table table-hover">
                         <thead class="thead">
-                            <th>id</th>
-                            <th>cantidad</th>
-                            <th>descripcion</th>
+                            <th>Id</th>
+                            <th>Cantidad</th>
+                            <th>Descripcion</th>
                             <th>Valor Unitario</th>
                             <th>Valor Total</th>
                             <th></th>
@@ -81,9 +81,8 @@
                             <td><?php echo $fila['Descripcion'] ?></td>
                             <td><?php echo $fila['Vlr_Unitario'] ?></td>
                             <td><?php echo $fila['Vlr_Total'] ?></td>
-                            <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>">EDITAR</a></td>
                             <td><a href="eliminar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo'] ?>">ELIMINAR</a></td>
-                            <td><button type="button" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
+                            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
                             
                         </tr>
                         <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
@@ -105,13 +104,13 @@
                                             <input type="text" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
                                             <label>cantidad vendida</label>
                                             <input type="text" name="cantidad">
-                                            <button type="submit" class="btn btn-primary">gUardAr</button>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            </div>
                                             </form>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        </div>
+                                        
                             </div>
                         </div>
                     </div>
