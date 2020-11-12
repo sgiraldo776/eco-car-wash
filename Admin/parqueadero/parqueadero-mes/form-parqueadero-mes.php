@@ -86,7 +86,10 @@
                     <?php
                     $sel = $conn->query("SELECT p.num_factura,p.Cliente,p.Correo,p.Celular,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=2 OR p.id_parqueo=6");
 
+                    $contador=0;
+
                     while ($row=$sel->fetch_assoc()) {
+                        $contador++;
                     ?>
                     <tr>
                         <td><?php echo $row['Cliente'] ?></td>
@@ -103,7 +106,7 @@
 
                         if (($diff->days)>30) {
                         ?>
-                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Atrasado</button></td>
+                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal<?php echo $contador?>">Atrasado</button></td>
                         <?php
                         }else{
                         ?>
@@ -112,7 +115,7 @@
                         }
                         ?>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="Modal<?php echo $contador?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -123,9 +126,35 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="text-center">
-                                            <a href=""><button class="btn btn-danger">Cancelar Mensualidad</button></a>
-                                            <a href="renovar-mensualidad.php?id=<?php $row['hora_ingreso']; ?>"><button class="btn btn-info">Renovar Mensualidad</button></a>
+                                            <button class="btn btn-danger" data-toggle="modal" data-target="#Modal1<?php echo $contador?>">Cancelar Mensualidad</button>
+                                            <a href="renovar-mensualidad.php?id=<?php echo $row['num_factura']; ?>"><button class="btn btn-info">Renovar Mensualidad</button></a>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal1<?php echo $contador?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Estas Seguro?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        A continuacion se muestran los datos de la mensualidad, si esta seguro de cancelarla presione "Cancelar", de lo contrario preiones "VOLVER"
+                                        <hr>
+                                        Nombre del cliente: <div class="text-info"><?php echo $row['Cliente'] ?></div>
+                                        Tipo de Vehiculo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?></div>
+                                        Placa del Vehiculo: <div class="text-info"><?php echo $row['placa'] ?></div>
+                                        Fecha de inicio Mensualidad: <div class="text-primary"><?php echo $row['hora_ingreso'] ?></div>
+                                        Valor de la Mensualidad: <div class="text-success"><?php echo $row['precio'] ?></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">VOLVER</button>
+                                        <a href="cancelar-mensualidad.php?id=<?php echo $row['num_factura']; ?>"><button type="button" class="btn btn-danger">Cancelar</button></a>
                                     </div>
                                 </div>
                             </div>

@@ -68,7 +68,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    $sel = $conn->query("SELECT p.placa,p.tipo_vehiculo,p.hora_ingreso FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4");
+                    $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4");
 
                     while ($row=$sel->fetch_assoc()) {
                     ?>
@@ -76,8 +76,77 @@
                         <td><?php echo $row['placa'] ?></td>
                         <td><?php echo $row['tipo_vehiculo'] ?></td>
                         <td><?php echo $row['hora_ingreso'] ?></td>
-                        <td><button class="btn btn-success">Retirar Vehiculo</button></td>
+                        <td><button class="btn btn-success" data-toggle="modal" data-target="#Modal1<?php echo $row['num_factura']; ?>">Retirar Vehiculo</button></td>
                     </tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modal1<?php echo $row['num_factura']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Datos de la Facturacion:</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Placa del Vehiculo: <div class="text-info"><?php echo $row['placa'] ?></div>
+                                    Tipo de vehiculo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?></div>
+                                    Hora de Ingreso: <div class="text-info"><?php echo $row['hora_ingreso'] ?></div>
+                                    Hora de Salida: <div class="text-info"><?php echo Date('h:i') ?></div>
+                                    <?php
+                                        $fecha1= new DateTime($row['hora_ingreso']);
+                                        $fecha2= new DateTime("now");
+                                        $diff = $fecha1->diff($fecha2);
+
+                                        if ($row['tipo_vehiculo'] =="Moto") {
+                                            if (($diff->i)<=15) {
+                                                echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
+                                                ?>
+                                                Valor Total: <div class="text-success">500</div>
+                                                <?php
+                                            }elseif(($diff->h)>=1){
+                                                $val = $row['precio']*$diff->h;
+                                                echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
+                                                ?>
+                                                Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                <?php
+                                            }elseif(($diff->i)>15){
+                                                $val = $row['precio'];
+                                                echo "Numero de Horas: <div class='text-info'>1</div>";
+                                                ?>
+                                                Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                <?php
+                                            }
+                                        }elseif ($row['tipo_vehiculo'] =="Carro") {
+                                            if (($diff->i)<=15) {
+                                                echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
+                                                ?>
+                                                Valor Total: <div class="text-success">800</div>
+                                                <?php
+                                            }elseif(($diff->h)>=1){
+                                                $val = $row['precio']*$diff->h;
+                                                echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
+                                                ?>
+                                                Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                <?php
+                                            }elseif(($diff->i)>15){
+                                                $val = $row['precio'];
+                                                echo "Numero de Horas: <div class='text-info'>1</div>";
+                                                ?>
+                                                Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                <?php
+                                            }
+                                        }
+                                        
+                                    ?>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">VOLVER</button>
+                                    <a href="retirar-vehiculo.php?id=<?php echo $row['num_factura']; ?>"><button type="button" class="btn btn-danger">Retirar Vehiculo</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <?php
                     }
                     ?>

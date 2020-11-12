@@ -4,12 +4,12 @@
     if ($conn->connect_error) {
         die("Conección exitosa: " . $conn->connect_error);
     }
-    $fecha = Date('y-m-d h:i');
+
     $id=$_GET['id'];
 
-    $up= $conn->query ("UPDATE tblparqueadero SET hora_ingreso='$fecha' WHERE num_factura='$id'");
-    if($up == TRUE){
-        echo "<script> 	alert ('Mensualidad Renovada Correctamente'); </script>";
+    $del= $conn->query ("DELETE FROM tblparqueadero WHERE num_factura='$id'");
+    if($del == TRUE){
+        echo "<script> 	alert ('Mensualidad Cancelada Correctamente'); </script>";
         echo "<script> 	location.href='form-parqueadero-mes.php'; </script>";
         
     } else {
