@@ -103,6 +103,10 @@
                         <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
                     </div>
 
+                    <div class="form-group text-center mt-3 mb-5">
+                        <button type="submit" class="btn btn-color">Reservar</button>
+                    </div>
+
                 </form>
             </div>
         </div>

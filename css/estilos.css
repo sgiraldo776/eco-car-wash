@@ -247,12 +247,6 @@ nav a:hover {
     width: 100rem;
 }
 
-
-
-#sidebar-container .menu {
-    /* width: 20rem; */
-}
-
 .formularios {
     width: 100%;
     margin-top: 2rem;
@@ -278,6 +272,18 @@ nav a:hover {
         display: none !important;
     }
 }
-.logo2{
+
+.logo2 {
     width: 100rem;
+}
+
+.tabla-admin {
+    overflow: scroll;
+    height: 20rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .stinky {
+        margin: 5rem 0 2rem 0;
+    }
 }
