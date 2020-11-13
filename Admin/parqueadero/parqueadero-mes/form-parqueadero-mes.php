@@ -3,37 +3,48 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../css/estilos.css">
 
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <title>Parqueadero Hora</title>
 </head>
+
 <body>
 
-<div class="d-flex" id="conten-prin">
-        <!-- Sidebar -->
-        <div id="sidebar-container" class="col-3">
-            <div class="col-3 d-none d-lg-block logo2">
-                <img src="../../../img/logo-bla.png" alt="">
+    <section class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+            <div class="col-12 btn-group btn-block text-center">
+                <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static"
+                    aria-haspopup="true" aria-expanded="false">
+                    Formularios
+                </button>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
+                    <a href="../../insumos/form_insumo.php"><button class="dropdown-item"
+                            type="button">Insumos</button></a>
+                    <a href="../parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero
+                            Hora</button></a>
+                    <a href="form-parqueadero-mes.php"><button class="dropdown-item"
+                            type="button">Parqueadero Mes</button></a>
+                    <a href="../../servicios/form_servicios.php"><button class="dropdown-item"
+                            type="button">Servicios</button></a>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" type="button">Cerrar Sección</button>
+                </div>
             </div>
-            <div class="menu">
-                <a href="../../insumos/form_insumo.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2" title="Insumos"></i><h5 class="m-1 navbar-enlaces">Insumos</h5></a>
-                <a href="../parqueadero-hra/form-parqueadero-hra.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-people lead mr-2" title="Parqueadero"></i><h5 class="m-1 navbar-enlaces">Parqueadero Hora</h5></a>
-                <a href="form-parqueadero-mes.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-people lead mr-2" title="Parqueadero"></i><h5 class="m-1 navbar-enlaces">Parqueadero Mes</h5></a>
-                <a href="../../servicios/form_servicios.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2" title="Servicios"></i><h5 class="m-1 navbar-enlaces">Servicios</h5></a>
-                <a href="../../proveedor/form_proveedor.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-person lead mr-2" title="Proveedor"></i><h5 class="m-1 navbar-enlaces">Proveedor</h5></a>
-                <a href="../../sitio/form_sitio.php" class="d-flex text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2" title="Sitio Turistico"></i><h5 class="m-1 navbar-enlaces">Sitio Turistico</h5></a>
-                
-            </div>
-        </div>
-        <div class="container formularios col-9">
-        <div class="mt-4">
-            <h1 class="">Ingresar Vehiculo Para Mensualidad</h1>
+            </ul>
+        </nav>
+    </section>
+
+    <div class="container formularios col-12 mt-5 p-sm-5">
+        <div class="stinky text-center mb-3">
+            <h2 class="">Ingresar Vehiculo Para Mensualidad</h2>
         </div>
         <div>
             <form action="ingr-parqueadero-mes.php" method="POST">
@@ -66,7 +77,9 @@
                     <input class="form-control" type="datetime-local" name="hora">
                     <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
                 </div>
-                <input type="submit" class="btn btn-color" value="Registrar">
+                <div class="form-group text-center mb-5">
+                    <button type="submit" class="btn btn-color">Registrar</button>
+                </div>
             </form>
             <hr>
             <table class="table table-hover table-dark">
@@ -106,7 +119,8 @@
 
                         if (($diff->days)>30) {
                         ?>
-                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Modal<?php echo $contador?>">Atrasado</button></td>
+                        <td><button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-target="#Modal<?php echo $contador?>">Atrasado</button></td>
                         <?php
                         }else{
                         ?>
@@ -115,46 +129,57 @@
                         }
                         ?>
                         <!-- Modal -->
-                        <div class="modal fade" id="Modal<?php echo $contador?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="Modal<?php echo $contador?>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Que desea Hacer?</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                            <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="text-center">
-                                            <button class="btn btn-danger" data-toggle="modal" data-target="#Modal1<?php echo $contador?>">Cancelar Mensualidad</button>
-                                            <a href="renovar-mensualidad.php?id=<?php echo $row['num_factura']; ?>"><button class="btn btn-info">Renovar Mensualidad</button></a>
+                                            <button class="btn btn-danger" data-toggle="modal"
+                                                data-target="#Modal1<?php echo $contador?>">Cancelar
+                                                Mensualidad</button>
+                                            <a href="renovar-mensualidad.php?id=<?php echo $row['num_factura']; ?>"><button
+                                                    class="btn btn-info">Renovar Mensualidad</button></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="Modal1<?php echo $contador?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="Modal1<?php echo $contador?>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Estas Seguro?</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                            <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        A continuacion se muestran los datos de la mensualidad, si esta seguro de cancelarla presione "Cancelar", de lo contrario preiones "VOLVER"
+                                        A continuacion se muestran los datos de la mensualidad, si esta seguro de
+                                        cancelarla presione "Cancelar", de lo contrario preiones "VOLVER"
                                         <hr>
-                                        Nombre del cliente: <div class="text-info"><?php echo $row['Cliente'] ?></div>
-                                        Tipo de Vehiculo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?></div>
+                                        Nombre del cliente: <div class="text-info"><?php echo $row['Cliente'] ?>
+                                        </div>
+                                        Tipo de Vehiculo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?>
+                                        </div>
                                         Placa del Vehiculo: <div class="text-info"><?php echo $row['placa'] ?></div>
-                                        Fecha de inicio Mensualidad: <div class="text-primary"><?php echo $row['hora_ingreso'] ?></div>
-                                        Valor de la Mensualidad: <div class="text-success"><?php echo $row['precio'] ?></div>
+                                        Fecha de inicio Mensualidad: <div class="text-primary">
+                                            <?php echo $row['hora_ingreso'] ?></div>
+                                        Valor de la Mensualidad: <div class="text-success">
+                                            <?php echo $row['precio'] ?></div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-info" data-dismiss="modal">VOLVER</button>
-                                        <a href="cancelar-mensualidad.php?id=<?php echo $row['num_factura']; ?>"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                                        <a href="cancelar-mensualidad.php?id=<?php echo $row['num_factura']; ?>"><button
+                                                type="button" class="btn btn-danger">Cancelar</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -169,8 +194,15 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

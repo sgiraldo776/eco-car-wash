@@ -17,27 +17,35 @@
 </head>
 <body>
 
-
-
-<div class="d-flex" id="conten-prin">
-        <!-- Sidebar -->
-        <div id="sidebar-container" class="col-3">
-            <div class="col-3 d-none d-lg-block logo2">
-                <img src="../../img/logo-bla.png" alt="">
+<section class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+            <div class="col-12 btn-group btn-block text-center">
+                <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static"
+                    aria-haspopup="true" aria-expanded="false">
+                    Formularios
+                </button>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
+                    <a href="../insumos/form_insumo.php"><button class="dropdown-item"
+                            type="button">Insumos</button></a>
+                    <a href="../parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero
+                            Hora</button></a>
+                    <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item"
+                            type="button">Parqueadero Mes</button></a>
+                    <a href="form_servicios.php"><button class="dropdown-item"
+                            type="button">Servicios</button></a>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" type="button">Cerrar Sección</button>
+                </div>
             </div>
-            <div class="menu">
-                <a href="../insumos/form_insumo.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2" title="Insumos"></i><h5 class="m-1 navbar-enlaces">Insumos</h5></a>
-                <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-people lead mr-2" title="Parqueadero"></i><h5 class="m-1 navbar-enlaces">Parqueadero Hora</h5></a>
-                <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-people lead mr-2" title="Parqueadero"></i><h5 class="m-1 navbar-enlaces">Parqueadero Mes</h5></a>
-                <a href="form_servicios.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2" title="Servicios"></i><h5 class="m-1 navbar-enlaces">Servicios</h5></a>
-                <a href="../proveedor/form_proveedor.php" class="d-flex text-light p-3 border-0"><i class="icon ion-md-person lead mr-2" title="Proveedor"></i><h5 class="m-1 navbar-enlaces">Proveedor</h5></a>
-                <a href="../sitio/form_sitio.php" class="d-flex text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2" title="Sitio Turistico"></i><h5 class="m-1 navbar-enlaces">Sitio Turistico</h5></a>
-                
-            </div>
-        </div>
-        <div class="container formularios col-9">
+            </ul>
+        </nav>
+    </section>
+
+        <div class="container formularios col-12 mt-5 p-sm-5">
         <div class="container">
-        <h1>Agregar Servicios Ofertados</h1>
+            <div class="stinky text-center mb-3">
+                <h2 class="">Agregar Servicios Ofertados</h2>
+            </div>
         <form action="insertar_servicios.php" method="post">
             <div class="form-group">
                 <label> Tipo de servicio: </label>
@@ -50,9 +58,10 @@
             <div class="form-group">
                 <label> Valor del servicio: </label>
                 <input type="text" class="form-control" name="Valor" placeholder="Valor del servicio">
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>            
+            <div class="form-group text-center mb-5">
+                    <button type="submit" class="btn btn-color">Registrar</button>
+                </div>
         </form>
 
         <div class="mt-4">

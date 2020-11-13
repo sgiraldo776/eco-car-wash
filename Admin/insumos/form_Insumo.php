@@ -24,44 +24,16 @@
     <body>
 
         <section class="fixed-top">
-            <!-- 
-            <div class="collapse" id="navbarToggleExternalContent">
-
-                <div class="bg-light p-4 text-center">
-                    <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
-                    <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero Hora</button></a>
-                    <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero Mes</button></a>
-                    <a href="../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
-                    <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
-                    <a href="../sitio/form_sitio.php"><button class="dropdown-item" type="button">Sitio Turistico</button></a>
-
-                    <div class="dropdown-divider"></div>
-                    <button class="dropdown-item" type="button">Cerrar Sección</button>
-                </div>
-            </div>
-            <div class=" text-center">
-                <nav class="navbar navbar-dark bg-nav">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <div class="text-center">
-                            <span class=""> <h2>Formularios</h2> </span>
-                        </div>
-                    </button>
-                </nav>
-            </div> -->
-
             <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-                <div class="btn-group btn-block text-center">
+                <div class="col-12 btn-group btn-block text-center">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                                 Formularios
                             </button>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" size="3">
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
                         <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
                         <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero Hora</button></a>
                         <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero Mes</button></a>
                         <a href="../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
-                        <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
-                        <a href="../sitio/form_sitio.php"><button class="dropdown-item" type="button">Sitio Turistico</button></a>
-
                         <div class="dropdown-divider"></div>
                         <button class="dropdown-item" type="button">Cerrar Sección</button>
                     </div>

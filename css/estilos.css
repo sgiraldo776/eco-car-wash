@@ -38,6 +38,7 @@ h3 {
 .btn-color:hover {
     cursor: pointer;
     background-color: #1438A6;
+    color: #ffffff;
 }
 
 .btn-invi {
@@ -98,8 +99,13 @@ nav a:hover {
 }
 
 .dropdown-item:hover {
-    background-color: #929292 !important;
+    background-color: #1A4AD9 !important;
     color: #ffffff;
+    text-decoration: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
 }
 
 
