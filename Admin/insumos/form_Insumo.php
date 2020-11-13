@@ -2,6 +2,9 @@
     include '../../conexion.php';
 
     session_start();
+    if($_SESSION['rol']!=1){
+        echo "<script> location.href='../../index.php'; </script>";
+    }
 ?>
 
     <!DOCTYPE html>

@@ -1,5 +1,10 @@
 <?php
     require "../../../conexion.php";
+    session_start();
+    if($_SESSION['rol']!=1){
+        echo "<script> location.href='../../index.php'; </script>";
+    }   
+
     
     if ($conn->connect_error) {
         die("Conección exitosa: " . $conn->connect_error);

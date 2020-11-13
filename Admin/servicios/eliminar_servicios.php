@@ -1,5 +1,9 @@
 <?php
     require_once "../../conexion.php";
+    session_start();
+    if($_SESSION['rol']!=1){
+        echo "<script> location.href='../../index.php'; </script>";
+    } 
 
     $Id_Servicio = $_GET['Id_Servicio'];
 

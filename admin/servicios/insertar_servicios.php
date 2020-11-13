@@ -1,5 +1,9 @@
 <?php
     require_once "../../conexion.php";
+    session_start();
+    if($_SESSION['rol']!=1){
+        echo "<script> location.href='../../index.php'; </script>";
+    } 
 
     $Tipo_Servicio = $_POST['Tipo_Servicio'];
     $Descripcion = $_POST['Descripcion'];
