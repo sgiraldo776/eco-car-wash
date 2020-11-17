@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +21,9 @@
 </head>
 
 <body>
-
-    <?php
-        include 'conexion.php';
-        session_start();
+<?php
+    include('conexion.php');
+    session_start();
         if(!isset($_SESSION['rol'])){
             include 'vistas/includes/header-inicio.php';
         }else{
@@ -39,11 +38,7 @@
             }            
         }
 
-        // if(isset($_GET['estado'])){
-        //     $estado=$_GET['estado'];
-        // }
-    ?>
-
+?>
     <section class="bg-ind"></section>
 
     <section class="">
