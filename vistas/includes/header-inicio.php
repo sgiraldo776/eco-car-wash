@@ -15,9 +15,9 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="img/icono-pag.png">
+    <link rel="icon" type="image/png" href="<?php echo $url?>img/icono-pag.png">
 
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="<?php echo $url?>css/estilos.css">
 </head>
 
 <body>
@@ -38,19 +38,19 @@
                     <a class="nav-link" href="index.php">Inicio</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="vistas/nosotros/nosotros.php">Nosotros</a>
+                    <a class="nav-link" href="<?php echo $url?>vistas/nosotros/nosotros.php">Nosotros</a>
                     <!-- <a class="nav-link" href="Cliente/login/frm_login.php">Iniciar Sesion</a> -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="vistas/servicios/servicios.php">Servicios</a>
+                    <a class="nav-link" href="<?php echo $url?>vistas/servicios/servicios.php">Servicios</a>
                 </li>
                 <div class="btn-group">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                             Ingresar
                         </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                        <button class="dropdown-item" type="button">Iniciar sección</button>
-                        <button class="dropdown-item" type="button">Registrarse</button>
+                        <a href="<?php echo $url?>Cliente/login/frm_login.php"><button class="dropdown-item" type="button">Iniciar sección</button></a>
+                        <a href="<?php echo $url?>Cliente/usuario/form_cliente.php"><button class="dropdown-item" type="button">Registrarse</button></a>
                     </div>
                 </div>
             </ul>

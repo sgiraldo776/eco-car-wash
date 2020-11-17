@@ -21,29 +21,27 @@
 </head>
 
 <body>
-    <?php
-        include 'vistas/includes/header-inicio.php';
 
-        include('Admin/conexion.php');
+    <?php
+        include 'conexion.php';
         session_start();
         if(!isset($_SESSION['rol'])){
-            include 'includes/header-idx.php';
+            include 'vistas/includes/header-inicio.php';
         }else{
             if($_SESSION['rol'] !=1 ){
                 if($_SESSION['rol'] =2 ){
-                    include 'includes/header-user.php';
+                    include 'vistas/includes/header-admin.php';
                 }else {
-                    include 'includes/header-idx.php';
+                    include 'vistas/includes/header-inicio.php';
                 }
             }else {
-                include 'includes/header-admin.php';
+                include 'vistas/includes/header-inicio.php';
             }            
         }
 
-        if(isset($_GET['estado'])){
-            $estado=$_GET['estado'];
-        }
-
+        // if(isset($_GET['estado'])){
+        //     $estado=$_GET['estado'];
+        // }
     ?>
 
     <section class="bg-ind"></section>
