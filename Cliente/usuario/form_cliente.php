@@ -1,10 +1,6 @@
-<?php
-include '../../conexion.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,60 +8,98 @@ include '../../conexion.php';
     <!--importacion boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" href="img/icono-pag.png">
+
+    <link rel="stylesheet" href="../../css/estilos.css">
+
 </head>
+
 <body>
-    
-    <div class="container">
-        <form action="ingresar_cliente.php" method="post">
 
-            <div class="form-group">
-                <label>Numero De Cedula</label>
-                <input type="text" class="form-control" name="identificacion" placeholder="Cedula Ciudadania">
-            </div>
+    <?php
+include '../../conexion.php';
 
-            <div class="form-group">
-                <label>Nombre Clientes</label>
-                <input type="text" class="form-control" name="nombres" placeholder="nombres">
+?>
+        <nav class="bg-nav">
+            <div class=" col-12 text-center">
+                <a class="navbar-brand my-3" href="../../index.php">
+                    <img src="../../img/logo-bla.png " style="width: 250px;">
+                </a>
             </div>
-            <div class="form-group">
-                <label>Apellidos</label>
-                <input type="text" class="form-control" name="apellidos" placeholder="Apellidos">
-            </div>
-            <div class="form-group">
-                <label>Direccion</label>
-                <input type="text" class="form-control" name="direccion" placeholder="direccion de residencia">
-            </div>
-            <div class="form-group">
-                <label>Celular</label>
-                <input type="text" class="form-control" name="celular" placeholder="Telefono Celular">
-            </div>
-            <div class="form-group">
-                <label>Correo</label>
-                <input type="email" class="form-control" name="correo" placeholder="Correo Electronico">
-            </div>
+        </nav>
 
-            <div class="form-group">
-                <label>Contraseña</label>
-                <input type="password" class="form-control" name="contra1" placeholder="Contraseña">
-            </div>
-            <div class="form-group">
-                <label>Confirmar Contraseña</label>
-                <input type="password" class="form-control" name="contra2" placeholder="Confirmar Contraseña">
-            </div>
-            
-            <button type="submit" class="btn btn-color">Registrar</button>
-        
-        </form>
-    
-    </div>
+        <div class="container mt-3">
+            <form action="ingresar_cliente.php " method="post " class="col-12 ">
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                <div class="text-center mb-3">
+                    <h2>Registrate</h2>
+                </div>
+
+                <div class="form-group ">
+                    <label>Número De Cedula</label>
+                    <input type="text " class="form-control " name="identificacion " placeholder="Cedula Ciudadania ">
+                </div>
+
+                <div class="form-group ">
+                    <label>Nombre Clientes</label>
+                    <input type="text " class="form-control " name="nombres " placeholder="nombres ">
+                </div>
+                <div class="form-group ">
+                    <label>Apellidos</label>
+                    <input type="text " class="form-control " name="apellidos " placeholder="Apellidos ">
+                </div>
+                <div class="form-group ">
+                    <label>Dirección</label>
+                    <input type="text " class="form-control " name="direccion " placeholder="direccion de residencia ">
+                </div>
+                <div class="form-group ">
+                    <label>Celular</label>
+                    <input type="text " class="form-control " name="celular " placeholder="Telefono Celular ">
+                </div>
+                <div class="form-group ">
+                    <label>Correo</label>
+                    <input type="email " class="form-control " name="correo " placeholder="Correo Electronico ">
+                </div>
+
+                <div class="form-group ">
+                    <label>Contraseña</label>
+                    <input type="password " class="form-control " name="contra1 " placeholder="Contraseña ">
+                </div>
+                <div class="form-group ">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password " class="form-control " name="contra2 " placeholder="Confirmar Contraseña ">
+                </div>
+
+                <div class="text-center mb-3">
+                    <button type="submit " class="btn btn-color ">Registrar</button>
+                </div>
+
+                <div class="col-12 text-center mb-4">
+                    <a href="">¿Ya tienes cuenta?</a>
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous ">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous ">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous ">
+        </script>
 </body>
-<?php
+
+<!-- <?php
 //prueba de obtener hora del servidor
 $hoy = date('y-m-d h:i A', time()-21600) ;
 print_r($hoy);
-?>
+?> -->
+
 </html>
