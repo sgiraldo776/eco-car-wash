@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
@@ -88,6 +91,31 @@
             </form>
         </div>
     </div>
+
+
+    <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire('Ingresado correctamente')
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se ha podido ingresar')
+        </script>
+
+        <?php
+                }
+            }
+        }
+        ?>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

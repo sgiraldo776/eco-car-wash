@@ -49,10 +49,10 @@ try {
     $mail->charset = 'UTF-8';
     
     $mail->send();
-    echo "<script>alert('correo enviado exitosamente')</script>";
-    echo "<script> setTimeout(\"location.href='contacto.php'\",1000)</script>";
+    //echo "<script>alert('correo enviado exitosamente')</script>";
+    echo "<script> setTimeout(\"location.href='contacto.php?msg=1'\",1000)</script>";
 } catch (Exception $e) {
-    echo "<script>alert('No se pudo enviar el correo')</script>";
-    echo "<script> setTimeout(\"location.href='contacto.php'\",1000)</script>";
+    //echo "<script>alert('No se pudo enviar el correo')</script>";
+    echo "<script> setTimeout(\"location.href='contacto.php?msg=2'\",1000)</script>";
 }
 ?>

@@ -18,6 +18,9 @@
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../../../img/icono-pag.png">
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <title>Parqueadero Hora</title>
 </head>
 
@@ -197,6 +200,71 @@
             </table>
         </div>
     </div>
+
+    <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire('Ingresado correctamente')
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se ha podido ingresar')
+        </script>
+
+        <?php
+                }else{
+                    if($_GET['msg']==3){
+        ?>
+
+        <script>
+            Swal.fire('Mensualidad Renovada Correctamente')
+        </script>
+
+        <?php
+                    }else{
+                        if($_GET['msg']==4){
+        ?>
+
+        <script>
+            Swal.fire('No se ha podido renovar la mensualidad')
+        </script>
+
+        <?php
+                        }else{
+                            if($_GET['msg']==5){
+        ?>
+
+        <script>
+            Swal.fire('Mensualidad cancelada correctamente')
+        </script>
+
+
+        <?php
+                            }else{
+                                if($_GET['msg']==6){
+        ?>
+
+        <script>
+            Swal.fire('No se pudo cancelar la mensualidad')
+        </script>
+
+        <?php
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -21,9 +21,8 @@
 
     $sql= $conn->query ("INSERT INTO tblparqueadero (Cliente,placa,tipo_vehiculo,hora_ingreso,hora_salida, id_parqueo, Correo, Celular) VALUES (null,'$placa', '$tipo', '$hora' ,null, '$tipo_parque', null, null )");
     if($sql == TRUE){
-        echo "<script> 	alert ('Ingresado Correctamente'); </script>";
-        echo "<script> 	location.href='form-parqueadero-hra.php'; </script>";
+        echo "<script> 	location.href='form-parqueadero-hra.php?msg=1'; </script>";
     } else {
-        echo "<script> alert ('No se ha podido ingresar'); </script>";
+        echo "<script> 	location.href='form-parqueadero-hra.php?msg=2'; </script>";
     }
 ?>

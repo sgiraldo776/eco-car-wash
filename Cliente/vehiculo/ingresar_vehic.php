@@ -15,10 +15,9 @@
 
     $sql=$conn->query("INSERT INTO tblvehiculo (`id_Vehiculo`, `Marca`, `Modelo`, `Color`, `Tipo_Vehiculo`, `Vencimiento_SOAT`, `Vencimiento_Tecno`, `Id_Cliente`) VALUES ('$placa', '$marca', '$modelo', '$color', '$tipovehic', '$soat', '$tecno', '1')");
         if($sql==TRUE){
-            echo "<script> 	alert ('Ingresado Correctamente'); </script>";
-            echo "<script> 	location.href='form_vehic.php'; </script>";
+            echo "<script> 	location.href='form_vehic.php?msg=1'; </script>";
         }else{
-            echo "<script> 	alert ('No se pudo ingresar'); </script>";
+            echo "<script> 	location.href='form_vehic.php?msg=2'; </script>";
         }
 
 ?>

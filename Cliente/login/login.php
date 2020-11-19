@@ -12,14 +12,12 @@
     $row = mysqli_fetch_array($sel);
 
     if ($row==TRUE) {
-        echo "Sesion Iniciada, Bienvenido";
         if($row[4]==1){
             $_SESSION['id_usuario']=$row[0];
             $_SESSION['correo']=$row[1];
             $_SESSION['id_cliente']=$row[3];
             $_SESSION['rol']=$row[4];
             echo "<script> location.href='../../index.php'; </script>";
-            // echo "<script> location.href='../../index.php'; </script>";
         }else{
             $_SESSION['id_usuario']=$row[0];
             $_SESSION['correo']=$row[1];
@@ -28,7 +26,6 @@
             echo "<script> location.href='../../index.php'; </script>";
         }
     }else{
-        echo "<script> alert('Datos Incorrectos') </script>";
-        echo "<script> location.href='frm_login.php'; </script>";
+        echo "<script> location.href='frm_login.php?msg=2'; </script>";
     }
 ?>

@@ -32,6 +32,9 @@
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
@@ -60,6 +63,30 @@
             </div>
         </div>
     </main>
+
+    <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire('Correo enviado exitosamente')
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se pudo enviar el correo')
+        </script>
+
+        <?php
+                }
+            }
+        }
+        ?>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
