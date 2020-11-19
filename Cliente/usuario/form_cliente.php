@@ -38,12 +38,7 @@ include '../../conexion.php';
             <form action="ingresar_cliente.php " method="post " class="col-12 ">
 
                 <div class="text-center mb-3">
-                    <h2>Registrate</h2>
-                </div>
-
-                <div class="form-group ">
-                    <label>Número De Cedula</label>
-                    <input type="text " class="form-control " name="identificacion " placeholder="Cedula Ciudadania ">
+                    <h2>Regístrate</h2>
                 </div>
 
                 <div class="form-group ">
@@ -54,6 +49,12 @@ include '../../conexion.php';
                     <label>Apellidos</label>
                     <input type="text " class="form-control " name="apellidos " placeholder="Apellidos ">
                 </div>
+
+                <div class="form-group ">
+                    <label>Número De Cedula</label>
+                    <input type="text " class="form-control " name="identificacion " placeholder="Cedula Ciudadania ">
+                </div>
+
                 <div class="form-group ">
                     <label>Dirección</label>
                     <input type="text " class="form-control " name="direccion " placeholder="direccion de residencia ">

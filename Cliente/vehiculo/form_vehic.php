@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vehículo</title>
 
     <!--importacion boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -49,7 +49,7 @@
                         <input type="text" class="form-control" id="color" name="color">
                     </div>
                     <div class="form-group col-12 col-md-6 col-lg-6">
-                        <label for="">Tipo de vehiculo</label>
+                        <label for="">Tipo de vehículo</label>
                         <select class="custom-select" name="tipo" id="tipo">
                         <option selected>--Seleccione una opción--</option>
                         <option value="1">Motocicleta</option>
@@ -75,7 +75,7 @@
                         <input type="date" class="form-control" id="soat" name="soat">
                     </div>
                     <div class="form-group col-12">
-                        <label for="">Vencimiento de la Tecnico Mecanica</label>
+                        <label for="">Vencimiento de la Técnico Mecànica</label>
                         <input type="date" class="form-control" id="tecmeca" name="tecmeca">
                     </div>
                 </div>

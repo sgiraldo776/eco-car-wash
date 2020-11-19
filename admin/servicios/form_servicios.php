@@ -73,7 +73,7 @@
                 <thead class="thead">
                     <th>id</th>
                     <th>Tipo de Servicio</th>
-                    <th>Descripcion</th>
+                    <th>Descripción</th>
                     <th>Valor</th>
                     <th></th>
                     <th></th>
