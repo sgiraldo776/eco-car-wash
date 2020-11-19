@@ -56,21 +56,23 @@ include '../../conexion.php';
                 </div>
 
                 <div class="form-group">
-                    <label>Dirección</label>
-                    <input type="text" class="form-control" name="direccion" placeholder="Dirección de residencia">
-                </div>
-                <div class="form-group">
                     <label>Celular</label>
                     <input type="text" class="form-control" name="celular" placeholder="Número de celular">
                 </div>
+
                 <div class="form-group">
-                    <label>Correo</label>
-                    <input type="email" class="form-control" name="correo" placeholder="Correo electronico">
+                    <label>Dirección</label>
+                    <input type="text" class="form-control" name="direccion" placeholder="Dirección de residencia">
                 </div>
 
                 <div class="form-group">
                     <label>Ciudad de residencia</label>
                     <input type="text" class="form-control" name="ciudad" placeholder="Ciudad de residencia">
+                </div>
+
+                <div class="form-group">
+                    <label>Correo</label>
+                    <input type="email" class="form-control" name="correo" placeholder="Correo electronico">
                 </div>
 
                 <div class="form-group">
