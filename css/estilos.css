@@ -293,3 +293,14 @@ nav a:hover {
         margin: 5rem 0 2rem 0;
     }
 }
+
+
+/* Formulario de Mi_Perfil */
+
+.bg-perfil {
+    background-image: url(../img/perfil.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
