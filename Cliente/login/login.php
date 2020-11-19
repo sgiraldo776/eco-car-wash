@@ -18,7 +18,7 @@
             $_SESSION['correo']=$row[1];
             $_SESSION['id_cliente']=$row[3];
             $_SESSION['rol']=$row[4];
-            echo "<script> location.href='../../Admin/insumos/form_insumo.php'; </script>";
+            echo "<script> location.href='../../index.php'; </script>";
             // echo "<script> location.href='../../index.php'; </script>";
         }else{
             $_SESSION['id_usuario']=$row[0];

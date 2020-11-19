@@ -1,4 +1,21 @@
+<?php
+    include('conexion.php');
+    session_start();
+        if(!isset($_SESSION['rol'])){
+            include 'vistas/includes/header-inicio.php';
+        }else{
+            if($_SESSION['rol'] !=1 ){
+                if($_SESSION['rol'] =2 ){
+                    include 'vistas/includes/header-usuario.php';
+                }else {
+                    include 'vistas/includes/header-inicio.php';
+                }
+            }else {
+                include 'vistas/includes/header-admin.php';
+            }            
+        }
 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,24 +38,7 @@
 </head>
 
 <body>
-<?php
-    include('conexion.php');
-    session_start();
-        if(!isset($_SESSION['rol'])){
-            include 'vistas/includes/header-inicio.php';
-        }else{
-            if($_SESSION['rol'] !=1 ){
-                if($_SESSION['rol'] =2 ){
-                    include 'vistas/includes/header-admin.php';
-                }else {
-                    include 'vistas/includes/header-inicio.php';
-                }
-            }else {
-                include 'vistas/includes/header-inicio.php';
-            }            
-        }
 
-?>
     <section class="bg-ind"></section>
 
     <section class="">

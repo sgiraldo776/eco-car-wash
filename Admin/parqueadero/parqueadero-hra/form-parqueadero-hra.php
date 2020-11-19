@@ -35,7 +35,7 @@
                         <a href="../parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero Mes</button></a>
                         <a href="../../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sección</button>
+                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
                     </div>
                 </div>
                 </ul>

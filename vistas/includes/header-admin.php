@@ -42,12 +42,12 @@
                             Admin
                         </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                        <a href="../../insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
-                        <a href="form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueo/Hora</button></a>
-                        <a href="../parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueo/Mes</button></a>
-                        <a href="../../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
+                        <a href="<?php echo $URL;?>/admin/insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
+                        <a href="<?php echo $URL; ?>admin/parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueo/Hora</button></a>
+                        <a href="<?php echo $URL; ?>/admin/parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueo/Mes</button></a>
+                        <a href="<?php echo $URL; ?>/admin/servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sección</button>
+                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
                     </div>
                 </div>
             </ul>

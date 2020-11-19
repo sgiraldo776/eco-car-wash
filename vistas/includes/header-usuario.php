@@ -49,12 +49,11 @@
                             Perfil
                         </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                        <button class="dropdown-item" type="button">Mi Perfil</button>
-                        <button class="dropdown-item" type="button">Mi Vehículo</button>
-                        <button class="dropdown-item" type="button">Reservas</button>
-                        <button class="dropdown-item" type="button">Parqueo</button>
+                        <a href="<?php echo $URL; ?>"><button class="dropdown-item" type="button">Mi Perfil</button></a>
+                        <a href="<?php echo $URL; ?>"><button class="dropdown-item" type="button">Mi Vehículo</button></a>
+                        <a href="<?php echo $URL; ?>/Cliente/reservas/reservas.php"><button class="dropdown-item" type="button">Reservas</button></a>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sección</button>
+                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
                     </div>
                 </div>
             </ul>

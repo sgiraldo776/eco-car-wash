@@ -38,7 +38,7 @@
                     <a href="form_servicios.php"><button class="dropdown-item"
                             type="button">Servicios</button></a>
                     <div class="dropdown-divider"></div>
-                    <button class="dropdown-item" type="button">Cerrar Sección</button>
+                    <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                 </div>
             </div>
             </ul>

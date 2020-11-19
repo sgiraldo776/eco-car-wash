@@ -48,7 +48,7 @@
                         Ingresar
                     </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                        <a href="<?php echo $URL ?>Cliente/login/frm_login.php"><button class="dropdown-item" type="button">Iniciar sección</button></a>
+                        <a href="<?php echo $URL ?>Cliente/login/frm_login.php"><button class="dropdown-item" type="button">Iniciar Sesión</button></a>
                         <a href="<?php echo $URL ?>Cliente/usuario/form_cliente.php"><button class="dropdown-item" type="button">Registrarse</button></a>
                     </div>
                 </div>
