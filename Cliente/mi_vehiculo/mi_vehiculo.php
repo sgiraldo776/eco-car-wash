@@ -2,7 +2,7 @@
     include '../../conexion.php';
 
     session_start();
-    if($_SESSION['rol']!=1){
+    if($_SESSION['rol']!=2){
         echo "<script> location.href='../../index.php'; </script>";
     }
 ?>
@@ -27,113 +27,53 @@
     </head>
 
     <body>
-
         <div class="container formularios col-12 p-sm-5">
-            <form action="ingresar_vehic.php" method="POST">
-                <div class="text-center logo col-12">
-                    <a href="">
-                        <img src="../../img/logo.png" alt="" style="width: 60%">
-                    </a>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="#">Placa</label>
-                        <input type="text" class="form-control" id="placa" name="placa">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-12 col-md-6 col-lg-6">
-                        <label for="#">Marca</label>
-                        <input type="text" class="form-control" id="marca" name ="marca">
-                    </div>
-                    <div class="form-group col-12 col-md-6 col-lg-6">
-                        <label for="">Modelo</label>
-                        <input type="number" class="form-control" id="modelo" name="modelo" min="1960" max="2050">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-12 col-md-6 col-lg-6">
-                        <label for="#">Color</label>
-                        <input type="text" class="form-control" id="color" name="color">
-                    </div>
-                    <div class="form-group col-12 col-md-6 col-lg-6">
-                        <label for="">Tipo de vehículo</label>
-                        <select class="custom-select" name="tipo" id="tipo">
-                        <option selected>--Seleccione una opción--</option>
-                        <option value="1">Motocicleta</option>
-                        <option value="2">Motocarro</option>
-                        <option value="3">Mototriciclo</option>
-                        <option value="4">Cuatrimoto</option>
-                        <option value="5">Automóvil</option>
-                        <option value="6">Campero</option>
-                        <option value="7">Camioneta</option>
-                        <option value="8">Microbús</option>
-                        <option value="9">Bus</option>
-                        <option value="10">Buseta</option>
-                        <option value="11">Camión</option>
-                        <option value="12">Tractocamión</option>
-                        <option value="13">Volqueta</option>
-                    </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="#">Vencimiento del SOAT</label>
-                        <input type="date" class="form-control" id="soat" name="soat">
-                    </div>
-                    <div class="form-group col-12">
-                        <label for="">Vencimiento de la Técnico Mecànica</label>
-                        <input type="date" class="form-control" id="tecmeca" name="tecmeca">
-                    </div>
-                </div>
-
-                <div class="align-items-center text-center">
-                    <button type="submit" class="btn-color">Enviar</button>
-                </div>
-
-            </form>
-
+            <div class="text-center logo col-12">
+                <a href="../../index.php">
+                    <img src="../../img/logo.png" alt="" style="width: 60%">
+                </a>
+            </div>
+            <div class="align-items-center text-center">
+                <a href="../vehiculo/form_vehic.php"><button type="submit" class="btn-color">Agregar vehiculo</button></a>
+            </div>
             <div class="tabla-admin mt-4">
                 <table class="table table-hover">
                     <thead class="thead">
-                        <th>Id</th>
-                        <th>Cantidad</th>
-                        <th>Descripción</th>
-                        <th>Valor Unitario</th>
-                        <th>Valor Total</th>
-                        <th></th>
+                        <th>Placa</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Color</th>
+                        <th>Vehiculo</th>
                         <th></th>
                     </thead>
                     <?php 
-                        $sel = $conn ->query("SELECT * FROM tblInsumo_Repuesto ");
+                        $cliente=$_SESSION['id_cliente'];
+                        $sel = $conn ->query("SELECT * FROM tblvehiculo WHERE id_Cliente='$cliente'");
                         $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
                             $cont++;
                         ?>
                     <tr>
                         <td>
-                            <?php echo $fila['Id_Insumo'] ?>
+                            <?php echo $fila['id_Vehiculo'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Cantidad'] ?>
+                            <?php echo $fila['Marca'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Descripcion'] ?>
+                            <?php echo $fila['Modelo'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Vlr_Unitario'] ?>
+                            <?php echo $fila['Color'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Vlr_Total'] ?>
+                            <?php echo $fila['Tipo_Vehiculo'] ?>
                         </td>
-                        <td><a href="eliminar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo'] ?>">ELIMINAR</a></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Modificar vehiculo</button></td>
 
                     </tr>
                     <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Salida del Insumo</h5>
@@ -142,19 +82,70 @@
                                         </button>
                                 </div>
                                 <div class="modal-body">
-
-
-                                    <form action="restar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo']?>" method="post">
-                                        <label>Código</label>
-                                        <input type="text" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
-                                        <label>Nombre Producto</label>
-                                        <input type="text" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
-                                        <label>cantidad vendida</label>
-                                        <input type="text" name="cantidad">
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <form action="" method="POST">
+                                        <div class="logo col-12 text-center">
+                                            <a href="">
+                                                <img src="../../img/logo.png" alt="">
+                                            </a>
                                         </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-12">
+                                                <label for="#">Placa</label>
+                                                <input type="text" class="form-control" id="placa" name="placa" value="<?php echo $fila['id_Vehiculo'] ?>" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-12 col-md-6 col-lg-6">
+                                                <label for="#">Marca</label>
+                                                <input type="text" class="form-control" id="marca" name ="marca" value="<?php echo $fila['Marca'] ?>">
+                                            </div>
+                                            <div class="form-group col-12 col-md-6 col-lg-6">
+                                                <label for="">Modelo</label>
+                                                <input type="number" class="form-control" id="modelo" name="modelo" min="1960" max="2050" value="<?php echo $fila['Modelo'] ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-12 col-md-6 col-lg-6">
+                                                <label for="#">Color</label>
+                                                <input type="text" class="form-control" id="color" name="color" value="<?php echo $fila['Color'] ?>">
+                                            </div>
+                                            <div class="form-group col-12 col-md-6 col-lg-6">
+                                                <label for="">Tipo de vehículo</label>
+                                                <select class="custom-select" name="tipo" id="tipo">
+                                                <option selected>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-12">
+                                                <label for="#">Vencimiento del SOAT</label>
+                                                <input type="date" class="form-control" id="soat" name="soat" value="<?php echo $fila['Vencimiento_SOAT'] ?>">
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <label for="">Vencimiento de la Técnico Mecànica</label>
+                                                <input type="date" class="form-control" id="tecmeca" name="tecmeca" value="<?php echo $fila['Vencimiento_Tecno'] ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="align-items-center text-center">
+                                            <button type="submit" class="btn-color">Actualizar</button>
+                                        </div>
+
                                     </form>
                                 </div>
 
