@@ -11,6 +11,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>

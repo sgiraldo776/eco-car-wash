@@ -5,7 +5,7 @@
 
     $Usuario = $_POST['correo'];
     $Contraseña = $_POST['contr'];
-    //$Contraseña=hash("sha256", $Contraseña); QUITAR EL COMENTARIO CUANDO EL LOGIN ESTÉ LISTO
+    $Contraseña=hash("sha256", $Contraseña); //QUITAR EL COMENTARIO CUANDO EL LOGIN ESTÉ LISTO
 
     $sel = $conn->query("SELECT * FROM tblusuario WHERE Username='$Usuario' AND Password='$Contraseña'");
 
