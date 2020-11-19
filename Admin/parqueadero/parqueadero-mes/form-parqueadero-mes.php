@@ -17,6 +17,7 @@
 
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../../img/icono-pag.png">
     <title>Parqueadero Hora</title>
 </head>
 
@@ -48,7 +49,7 @@
 
     <div class="container formularios col-12 mt-5 p-sm-5">
         <div class="stinky text-center mb-3">
-            <h2 class="">Ingresar Vehiculo Para Mensualidad</h2>
+            <h2 class="">Ingresar Vehículo Para Mensualidad</h2>
         </div>
         <div>
             <form action="ingr-parqueadero-mes.php" method="POST">
@@ -57,7 +58,7 @@
                     <input type="text" class="form-control" name="cliente">
                 </div>
                 <div class="form-group">
-                    <label>Tipo de Vehiculo</label>
+                    <label>Tipo de Vehículo</label>
                     <select class="form-control" name="tipo">
                         <option value="Moto" selected disabled>- Seleccione -</option>
                         <option value="Moto">Moto</option>
@@ -69,20 +70,20 @@
                     <input class="form-control" type="email" name="correo">
                 </div>
                 <div class="form-group">
-                    <label>Numero Celular</label>
+                    <label>Número Celular</label>
                     <input class="form-control" type="tel" name="celular">
                 </div>
                 <div class="form-group">
-                    <label>Placa del vehiculo</label>
+                    <label>Placa del vehículo</label>
                     <input class="form-control" type="text" name="placa">
                 </div>
                 <div class="form-group">
                     <label>Fecha de inicio mensualidad</label>
                     <input class="form-control" type="datetime-local" name="hora">
-                    <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
+                    <small class="form-text text-muted">La hora de ingreso se rellena automáticamente</small>
                 </div>
                 <div class="form-group text-center mb-5">
-                    <button type="submit" class="btn btn-color">Registrar</button>
+                    <button type="submit" class="btn btn-color">Regístrar</button>
                 </div>
             </form>
             <hr>
@@ -93,7 +94,7 @@
                         <th scope="col">Correo</th>
                         <th scope="col">Celular</th>
                         <th scope="col">Placa</th>
-                        <th scope="col">Tipo de Vehiculo</th>
+                        <th scope="col">Tipo de Vehículo</th>
                         <th scope="col">Fecha inicio Mensualidad</th>
                         <th scope="col">Precio Mensualidad</th>
                         <th scope="col">Estado</th>
@@ -128,7 +129,7 @@
                         <?php
                         }else{
                         ?>
-                        <td class="text-success">Al Dia</button></td>
+                        <td class="text-success">Al Día</button></td>
                         <?php
                         }
                         ?>
@@ -138,7 +139,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Que desea Hacer?</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">¿Qué desea Hacer?</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -161,20 +162,20 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Estas Seguro?</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">¿Estás Seguro?</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        A continuacion se muestran los datos de la mensualidad, si esta seguro de
-                                        cancelarla presione "Cancelar", de lo contrario preiones "VOLVER"
+                                        A continuación se muestran los datos de la mensualidad, si está seguro de
+                                        cancelar presione "Cancelar", de lo contrario presione "VOLVER".
                                         <hr>
                                         Nombre del cliente: <div class="text-info"><?php echo $row['Cliente'] ?>
                                         </div>
-                                        Tipo de Vehiculo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?>
+                                        Tipo de Vehículo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?>
                                         </div>
-                                        Placa del Vehiculo: <div class="text-info"><?php echo $row['placa'] ?></div>
+                                        Placa del Vehículo: <div class="text-info"><?php echo $row['placa'] ?></div>
                                         Fecha de inicio Mensualidad: <div class="text-primary">
                                             <?php echo $row['hora_ingreso'] ?></div>
                                         Valor de la Mensualidad: <div class="text-success">

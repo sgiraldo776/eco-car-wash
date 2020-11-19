@@ -18,6 +18,7 @@
 
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../../img/icono-pag.png">
     <title>Parqueadero Hora</title>
 </head>
 
@@ -59,13 +60,13 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Placa del vehiculo</label>
+                        <label>Placa del vehículo</label>
                         <input class="form-control" type="text" name="placa">
                     </div>
                     <div class="form-group">
                         <label>Hora de Ingreso</label>
                         <input class="form-control" type="datetime-local" name="hora">
-                        <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
+                        <small class="form-text text-muted">La hora de ingreso se rellena automáticamente</small>
                     </div>                  
                 <div class="form-group text-center mb-5">
                     <button type="submit" class="btn btn-color">Registrar</button>
@@ -76,7 +77,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Placa</th>
-                            <th scope="col">Tipo vehiculo</th>
+                            <th scope="col">Tipo vehículo</th>
                             <th scope="col">Hora de Ingreso</th>
                             <th scope="col"></th>
                         </tr>
@@ -92,7 +93,7 @@
                             <td><?php echo $row['tipo_vehiculo'] ?></td>
                             <td><?php echo $row['hora_ingreso'] ?></td>
                             <td><button class="btn btn-success" data-toggle="modal"
-                                    data-target="#Modal1<?php echo $row['num_factura']; ?>">Retirar Vehiculo</button>
+                                    data-target="#Modal1<?php echo $row['num_factura']; ?>">Retirar Vehículo</button>
                             </td>
                         </tr>
                         <!-- Modal -->
@@ -101,14 +102,14 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Datos de la Facturacion:</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Datos de la Facturación:</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Placa del Vehiculo: <div class="text-info"><?php echo $row['placa'] ?></div>
-                                        Tipo de vehiculo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?>
+                                        Placa del Vehículo: <div class="text-info"><?php echo $row['placa'] ?></div>
+                                        Tipo de vehículo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?>
                                         </div>
                                         Hora de Ingreso: <div class="text-info"><?php echo $row['hora_ingreso'] ?></div>
                                         Hora de Salida: <div class="text-info"><?php echo Date('h:i') ?></div>
@@ -162,7 +163,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-info" data-dismiss="modal">VOLVER</button>
                                         <a href="retirar-vehiculo.php?id=<?php echo $row['num_factura']; ?>"><button
-                                                type="button" class="btn btn-danger">Retirar Vehiculo</button></a>
+                                                type="button" class="btn btn-danger">Retirar Vehículo</button></a>
                                     </div>
                                 </div>
                             </div>

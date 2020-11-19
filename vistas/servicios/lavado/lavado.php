@@ -14,6 +14,7 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../../../img/icono-pag.png">
 
     <link rel="stylesheet" href="../../../css/estilos.css">
 </head>
@@ -51,7 +52,7 @@
                         <button class="dropdown-item" type="button">Reservas</button>
                         <button class="dropdown-item" type="button">Parqueo</button>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sección</button>
+                        <button class="dropdown-item" type="button">Cerrar Sesión</button>
                     </div>
                 </div>
             </ul>
@@ -100,7 +101,7 @@
                     <div class="form-group">
                         <label>Fecha de inicio mensualidad</label>
                         <input class="form-control" type="datetime-local" name="hora">
-                        <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
+                        <small class="form-text text-muted">La hora de ingreso se rellena automáticamente</small>
                     </div>
 
                     <div class="form-group text-center mt-3 mb-5">

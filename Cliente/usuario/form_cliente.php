@@ -14,7 +14,7 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="img/icono-pag.png">
+    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
     <link rel="stylesheet" href="../../css/estilos.css">
 
@@ -35,49 +35,55 @@ include '../../conexion.php';
         </nav>
 
         <div class="container mt-3">
-            <form action="ingresar_cliente.php " method="post " class="col-12 ">
+            <form action="ingresar_cliente.php" method="POST" class="col-12">
 
                 <div class="text-center mb-3">
-                    <h2>Registrate</h2>
+                    <h2>Regístrate</h2>
                 </div>
 
-                <div class="form-group ">
-                    <label>Número De Cedula</label>
-                    <input type="text " class="form-control " name="identificacion " placeholder="Cedula Ciudadania ">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" name="nombres" placeholder="Nombres">
                 </div>
-
-                <div class="form-group ">
-                    <label>Nombre Clientes</label>
-                    <input type="text " class="form-control " name="nombres " placeholder="nombres ">
-                </div>
-                <div class="form-group ">
+                <div class="form-group">
                     <label>Apellidos</label>
-                    <input type="text " class="form-control " name="apellidos " placeholder="Apellidos ">
-                </div>
-                <div class="form-group ">
-                    <label>Dirección</label>
-                    <input type="text " class="form-control " name="direccion " placeholder="direccion de residencia ">
-                </div>
-                <div class="form-group ">
-                    <label>Celular</label>
-                    <input type="text " class="form-control " name="celular " placeholder="Telefono Celular ">
-                </div>
-                <div class="form-group ">
-                    <label>Correo</label>
-                    <input type="email " class="form-control " name="correo " placeholder="Correo Electronico ">
+                    <input type="text" class="form-control" name="apellidos" placeholder="Apellidos">
                 </div>
 
-                <div class="form-group ">
-                    <label>Contraseña</label>
-                    <input type="password " class="form-control " name="contra1 " placeholder="Contraseña ">
+                <div class="form-group">
+                    <label>Número De Cédula</label>
+                    <input type="text" class="form-control" name="identificacion" placeholder="Cédula ciudadanía">
                 </div>
-                <div class="form-group ">
+
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" class="form-control" name="direccion" placeholder="Dirección de residencia">
+                </div>
+                <div class="form-group">
+                    <label>Celular</label>
+                    <input type="text" class="form-control" name="celular" placeholder="Número de celular">
+                </div>
+                <div class="form-group">
+                    <label>Correo</label>
+                    <input type="email" class="form-control" name="correo" placeholder="Correo electronico">
+                </div>
+
+                <div class="form-group">
+                    <label>Ciudad de residencia</label>
+                    <input type="text" class="form-control" name="ciudad" placeholder="Ciudad de residencia">
+                </div>
+
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control" name="contra1" placeholder="Contraseña">
+                </div>
+                <div class="form-group">
                     <label>Confirmar Contraseña</label>
-                    <input type="password " class="form-control " name="contra2 " placeholder="Confirmar Contraseña ">
+                    <input type="password" class="form-control" name="contra2" placeholder="Confirmar contraseña">
                 </div>
 
                 <div class="text-center mb-3">
-                    <button type="submit " class="btn btn-color ">Registrar</button>
+                    <button type="submit" class="btn btn-color">Registrar</button>
                 </div>
 
                 <div class="col-12 text-center mb-4">

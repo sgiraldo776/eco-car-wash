@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="../../css/estilos.css">
         <!-- Ionic icons -->
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        
+        <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
         <title>Formulario Insumos</title>
     </head>
@@ -57,7 +59,7 @@
                     <input type="text" class="form-control" name="cantidad" placeholder="Cantidad unidades">
                 </div>
                 <div class="form-group">
-                    <label>Descripcion</label>
+                    <label>Descripción</label>
                     <input type="text" class="form-control" name="descripcion" placeholder="Descripcion Del Insumo">
                 </div>
                 <div class="form-group">
@@ -75,7 +77,7 @@
                     <thead class="thead">
                         <th>Id</th>
                         <th>Cantidad</th>
-                        <th>Descripcion</th>
+                        <th>Descripción</th>
                         <th>Valor Unitario</th>
                         <th>Valor Total</th>
                         <th></th>
@@ -120,9 +122,9 @@
 
 
                                     <form action="restar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo']?>" method="post">
-                                        <label>Codigo</label>
+                                        <label>Código</label>
                                         <input type="text" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
-                                        <label>Nombre Produto</label>
+                                        <label>Nombre Producto</label>
                                         <input type="text" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
                                         <label>cantidad vendida</label>
                                         <input type="text" name="cantidad">

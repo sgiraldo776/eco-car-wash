@@ -17,6 +17,7 @@
 
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
     <title>Formulario Servicios</title>
 </head>
 <body>
@@ -73,7 +74,7 @@
                 <thead class="thead">
                     <th>id</th>
                     <th>Tipo de Servicio</th>
-                    <th>Descripcion</th>
+                    <th>Descripción</th>
                     <th>Valor</th>
                     <th></th>
                     <th></th>

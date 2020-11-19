@@ -15,6 +15,8 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
+    <link rel="icon" type="image/png" href="../../../img/icono-pag.png">
+
     <link rel="stylesheet" href="../../../css/estilos.css">
 </head>
 
@@ -51,7 +53,7 @@
                         <button class="dropdown-item" type="button">Reservas</button>
                         <button class="dropdown-item" type="button">Parqueo</button>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sección</button>
+                        <button class="dropdown-item" type="button">Cerrar Sesión</button>
                     </div>
                 </div>
             </ul>

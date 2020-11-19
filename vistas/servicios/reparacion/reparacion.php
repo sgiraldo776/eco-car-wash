@@ -15,6 +15,8 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
+    <link rel="icon" type="image/png" href="../../../img/icono-pag.png">
+
     <link rel="stylesheet" href="../../../css/estilos.css">
 </head>
 
@@ -51,7 +53,7 @@
                         <button class="dropdown-item" type="button">Reservas</button>
                         <button class="dropdown-item" type="button">Parqueo</button>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sección</button>
+                        <button class="dropdown-item" type="button">Cerrar Sesión</button>
                     </div>
                 </div>
             </ul>
@@ -63,7 +65,7 @@
             <div class="bg-tipos">
                 <div class="col-12 text-center">
                     <h1>Reparación</h1>
-                    <p>Qué reparación deseas hacer a tu vehículo</p>
+                    <p>¿Qué reparación deseas hacer a tu vehículo?</p>
                 </div>
                 <div class="row">
                     <p class="texto"><b>Lavado #1:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
@@ -100,7 +102,7 @@
                     <div class="form-group">
                         <label>Fecha de inicio mensualidad</label>
                         <input class="form-control" type="datetime-local" name="hora">
-                        <small class="form-text text-muted">La hora de ingreso se rellena automaticamente</small>
+                        <small class="form-text text-muted">La hora de ingreso se rellena automáticamente</small>
                     </div>
 
                     <div class="form-group text-center mt-3 mb-5">

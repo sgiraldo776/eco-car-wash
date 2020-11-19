@@ -14,6 +14,7 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
@@ -51,7 +52,7 @@
                         <button class="dropdown-item" type="button">Reservas</button>
                         <button class="dropdown-item" type="button">Parqueo</button>
                         <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sección</button>
+                        <button class="dropdown-item" type="button">Cerrar Sesión</button>
                     </div>
                 </div>
             </ul>
@@ -65,7 +66,7 @@
                     <div class="tar-img">
                         <img src="../../img/iconos-01.svg" alt="">
                     </div>
-                    <h3>¿Quienes somos?</h3>
+                    <h3>¿Quiénes somos?</h3>
                     <p>Ut malesuada blandit venenatis. Nulla volutpat iaculis libero, nec commodo sem vestibulum ut. Etiam nec malesuada velit. Phasellus convallis eros massa, vel dapibus nunc aliquet ac. In sit amet laoreet dui. Aenean ac consectetur nunc,
                         ac tincidunt turpis. Donec porttitor non dolor ac tristique. Vivamus sed libero vel ligula volutpat bibendum eu ac metus. </p>
                 </div>
