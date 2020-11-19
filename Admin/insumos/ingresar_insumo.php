@@ -16,10 +16,9 @@
 
     $sql="INSERT INTO tblInsumo_Repuesto (Cantidad, Descripcion, Vlr_Unitario, Vlr_Total) VALUES ('$cantidad', '$descripcion', '$valoru', '$valortotal')";
     if ($conn->query($sql) === FALSE) {
-        echo "<script> alert ('No se ha podido ingresar'); </script>";
+        echo "<script> 	location.href='form_Insumo.php?msg=2'; </script>";
     } else {
-        echo "<script> 	alert ('Ingresado Correctamente'); </script>";
-        echo "<script> 	location.href='form_Insumo.php'; </script>";
+        echo "<script> 	location.href='form_Insumo.php?msg=1'; </script>";
     }
 
 

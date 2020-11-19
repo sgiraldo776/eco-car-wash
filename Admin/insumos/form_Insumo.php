@@ -20,6 +20,9 @@
         <link rel="stylesheet" href="../../css/estilos.css">
         <!-- Ionic icons -->
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+        <!-- Sweet alerts -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         
         <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
@@ -147,6 +150,71 @@
 
         </div>
         </div>
+
+        <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire('Insumo ingresado correctamente')
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se ha podido ingresar el insumo')
+        </script>
+
+        <?php
+                }else{
+                    if($_GET['msg']==3){
+        ?>
+
+        <script>
+            Swal.fire('Salida del insumo hecha correctamente')
+        </script>
+
+        <?php
+                    }else{
+                        if($_GET['msg']==4){
+        ?>
+
+        <script>
+            Swal.fire('Error en la salida del insumo')
+        </script>
+
+        <?php
+                        }else{
+                            if($_GET['msg']==5){
+        ?>
+
+        <script>
+            Swal.fire('Insumo eliminado correctamente')
+        </script>
+
+
+        <?php
+                            }else{
+                                if($_GET['msg']==6){
+        ?>
+
+        <script>
+            Swal.fire('Hubo un error al eliminar el insumo')
+        </script>
+
+        <?php
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ?>
 
 
 

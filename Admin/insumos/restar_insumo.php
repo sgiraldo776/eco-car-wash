@@ -24,10 +24,9 @@ $valtotal=$cf*$valu;
 $sql = $conn ->query("UPDATE tblinsumo_repuesto SET Cantidad='$cf', Vlr_Total='$valtotal' WHERE Id_Insumo='$Id_Insumo'");
 
 if ($sql) {
-    echo "<script> 	location.href='form_insumo.php'; </script>";
+    echo "<script> 	location.href='form_insumo.php?msg=3'; </script>";
 }else{
-    echo "<script> 	alert('ERROR') </script>";
-    echo "<script> 	location.href='form_insumo.php'; </script>";
+    echo "<script> 	location.href='form_insumo.php?msg=4'; </script>";
 }
 
 

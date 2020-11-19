@@ -13,11 +13,9 @@
 
     $del= $conn->query ("DELETE FROM tblparqueadero WHERE num_factura='$id'");
     if($del == TRUE){
-        echo "<script> 	alert ('Vehiculo Retirado Correctamente'); </script>";
-        echo "<script> 	location.href='form-parqueadero-hra.php'; </script>";
-        
+        echo "<script> 	location.href='form-parqueadero-hra.php?msg=3'; </script>";
     } else {
-        echo "<script> alert ('No se ha podido ingresar'); </script>";
-        echo "Error: No se pudo ingresar" . $up . "<br>". $conn->error; 
+        //echo "Error: No se pudo ingresar" . $up . "<br>". $conn->error; 
+        echo "<script> 	location.href='form-parqueadero-hra.php?msg=4'; </script>";
     }
 ?>

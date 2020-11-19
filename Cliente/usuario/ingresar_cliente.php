@@ -19,16 +19,14 @@
         if ($sql==true){
             $sql2=$conn->query("INSERT INTO tblUsuario (Id_Usuario, Username, Password, Id_Cliente, Id_Rol) VALUES ('$identificacion', '$correo', '$contrasena', '$identificacion', 2)");
             if ($sql2==true){
-                echo "<script> 	alert ('Ingresado Correctamente'); </script>";
-                echo "<script> 	location.href='form_cliente.php'; </script>";
-
+                echo "<script> 	location.href='../login/frm_login?msg=1.php'; </script>";
             }else{
                 $sq3=$conn->query("DELETE FROM tblCliente WHERE id_cliente='$identificacion'");
-                echo "<script> 	alert ('BUENARDA'); </script>";
+                echo "<script> 	location.href='../login/frm_login?msg=2.php'; </script>";
             }
 
         }else{
-            echo "<script> 	alert ('Error al ingresar'); </script>";
+            echo "<script> 	location.href='../login/frm_login?msg=2.php'; </script>";
         }
 
 

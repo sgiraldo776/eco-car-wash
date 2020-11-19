@@ -16,6 +16,9 @@
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 
@@ -54,6 +57,30 @@
             </form>
         </div>
     </div>
+
+    <?php
+    if(isset($_GET['msg'])){
+        if($_GET['msg']==1){
+    ?>
+
+    <script>
+        Swal.fire('Sesión cerrada correctamente')
+    </script>
+
+    <?php
+        }else{
+            if($_GET['msg']==2){
+    ?>
+
+    <script>
+        Swal.fire('Datos incorrectos')
+    </script>
+
+    <?php
+            }
+        }
+    }
+    ?>
 </body>
 
 </html>

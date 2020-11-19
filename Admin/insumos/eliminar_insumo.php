@@ -10,9 +10,8 @@
     $del = $conn -> query("DELETE FROM tblInsumo_Repuesto WHERE Id_Insumo='$Id_Insumo'");
 
     if ($del) {
-        echo "<script> 	alert ('Eliminado Correctamente'); </script>";
-        echo "<script> 	location.href='form_Insumo.php'; </script>";
+        echo "<script> 	location.href='form_Insumo.php?msg=5'; </script>";
     }else{
-        echo "<script> alert ('No se ha podido Eliminar'); </script>";
+        echo "<script> 	location.href='form_Insumo.php?msg=6'; </script>";
     }
 ?>

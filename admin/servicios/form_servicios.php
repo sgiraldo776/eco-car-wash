@@ -18,6 +18,10 @@
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../../img/icono-pag.png">
+
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <title>Formulario Servicios</title>
 </head>
 <body>
@@ -95,6 +99,51 @@
             </table>
         </div>
     </div>
+
+    <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire('Ingresado correctamente')
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se ha podido ingresar')
+        </script>
+
+        <?php
+                }else{
+                    if($_GET['msg']==3){
+        ?>
+
+        <script>
+            Swal.fire('Eliminado correctamente')
+        </script>
+
+        <?php
+                    }else{
+                        if($_GET['msg']==4){
+        ?>
+
+        <script>
+            Swal.fire('Error, no se ha podido eliminar')
+        </script>
+
+        <?php
+                        }
+                    }
+                }
+            }
+        }
+        ?>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
