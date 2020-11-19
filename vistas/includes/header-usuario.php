@@ -50,7 +50,7 @@
                         </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                         <a href="<?php echo $URL; ?>"><button class="dropdown-item" type="button">Mi Perfil</button></a>
-                        <a href="<?php echo $URL; ?>"><button class="dropdown-item" type="button">Mi Vehículo</button></a>
+                        <a href="<?php echo $URL; ?>Cliente/mi_vehiculo/mi_vehiculo.php"><button class="dropdown-item" type="button">Mi Vehículo</button></a>
                         <a href="<?php echo $URL; ?>/Cliente/reservas/reservas.php"><button class="dropdown-item" type="button">Reservas</button></a>
                         <div class="dropdown-divider"></div>
                         <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
