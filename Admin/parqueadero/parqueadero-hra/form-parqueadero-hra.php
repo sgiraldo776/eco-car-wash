@@ -115,53 +115,97 @@
                                         Tipo de vehículo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?>
                                         </div>
                                         Hora de Ingreso: <div class="text-info"><?php echo $row['hora_ingreso'] ?></div>
-                                        Hora de Salida: <div class="text-info"><?php echo Date('h:i') ?></div>
+                                        Hora de Salida: <div class="text-info"><?php echo Date('Y-m-d h:i') ?></div>
                                         <?php
                                         $fecha1= new DateTime($row['hora_ingreso']);
                                         $fecha2= new DateTime("now");
                                         $diff = $fecha1->diff($fecha2);
-
-                                        if ($row['tipo_vehiculo'] =="Moto") {
-                                            if (($diff->i)<=15) {
-                                                echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
-                                                ?>
-                                        Valor Total: <div class="text-success">500</div>
-                                        <?php
-                                            }elseif(($diff->h)>=1){
-                                                $val = $row['precio']*$diff->h;
-                                                echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
-                                                ?>
-                                        Valor Total: <div class="text-info"><?php echo $val?></div>
-                                        <?php
-                                            }elseif(($diff->i)>15){
-                                                $val = $row['precio'];
-                                                echo "Numero de Horas: <div class='text-info'>1</div>";
-                                                ?>
-                                        Valor Total: <div class="text-info"><?php echo $val?></div>
-                                        <?php
+                                        
+                                        if (($diff->d)<1) {
+                                            if ($row['tipo_vehiculo'] =="Moto") {
+                                                if (($diff->h)<1 && ($diff->i)<=15) {
+                                                    echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-success">500</div>
+                                            <?php
+                                                }elseif(($diff->h)>=1){
+                                                    $val = $row['precio']*$diff->h;
+                                                    echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }elseif(($diff->h)<1 && ($diff->i)>15){
+                                                    $val = $row['precio'];
+                                                    echo "Numero de Horas: <div class='text-info'>1</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }
+                                            }elseif ($row['tipo_vehiculo'] =="Carro") {
+                                                if (($diff->h)<1 && ($diff->i)<=15) {
+                                                    echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-success">800</div>
+                                            <?php
+                                                }elseif(($diff->h)>=1){
+                                                    $val = $row['precio']*$diff->h;
+                                                    echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }elseif(($diff->h)<1 && ($diff->i)>15){
+                                                    $val = $row['precio'];
+                                                    echo "Numero de Horas: <div class='text-info'>1</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }
                                             }
-                                        }elseif ($row['tipo_vehiculo'] =="Carro") {
-                                            if (($diff->i)<=15) {
-                                                echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
-                                                ?>
-                                        Valor Total: <div class="text-success">800</div>
-                                        <?php
-                                            }elseif(($diff->h)>=1){
-                                                $val = $row['precio']*$diff->h;
-                                                echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
-                                                ?>
-                                        Valor Total: <div class="text-info"><?php echo $val?></div>
-                                        <?php
-                                            }elseif(($diff->i)>15){
-                                                $val = $row['precio'];
-                                                echo "Numero de Horas: <div class='text-info'>1</div>";
-                                                ?>
-                                        Valor Total: <div class="text-info"><?php echo $val?></div>
-                                        <?php
+                                        }else{
+                                            if ($row['tipo_vehiculo'] =="Moto") {
+                                                if (($diff->h)<1 && ($diff->i)<=59) {
+                                                    $val = $row['precio']*(($diff->d)*24);
+                                                    echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }elseif(($diff->h)<=23){
+                                                    $val = $row['precio']*((($diff->d)*24)+($diff->h));
+                                                    echo "Numero de días y horas: <div class='text-info'>".$diff->d." días y ".$diff->h." horas</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }elseif(($diff->i)>1380){
+                                                    $val = $row['precio']*((($diff->d)*24)+24);
+                                                    echo "Numero de Horas: <div class='text-info'>".(($diff->d)+1)."</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }
+                                            }elseif ($row['tipo_vehiculo'] =="Carro") {
+                                                if (($diff->h)<1 && ($diff->i)<=59) {
+                                                    $val = $row['precio']*(($diff->d)*24);
+                                                    echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }elseif(($diff->h)<=23){
+                                                    $val = $row['precio']*((($diff->d)*24)+($diff->h));
+                                                    echo "Numero de días y horas: <div class='text-info'>".$diff->d." días y ".$diff->h." horas</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }elseif(($diff->i)>1380){
+                                                    $val = $row['precio']*((($diff->d)*24)+24);
+                                                    echo "Numero de dias: <div class='text-info'>".(($diff->d)+1)."</div>";
+                                                    ?>
+                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                            <?php
+                                                }
                                             }
                                         }
+                                        ?>
                                         
-                                    ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-info" data-dismiss="modal">VOLVER</button>

@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="../../css/estilos.css">
         <!-- Ionic icons -->
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <!-- Sweet alerts -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         
         <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
@@ -82,7 +84,7 @@
                                         </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="" method="POST">
+                                    <form action="editar_vehiculo.php?placa=<?php echo $fila['id_Vehiculo']?>" method="post">
                                         <div class="logo col-12 text-center">
                                             <a href="">
                                                 <img src="../../img/logo.png" alt="">
@@ -113,8 +115,11 @@
                                             <div class="form-group col-12 col-md-6 col-lg-6">
                                                 <label for="">Tipo de vehículo</label>
                                                 <select class="custom-select" name="tipo" id="tipo">
-                                                <option selected>--Seleccione una opción--</option>
-                                                <option value="Motocicleta">Motocicleta</option>
+                                                <?php
+                                                    if ($fila['Tipo_Vehiculo']=="Motocicleta") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta" selected>Motocicleta</option>
                                                 <option value="Motocarro">Motocarro</option>
                                                 <option value="Mototriciclo">Mototriciclo</option>
                                                 <option value="Cuatrimoto">Cuatrimoto</option>
@@ -127,6 +132,213 @@
                                                 <option value="Camión">Camión</option>
                                                 <option value="Tractocamión">Tractocamión</option>
                                                 <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Morocarro") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro" selected>Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Mototriciclo") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo" selected>Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Cuatrimoto") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto" selected>Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Automóvil") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil" selected>Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Campero") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero" selected>Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Camioneta") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta" selected>Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Microbús") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús" selected>Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Bus") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus" selected>Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Buseta") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta" selected>Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Camión") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión" selected>Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Tractocamión") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión" selected>Tractocamión</option>
+                                                <option value="Volqueta">Volqueta</option>
+                                                <?php
+                                                    }elseif ($fila['Tipo_Vehiculo']=="Volqueta") {
+                                                ?>
+                                                <option>--Seleccione una opción--</option>
+                                                <option value="Motocicleta">Motocicleta</option>
+                                                <option value="Motocarro">Motocarro</option>
+                                                <option value="Mototriciclo">Mototriciclo</option>
+                                                <option value="Cuatrimoto">Cuatrimoto</option>
+                                                <option value="Automóvil">Automóvil</option>
+                                                <option value="Campero">Campero</option>
+                                                <option value="Camioneta">Camioneta</option>
+                                                <option value="Microbús">Microbús</option>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Buseta">Buseta</option>
+                                                <option value="Camión">Camión</option>
+                                                <option value="Tractocamión">Tractocamión</option>
+                                                <option value="Volqueta" selected>Volqueta</option>
+                                                <?php
+                                                    }
+                                                ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -155,14 +367,31 @@
                     <?php } ?>
                 </table>
             </div>
-
-
         </div>
 
-        </div>
-        </div>
+        <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
 
+        <script>
+            Swal.fire('Actualizado correctamente')
+        </script>
 
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se ha podido actualizar')
+        </script>
+
+        <?php
+                }
+            }
+        }
+        ?>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
