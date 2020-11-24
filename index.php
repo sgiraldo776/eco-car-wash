@@ -41,6 +41,20 @@
 
     <section class="bg-ind"></section>
 
+    <section class="video">
+        <?php 
+            $sel = $conn ->query("SELECT * FROM tblvideo where cod='1'");
+
+            while ($row=$sel->fetch_array()) {
+            ?>
+            <?php echo $row[1] ?>  <?php echo $row[2] ?>
+            <?php
+
+            echo('<iframe width="560" height="315" src="'.$row[2].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');	
+            }
+        ?>
+    </section>
+
     <section class="">
         <br> <br>
     </section>
