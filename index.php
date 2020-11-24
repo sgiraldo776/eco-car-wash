@@ -41,14 +41,14 @@
 
     <section class="bg-ind"></section>
 
-    <div class="container">
+    <div class="container text-center mt-5 ">
 
         <?php 
             $sel = $conn ->query("SELECT * FROM tblvideo where id='1'");
 
             while ($row=$sel->fetch_array()) {
 
-            echo('<iframe width="560" height="315" src="'.$row[2].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');	
+            echo('<iframe width="854" height="480" src="'.$row[2].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');	
             }
 
             if (isset($_SESSION['rol'])) {
