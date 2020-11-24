@@ -74,14 +74,14 @@
                                 <div class="container">
                                     <form action="admin/video/actu_video.php" method="post">
                                         <div class="form-group">
-                                            <label>Nombre</label>
+                                            <label>Nombre:</label>
                                             <input class="form-control" type="text" name="nombre">
                                         </div>
                                         <fieldset>
                                         <legend>vídeo</legend>
                                         <p>Inserte la url del video del video que aparece en la parte superior de la pagina de youtube</p>
                                         <div class="form-group">
-                                            <label>URL Vídeo</label>
+                                            <label>URL Vídeo:</label>
                                             <input class="form-control" type="text" name="url">
                                         </div>
                                         </fieldset>

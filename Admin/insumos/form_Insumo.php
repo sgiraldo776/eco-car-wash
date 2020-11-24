@@ -91,6 +91,7 @@
                         <th>Valor Total</th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </thead>
                     <?php 
                         $sel = $conn ->query("SELECT * FROM tblInsumo_Repuesto ");
@@ -116,6 +117,7 @@
                         </td>
                         <td><a href="eliminar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo'] ?>">ELIMINAR</a></td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2<?php echo $cont; ?>" id="ingresar">Agregar Insumo</button></td>
 
                     </tr>
                     <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
@@ -131,12 +133,42 @@
 
 
                                     <form action="restar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo']?>" method="post">
-                                        <label>Código</label>
-                                        <input type="text" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
-                                        <label>Nombre Producto</label>
-                                        <input type="text" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
-                                        <label>cantidad vendida</label>
-                                        <input type="text" name="cantidad">
+                                        <label>Código:</label>
+                                        <input type="text" class="form-control" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
+                                        <label>Nombre Producto:</label>
+                                        <input type="text" class="form-control" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
+                                        <label>cantidad vendida:</label>
+                                        <input type="text" class="form-control" name="cantidad">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal" tabindex="-1" role="dialog" id="modal2<?php echo $cont; ?>">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Agregar Insumo</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body">
+
+
+                                    <form action="sumar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo']?>" method="post">
+                                        <label>Código:</label>
+                                        <input type="text" class="form-control" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
+                                        <label>Nombre Producto:</label>
+                                        <input type="text" class="form-control" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
+                                        <label>Cantidad a agregar:</label>
+                                        <input type="text" class="form-control" name="cantidad">
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-primary">Guardar</button>
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -213,6 +245,27 @@
         </script>
 
         <?php
+                            }else{
+                                if($_GET['msg']==7){
+        ?>
+
+        <script>
+            Swal.fire('Insumo agregado correctamente')
+        </script>
+
+        <?php
+                            }else{
+                                if($_GET['msg']==8){
+        ?>
+
+        <script>
+            Swal.fire('Hubo un error al agregar el insumo')
+        </script>
+
+
+        <?php
+                                        }   
+                                    }
                                 }
                             }
                         }
