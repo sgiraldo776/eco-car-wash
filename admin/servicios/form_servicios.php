@@ -60,21 +60,21 @@
             <div class="stinky text-center mb-3">
                 <h2 class="">Agregar Servicios Ofertados</h2>
             </div>
-        <form action="insertar_servicios.php" method="post">
+        <form action="insertar_servicios.php" name="add_form" method="post">
             <div class="form-group">
                 <label> Tipo de servicio: </label>
-                <input type="text" name="Tipo_Servicio" class="form-control" placeholder="Tipo de servicio">
+                <input type="text" id="Tipo_Servicio" name="Tipo_Servicio" class="form-control" placeholder="Tipo de servicio">
             </div>
             <div class="form-group">
                 <label> Descripción del servicio: </label>
-                <textarea name="Descripcion" class="form-control" cols="30" rows="10" placeholder="Descripcion del servicio"></textarea>
+                <textarea id="Descripcion" name="Descripcion" class="form-control" cols="30" rows="10" placeholder="Descripcion del servicio"></textarea>
             </div>
             <div class="form-group">
                 <label> Valor del servicio: </label>
-                <input type="text" class="form-control" name="Valor" placeholder="Valor del servicio">
+                <input type="text" class="form-control" id="Valor" name="Valor" placeholder="Valor del servicio">
             </div>            
             <div class="form-group text-center mb-5">
-                    <button type="submit" class="btn btn-color">Registrar</button>
+                    <button type="button" class="btn btn-color">Registrar</button>
                 </div>
         </form>
 
@@ -98,12 +98,37 @@
                     <td><?php echo $fila['Descripcion'] ?></td>
                     <td><?php echo $fila['Valor'] ?></td>
                     <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>">EDITAR</a></td>
-                    <td><a href="eliminar_servicios.php?Id_Servicio=<?php echo $fila['Id_Servicio'] ?>">ELIMINAR</a></td>
+                    <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Servicio']?>)">ELIMINAR</a></td>
                 </tr>
                 <?php } ?>
             </table>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function preguntar(id){
+           Swal
+            .fire({
+                title: "¿Eliminar servicio?",
+                text: "¿Estas seguro de eliminar el servicio ofertado?",
+                icon: 'error',            
+                showCancelButton: true,
+                confirmButtonText: "Sí, eliminar",
+                cancelButtonText: "Cancelar",
+            })
+            .then(resultado => {
+                if (resultado.value) {
+                    // Hicieron click en "Sí"
+                    //console.log("*se elimina la venta*");
+                    window.location.href="eliminar_servicios.php?Id_Servicio="+id
+                } else {
+                    // Dijeron que no
+                    console.log("*NO se elimina*");
+                }
+            });
+
+        }
+        </script>
 
     <?php
         if(isset($_GET['msg'])){
@@ -153,5 +178,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    <!--validacion de capos vacios-->
+    <script type="text/javascript" src="js/validacion.js"></script>
 </body>
 </html>

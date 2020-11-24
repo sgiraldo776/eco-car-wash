@@ -60,38 +60,38 @@
             <h2 class="">Ingresar Vehículo Para Mensualidad</h2>
         </div>
         <div>
-            <form action="ingr-parqueadero-mes.php" method="POST">
+            <form action="ingr-parqueadero-mes.php" name="add_form" method="POST">
                 <div class="form-group">
                     <label>Nombre Del Cliente</label>
-                    <input type="text" class="form-control" name="cliente">
+                    <input type="text" class="form-control" id="cliente" name="cliente">
                 </div>
                 <div class="form-group">
                     <label>Tipo de Vehículo</label>
-                    <select class="form-control" name="tipo">
-                        <option value="Moto" selected disabled>- Seleccione -</option>
+                    <select class="form-control" id="tipo" name="tipo">
+                        <option value="0" selected>- Seleccione -</option>
                         <option value="Moto">Moto</option>
                         <option value="Carro">Carro</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Correo</label>
-                    <input class="form-control" type="email" name="correo">
+                    <input class="form-control" type="email" id="correo" name="correo">
                 </div>
                 <div class="form-group">
                     <label>Número Celular</label>
-                    <input class="form-control" type="tel" name="celular">
+                    <input class="form-control" type="tel" id="celular" name="celular">
                 </div>
                 <div class="form-group">
                     <label>Placa del vehículo</label>
-                    <input class="form-control" type="text" name="placa">
+                    <input class="form-control" type="text" id="placa" name="placa">
                 </div>
                 <div class="form-group">
                     <label>Fecha de inicio mensualidad</label>
-                    <input class="form-control" type="datetime-local" name="hora">
+                    <input class="form-control" type="datetime-local" id="hora" name="hora">
                     <small class="form-text text-muted">La hora de ingreso se rellena automáticamente</small>
                 </div>
                 <div class="form-group text-center mb-5">
-                    <button type="submit" class="btn btn-color">Regístrar</button>
+                    <button type="button" class="btn btn-color">Regístrar</button>
                 </div>
             </form>
             <hr>
@@ -281,6 +281,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
+
+    <!--validacion de capos vacios-->
+    <script type="text/javascript" src="js/validacion.js"></script>
 </body>
 
 </html>

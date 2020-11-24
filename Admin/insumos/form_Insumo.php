@@ -61,23 +61,23 @@
             <div class="stinky text-center">
                 <h2>Formulario Insumos</h2>
             </div>
-            <form action="ingresar_insumo.php" method="post">
+            <form action="ingresar_insumo.php" name="add_form" method="post">
 
                 <div class="form-group">
                     <label>Cantidad</label>
-                    <input type="text" class="form-control" name="cantidad" placeholder="Cantidad unidades">
+                    <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Cantidad unidades">
                 </div>
                 <div class="form-group">
                     <label>Descripción</label>
-                    <input type="text" class="form-control" name="descripcion" placeholder="Descripcion Del Insumo">
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion Del Insumo">
                 </div>
                 <div class="form-group">
                     <label>Valor Unitario</label>
-                    <input type="text" class="form-control" name="valorunitario" placeholder="Valor Unitario">
+                    <input type="text" class="form-control" id="valorunitario" name="valorunitario" placeholder="Valor Unitario">
                 </div>
 
                 <div class="form-group text-center mb-5">
-                    <button type="submit" class="btn btn-color">Registrar</button>
+                    <button type="button" class="btn btn-color">Registrar</button>
                 </div>
 
             </form>
@@ -115,7 +115,7 @@
                         <td>
                             <?php echo $fila['Vlr_Total'] ?>
                         </td>
-                        <td><a href="eliminar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo'] ?>">ELIMINAR</a></td>
+                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)">ELIMINAR</a></td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2<?php echo $cont; ?>" id="ingresar">Agregar Insumo</button></td>
 
@@ -188,6 +188,33 @@
 
         </div>
         </div>
+
+
+        <script type="text/javascript">
+        function preguntar(id){
+           Swal
+            .fire({
+                title: "¿Eliminar insumo?",
+                text: "¿Estas seguro de eliminar el insumo?",
+                icon: 'error',            
+                showCancelButton: true,
+                confirmButtonText: "Sí, eliminar",
+                cancelButtonText: "Cancelar",
+            })
+            .then(resultado => {
+                if (resultado.value) {
+                    // Hicieron click en "Sí"
+                    //console.log("*se elimina la venta*");
+                    window.location.href="eliminar_insumo.php?Id_Insumo="+id
+                } else {
+                    // Dijeron que no
+                    console.log("*NO se elimina*");
+                }
+            });
+
+        }
+        </script>
+
 
         <?php
         if(isset($_GET['msg'])){
@@ -275,11 +302,12 @@
         }
         ?>
 
-
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+        <!--validacion de capos vacios-->
+        <script type="text/javascript" src="js/validacion.js"></script>
     </body>
 
     </html>
