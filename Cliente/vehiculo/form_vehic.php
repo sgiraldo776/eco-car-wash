@@ -13,9 +13,6 @@ if (!isset($_SESSION['rol'])){
     }
 }
 
-
-
-
 ?>
 
 <!DOCTYPE html>
