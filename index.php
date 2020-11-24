@@ -50,10 +50,51 @@
 
             echo('<iframe width="560" height="315" src="'.$row[2].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');	
             }
+
+            if (isset($_SESSION['rol'])) {
+                if($_SESSION['rol']==1){
+                    echo ' <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Cambiar Video
+                    </button>';
+                    
+                }
+            }
         ?>
 
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cambiar Video</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <form action="admin/video/actu_video.php" method="post">
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            <input class="form-control" type="text" name="nombre">
+                                        </div>
+                                        <fieldset>
+                                        <legend>vídeo</legend>
+                                        <p>Inserte la url del video del video que aparece en la parte superior de la pagina de youtube</p>
+                                        <div class="form-group">
+                                            <label>URL Vídeo</label>
+                                            <input class="form-control" type="text" name="url">
+                                        </div>
+                                        </fieldset>
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
     
-    </div>
+    </div> <!-- etiqueta contenedor -->
 
     <section class="">
         <br> <br>
