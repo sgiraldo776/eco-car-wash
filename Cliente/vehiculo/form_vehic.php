@@ -1,3 +1,23 @@
+<?php
+
+include '../../conexion.php';
+
+session_start();
+
+if (!isset($_SESSION['rol'])){
+    echo "<script> location.href='../login/frm_login.php'; </script>";
+
+}else{
+    if($_SESSION['rol']!=2){
+        echo "<script> location.href='../../index.php'; </script>";
+    }
+}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

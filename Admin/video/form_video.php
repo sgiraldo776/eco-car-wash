@@ -1,3 +1,15 @@
+<?php
+    include('conexion.php');
+    session_start();
+    if(!isset($_SESSION['rol'])){
+        header('location: ../../Cliente/login/frm_login.php');
+    }else{
+        if($_SESSION['rol'] !=1 ){
+            header('location: ../../Cliente/login/frm_login.php');
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

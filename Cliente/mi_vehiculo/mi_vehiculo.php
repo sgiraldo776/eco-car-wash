@@ -2,8 +2,13 @@
     include '../../conexion.php';
 
     session_start();
-    if($_SESSION['rol']!=2){
-        echo "<script> location.href='../../index.php'; </script>";
+    if (!isset($_SESSION['rol'])){
+        echo "<script> location.href='../login/frm_login.php'; </script>";
+
+    }else{
+        if($_SESSION['rol']!=2){
+            echo "<script> location.href='../../index.php'; </script>";
+        }
     }
 ?>
 
