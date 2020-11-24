@@ -75,7 +75,7 @@
         <div class="card">
             <img src="../../img/serv-03.jpg" alt="">
             <h2>Parqueo</h2>
-            <a href="parqueo/parqueo.php"><button class="btn btn-color">Reserva</button></a>
+            <a href="parqueo/parqueo.php"><button class="btn btn-color">Ver</button></a>
         </div>
     </div>
 
