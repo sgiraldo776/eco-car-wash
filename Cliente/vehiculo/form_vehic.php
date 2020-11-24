@@ -56,20 +56,20 @@
                         <label for="">Tipo de vehículo</label>
                         <select class="custom-select" name="tipo" id="tipo">
                         <option selected>--Seleccione una opción--</option>
-                        <option value="1">Motocicleta</option>
-                        <option value="2">Motocarro</option>
-                        <option value="3">Mototriciclo</option>
-                        <option value="4">Cuatrimoto</option>
-                        <option value="5">Automóvil</option>
-                        <option value="6">Campero</option>
-                        <option value="7">Camioneta</option>
-                        <option value="8">Microbús</option>
-                        <option value="9">Bus</option>
-                        <option value="10">Buseta</option>
-                        <option value="11">Camión</option>
-                        <option value="12">Tractocamión</option>
-                        <option value="13">Volqueta</option>
-                    </select>
+                        <option value="Motocicleta">Motocicleta</option>
+                        <option value="Motocarro">Motocarro</option>
+                        <option value="Mototriciclo">Mototriciclo</option>
+                        <option value="Cuatrimoto">Cuatrimoto</option>
+                        <option value="Automóvil">Automóvil</option>
+                        <option value="Campero">Campero</option>
+                        <option value="Camioneta">Camioneta</option>
+                        <option value="Microbús">Microbús</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Buseta">Buseta</option>
+                        <option value="Camión">Camión</option>
+                        <option value="Tractocamión">Tractocamión</option>
+                        <option value="Volqueta">Volqueta</option>
+                        </select>
                     </div>
                 </div>
 
