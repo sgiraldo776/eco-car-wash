@@ -116,14 +116,14 @@
                         if($buscar == "" ){
                     $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4");
                         }else{
-                            $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4 AND placa='$buscar'");
+                            $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE (p.id_parqueo=1 OR p.id_parqueo=4) AND placa='$buscar'");
                         }
-                    while ($row=$sel->fetch_assoc()) {
+                    while ($row=$sel->fetch_array()) {
                     ?>
                         <tr>
-                            <td><?php echo $row['placa'] ?></td>
-                            <td><?php echo $row['tipo_vehiculo'] ?></td>
-                            <td><?php echo $row['hora_ingreso'] ?></td>
+                            <td><?php echo $row[1] ?></td>
+                            <td><?php echo $row[2] ?></td>
+                            <td><?php echo $row[3] ?></td>
                             <td><button class="btn btn-success" data-toggle="modal"
                                     data-target="#Modal1<?php echo $row['num_factura']; ?>">Retirar Vehículo</button>
                             </td>
