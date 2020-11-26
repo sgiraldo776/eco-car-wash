@@ -43,31 +43,31 @@ if (!isset($_SESSION['rol'])){
 
             <form action="ingresar_vehic.php" method="POST">
                 <div class="logo col-12">
-                    <a href="">
+                    <a href="<?php echo $URL ?>">
                         <img src="../../img/logo.png" alt="">
                     </a>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="#">Placa</label>
-                        <input type="text" class="form-control" id="placa" name="placa">
+                        <input type="text" class="form-control" id="placa" name="placa" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="#">Marca</label>
-                        <input type="text" class="form-control" id="marca" name ="marca">
+                        <input type="text" class="form-control" id="marca" name ="marca" required>
                     </div>
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="">Modelo</label>
-                        <input type="number" class="form-control" id="modelo" name="modelo" min="1960" max="2050">
+                        <input type="number" class="form-control" id="modelo" name="modelo" min="1960" max="2050" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="#">Color</label>
-                        <input type="text" class="form-control" id="color" name="color">
+                        <input type="text" class="form-control" id="color" name="color" required>
                     </div>
                     <div class="form-group col-12 col-md-6 col-lg-6">
                         <label for="">Tipo de vehículo</label>
@@ -93,11 +93,11 @@ if (!isset($_SESSION['rol'])){
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label for="#">Vencimiento del SOAT</label>
-                        <input type="date" class="form-control" id="soat" name="soat">
+                        <input type="date" class="form-control" id="soat" name="soat" required>
                     </div>
                     <div class="form-group col-12">
                         <label for="">Vencimiento de la Técnico Mecànica</label>
-                        <input type="date" class="form-control" id="tecmeca" name="tecmeca">
+                        <input type="date" class="form-control" id="tecmeca" name="tecmeca" required>
                     </div>
                 </div>
 
