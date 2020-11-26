@@ -51,6 +51,7 @@
             </nav>
         </section>
 
+
         <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet"> 
 
         <div class="container formularios col-12 mt-5 p-sm-5">
@@ -81,6 +82,19 @@
                 </div>
                 </form>
                 <hr>
+
+                <div class="contenedor">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-3 buscador busc">
+                            <form action="form-parqueadero-hra.php" method="POST">
+                                <input type="text" name="buscar" placeholder="Buscar" class="buscar">
+                                    <button class="boton-buscar" type="submit" value="buscar">
+                                    <img src="../../../img/buscar.svg"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
                 <table class="table table-hover table-dark">
                     <thead>
                         <tr>
@@ -92,8 +106,18 @@
                     </thead>
                     <tbody>
                         <?php
-                    $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4");
+                        $buscar = "";
+                        if(!isset($_POST['buscar'])){
+                            $_POST['buscar'] = "";
+                            $buscar = $_POST['buscar'];
+                        }
+                        $buscar = $_POST['buscar'];
 
+                        if($buscar == "" ){
+                    $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4");
+                        }else{
+                            $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4 AND placa=$buscar");
+                        }
                     while ($row=$sel->fetch_assoc()) {
                     ?>
                         <tr>

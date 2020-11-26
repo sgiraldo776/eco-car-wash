@@ -95,6 +95,19 @@
                 </div>
             </form>
             <hr>
+            <div class="contenedor">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-3 buscador busc">
+                            <form action="form-parqueadero-mes.php" method="POST">
+                                <input type="text" name="buscar" placeholder="Buscar" class="buscar">
+                                    <button class="boton-buscar" type="submit" value="buscar">
+                                    <img src="../../../img/buscar.svg"></button>
+                                    <br>
+                                    <span>para listar de todos los veiculos dejar el campo vacio y darle buscar</span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             <table class="table table-hover table-dark">
                 <thead>
                     <tr>
@@ -110,7 +123,19 @@
                 </thead>
                 <tbody>
                     <?php
+                    $buscar = "";
+                    if(!isset($_POST['buscar'])){
+                        $_POST['buscar'] = "";
+                        $buscar = $_POST['buscar'];
+                    }
+                    $buscar = $_POST['buscar'];
+
+                    if($buscar == "" ){
+
                     $sel = $conn->query("SELECT p.num_factura,p.Cliente,p.Correo,p.Celular,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=2 OR p.id_parqueo=6");
+                    }else{
+                        $sel = $conn->query("SELECT p.num_factura,p.Cliente,p.Correo,p.Celular,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=2 OR p.id_parqueo=6 and placa=$buscar");
+                    }
 
                     $contador=0;
 
