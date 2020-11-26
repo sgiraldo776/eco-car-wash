@@ -134,22 +134,22 @@
 
                     $sel = $conn->query("SELECT p.num_factura,p.Cliente,p.Correo,p.Celular,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=2 OR p.id_parqueo=6");
                     }else{
-                        $sel = $conn->query("SELECT p.num_factura,p.Cliente,p.Correo,p.Celular,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=2 OR p.id_parqueo=6 and placa=$buscar");
+                        $sel = $conn->query("SELECT p.num_factura,p.Cliente,p.Correo,p.Celular,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE (p.id_parqueo=2 OR p.id_parqueo=6) and placa='$buscar'");
                     }
 
                     $contador=0;
 
-                    while ($row=$sel->fetch_assoc()) {
+                    while ($row=$sel->fetch_array()) {
                         $contador++;
                     ?>
                     <tr>
-                        <td><?php echo $row['Cliente'] ?></td>
-                        <td><?php echo $row['Correo'] ?></td>
-                        <td><?php echo $row['Celular'] ?></td>
-                        <td><?php echo $row['placa'] ?></td>
-                        <td><?php echo $row['tipo_vehiculo'] ?></td>
-                        <td><?php echo $row['hora_ingreso'] ?></td>
-                        <td><?php echo $row['precio'] ?></td>
+                        <td><?php echo $row[1] ?></td>
+                        <td><?php echo $row[2] ?></td>
+                        <td><?php echo $row[3] ?></td>
+                        <td><?php echo $row[4] ?></td>
+                        <td><?php echo $row[5] ?></td>
+                        <td><?php echo $row[6] ?></td>
+                        <td><?php echo $row[7] ?></td>
                         <?php
                         $fecha1= new DateTime($row['hora_ingreso']);
                         $fecha2= new DateTime("now");

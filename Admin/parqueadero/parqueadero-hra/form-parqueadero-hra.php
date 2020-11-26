@@ -116,7 +116,7 @@
                         if($buscar == "" ){
                     $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4");
                         }else{
-                            $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4 AND placa=$buscar");
+                            $sel = $conn->query("SELECT p.num_factura,p.placa,p.tipo_vehiculo,p.hora_ingreso,tp.precio FROM tblparqueadero as p INNER JOIN tbltipoparqueo as tp ON p.id_parqueo=tp.id_parqueo WHERE p.id_parqueo=1 OR p.id_parqueo=4 AND placa='$buscar'");
                         }
                     while ($row=$sel->fetch_assoc()) {
                     ?>
