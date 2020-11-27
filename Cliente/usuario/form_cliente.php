@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -105,20 +105,10 @@ include '../../conexion.php';
         ?>
 
         <script>
-            Swal.fire('Ingresado correctamente')
-        </script>
-
-        <?php
-            }else{
-                if($_GET['msg']==2){
-        ?>
-
-        <script>
             Swal.fire('No se ha podido ingresar')
         </script>
 
         <?php
-                }
             }
         }
         ?>

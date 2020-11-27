@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -75,8 +75,18 @@
     <script>
         Swal.fire('Datos incorrectos')
     </script>
+    
+    <?php
+        }else{
+            if($_GET['msg']==3){
+    ?>
+
+    <script>
+        Swal.fire('Registro existoso')
+    </script>
 
     <?php
+            }
             }
         }
     }
