@@ -56,7 +56,7 @@
                     </thead>
                     <?php 
                         $cliente=$_SESSION['id_cliente'];
-                        $sel = $conn ->query("SELECT * FROM tblvehiculo WHERE id_Cliente='$cliente'");
+                        $sel = $conn -> query("SELECT * FROM tblvehiculo WHERE id_Cliente='$cliente'");
                         $cont=0;
                         while ($fila = $sel -> fetch_array()) {
                             $cont++;
@@ -78,7 +78,7 @@
                             <?php echo $fila[4] ?>
                         </td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Modificar vehiculo</button></td>
-                        <td><a href="#" onclick="preguntar(<?php echo $fila['0']?>)">ELIMINAR</a></td>
+                        <td><a href="#" onclick="preguntar('<?php echo $fila[0]?>')">ELIMINAR</a></td>
                     </tr>
                     <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
                         <div class="modal-dialog modal-xl" role="document">
@@ -377,8 +377,7 @@
 
         <script type="text/javascript">
         function preguntar(id){
-           Swal
-            .fire({
+            Swal.fire({
                 title: "¿Eliminar vehículo?",
                 text: "¿Estas seguro de eliminar el vehículo?",
                 icon: 'error',            
