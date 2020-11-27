@@ -24,8 +24,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-nav">
         <div class="col-sm-3 text-center">
-            <a class="navbar-brand" href="index.php">
-                <img src="img/logo-bla.png" alt="">
+            <a class="navbar-brand" href="<?php echo $URL ?>index.php">
+                <img src="<?php echo $URL ?>img/logo-bla.png" alt="">
             </a>
         </div>
 
@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav hola ml-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="index.php">Inicio</span></a>
+                    <a class="nav-link" href="<?php echo $URL; ?>index.php">Inicio</span></a>
                 </li>
                 <div class="btn-group">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
@@ -47,7 +47,7 @@
                         <a href="<?php echo $URL; ?>/admin/parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueo/Mes</button></a>
                         <a href="<?php echo $URL; ?>/admin/servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
+                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                     </div>
                 </div>
             </ul>

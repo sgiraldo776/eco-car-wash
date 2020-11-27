@@ -1,3 +1,21 @@
+<?php
+    include('../../conexion.php');
+    session_start();
+        if(!isset($_SESSION['rol'])){
+            include '../../vistas/includes/header-inicio.php';
+        }else{
+            if($_SESSION['rol'] !=1 ){
+                if($_SESSION['rol'] =2 ){
+                    include '../../vistas/includes/header-usuario.php';
+                }else {
+                    include '../../vistas/includes/header-inicio.php';
+                }
+            }else {
+                include '../../vistas/includes/header-admin.php';
+            }            
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,34 +40,8 @@
             </a>
         </div>
             <div>
-                <h1>Reservar</h1>
+                <h1>Reservas</h1>
             </div>
-        <div class="row">
-            <div class="form-group col">
-                <label for="#">Servicio</label>
-                <select name="servicio" id="servicio" class="form-control">
-                    <option value="0">-Seleccione-</option>
-                    <option value="revision">Revisión</option>
-                    <option value="lavado">Lavado</option>
-                </select>
-            </div>
-            <div class="form-group col">
-                <label for="#">Documento de identidad</label>
-                <input type="text" class="form-control" id="id" name="id">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-12">
-                <label for="#">Fecha de la Cita</label>
-                <input type="datetime-local" class="form-control" name="fecha" id="fecha" onblur="myFunction()">
-            </div>
-        </div>
-
-        <div class="align-items-center text-center">
-            <button type="submit" class="btn-color">Reservar</button>
-        </div>
-        </form>
-    </div>
 
 
 

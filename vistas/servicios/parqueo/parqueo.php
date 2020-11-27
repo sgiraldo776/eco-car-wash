@@ -1,3 +1,21 @@
+<?php
+    include('../../../conexion.php');
+    session_start();
+        if(!isset($_SESSION['rol'])){
+            include '../../includes/header-inicio.php';
+        }else{
+            if($_SESSION['rol'] !=1 ){
+                if($_SESSION['rol'] =2 ){
+                    include '../../includes/header-usuario.php';
+                }else {
+                    include '../../includes/header-inicio.php';
+                }
+            }else {
+                include '../../includes/header-admin.php';
+            }            
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,50 +40,12 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-        <div class="col-sm-3 text-center">
-            <a class="navbar-brand" href="../../../index.php">
-                <img src="../../../img/logo-bla.png" alt="">
-            </a>
-        </div>
-
-        <button class="navbar-toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav hola ml-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="../../../index.php">Inicio</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../../vistas/nosotros/nosotros.php">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../../vistas/servicios/servicios.php">Servicios</a>
-                </li>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                            Perfil
-                        </button>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                        <button class="dropdown-item" type="button">Mi Perfil</button>
-                        <button class="dropdown-item" type="button">Mi Vehículo</button>
-                        <button class="dropdown-item" type="button">Reservas</button>
-                        <button class="dropdown-item" type="button">Parqueo</button>
-                        <div class="dropdown-divider"></div>
-                        <button class="dropdown-item" type="button">Cerrar Sesión</button>
-                    </div>
-                </div>
-            </ul>
-        </div>
-    </nav>
-
 
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-center text-center contac">
-                    <h3 class="contac"><a href="#">Contáctenos</a></h3>
+                    <h3 class="contac"><a href="<?php echo $URL; ?>vistas/contactenos/contacto.php">Contáctenos</a></h3>
                 </div>
                 <div class="col-lg-6 my-3 my-lg-0 text-lg-center text-center">
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-twitter"></i></a>

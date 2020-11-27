@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav hola ml-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="index.php">Inicio</span></a>
+                    <a class="nav-link" href="<?php echo $URL; ?>index.php">Inicio</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $URL ?>vistas/nosotros/nosotros.php">Nosotros</a>

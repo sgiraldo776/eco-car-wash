@@ -6,12 +6,12 @@
         }else{
             if($_SESSION['rol'] !=1 ){
                 if($_SESSION['rol'] =2 ){
-                    include '../../includes/header-usuario.php';
+                    include '../includes/header-usuario.php';
                 }else {
-                    include '../../includes/header-inicio.php';
+                    include '../includes/header-inicio.php';
                 }
             }else {
-                include '../../includes/header-admin.php';
+                include '../includes/header-admin.php';
             }            
         }
 ?>
