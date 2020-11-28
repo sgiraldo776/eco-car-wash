@@ -2,13 +2,13 @@
     include('../../../conexion.php');
     session_start();
         if(!isset($_SESSION['rol'])){
-            include '../../includes/header-inicio.php';
+            echo "<script> location.href='../../../Cliente/login/frm_login.php'; </script>";
         }else{
             if($_SESSION['rol'] !=1 ){
                 if($_SESSION['rol'] =2 ){
                     include '../../includes/header-usuario.php';
                 }else {
-                    include '../../includes/header-inicio.php';
+                    echo "<script> location.href='../../../Cliente/login/frm_login.php'; </script>";
                 }
             }else {
                 include '../../includes/header-admin.php';
@@ -34,6 +34,9 @@
     <link rel="icon" type="image/png" href="../../../img/icono-pag.png">
 
     <link rel="stylesheet" href="../../../css/estilos.css">
+
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -48,42 +51,48 @@
                     <p class="texto"><b>Lavado #1:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
                         la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
 
-                    <p class="texto"><b>Lavado #1:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
+                    <p class="texto"><b>Lavado #2:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
                         la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
 
-                    <p class="texto"><b>Lavado #1:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
+                    <p class="texto"><b>Lavado #3:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
                         la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
                 </div>
             </div>
             <div class="col-12">
-                <form action="" class="col-12">
+                <form action="ingresar_lavado.php" name="add_form" class="col-12">
 
                     <div class="form-group">
                         <label class="my-1 mr-2">Tipo Lavado</label>
-                        <select class="custom-select my-1 mr-sm-2">
-                            <option disable>--seleccione--</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="custom-select my-1 mr-sm-2" name="lavado" id="lavado">
+                            <option value="0" selected>--seleccione--</option>
+                            <option value="1">Lavado #1</option>
+                            <option value="2">Lavado #2</option>
+                            <option value="3">Lavado #3</option>
                         </select>
 
                         <label class="my-1 mr-2">Mi Vehículo</label>
-                        <select class="custom-select my-1 mr-sm-2">
-                            <option disable>--seleccione--</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="custom-select my-1 mr-sm-2" name="vehiculo" id="vehiculo">
+                            <option value="0">--seleccione--</option>
+                            <?php 
+                            $cliente=$_SESSION['id_cliente'];
+                            $sel = $conn ->query("SELECT * FROM tblvehiculo WHERE Id_Cliente='$cliente'");
+                            
+                      		while ($row=$sel->fetch_array()) {
+                            ?>
+                            <option value="<?php echo $row[0] ?>"> <?php echo $row[0] ?></option>
+                            <?php	
+                            }
+                            ?>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label>Fecha de inicio mensualidad</label>
-                        <input class="form-control" type="datetime-local" name="hora">
-                        <small class="form-text text-muted">La hora de ingreso se rellena automáticamente</small>
+                        <label>Fecha del lavado</label>
+                        <input class="form-control" type="datetime-local" name="fecha" id="fecha">
                     </div>
 
                     <div class="form-group text-center mt-3 mb-5">
-                        <button type="submit" class="btn btn-color">Reservar</button>
+                        <button type="button" class="btn btn-color">Reservar</button>
                     </div>
 
                 </form>
@@ -113,6 +122,9 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+    <script type="text/javascript" src="js/validacion.js"></script>
+
 </body>
 
 </html>
