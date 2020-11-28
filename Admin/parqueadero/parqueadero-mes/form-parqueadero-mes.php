@@ -45,6 +45,7 @@
                             Hora</button></a>
                     <a href="form-parqueadero-mes.php"><button class="dropdown-item"
                             type="button">Parqueadero Mes</button></a>
+                    <a href="../precios/precios.php"><button class="dropdown-item" type="button">Precios Parqueadero</button></a>
                     <a href="../../servicios/form_servicios.php"><button class="dropdown-item"
                             type="button">Servicios</button></a>
                     <div class="dropdown-divider"></div>
