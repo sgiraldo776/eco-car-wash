@@ -107,7 +107,7 @@
 
     <script type="text/javascript">
         function preguntar(id){
-           Swal
+        Swal
             .fire({
                 title: "¿Eliminar servicio?",
                 text: "¿Estas seguro de eliminar el servicio ofertado?",
