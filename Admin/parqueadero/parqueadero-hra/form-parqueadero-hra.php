@@ -42,6 +42,7 @@
                         <a href="../../insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
                         <a href="form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero Hora</button></a>
                         <a href="../parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero Mes</button></a>
+                        <a href="../precios/precios.php"><button class="dropdown-item" type="button">Precios Parqueadero</button></a>
                         <a href="../../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
                         <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
@@ -154,81 +155,109 @@
                                             if ($row['tipo_vehiculo'] =="Moto") {
                                                 if (($diff->h)<1 && ($diff->i)<=15) {
                                                     echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='8'");
+                                                    while ($fila=$preci->fetch_array()) {
                                                     ?>
-                                            Valor Total: <div class="text-success">500</div>
+                                                    Valor Total: <div class="text-success"><?php echo $fila['precio']?></div>
                                             <?php
+                                                    }
                                                 }elseif(($diff->h)>=1){
                                                     $val = $row['precio']*$diff->h;
                                                     echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
                                                 }elseif(($diff->h)<1 && ($diff->i)>15){
                                                     $val = $row['precio'];
                                                     echo "Numero de Horas: <div class='text-info'>1</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
                                                 }
                                             }elseif ($row['tipo_vehiculo'] =="Carro") {
                                                 if (($diff->h)<1 && ($diff->i)<=15) {
                                                     echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='7'");
+                                                    while ($fila=$preci->fetch_array()) {
                                                     ?>
-                                            Valor Total: <div class="text-success">800</div>
+                                                    Valor Total: <div class="text-success"><?php echo $fila['precio']?></div>
                                             <?php
+                                                    }
                                                 }elseif(($diff->h)>=1){
                                                     $val = $row['precio']*$diff->h;
                                                     echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
                                                 }elseif(($diff->h)<1 && ($diff->i)>15){
                                                     $val = $row['precio'];
                                                     echo "Numero de Horas: <div class='text-info'>1</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
                                                 }
                                             }
                                         }else{
                                             if ($row['tipo_vehiculo'] =="Moto") {
                                                 if (($diff->h)<1 && ($diff->i)<=59) {
-                                                    $val = $row['precio']*(($diff->d)*24);
-                                                    echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='5'");
+                                                    while ($fila=$preci->fetch_array()) {
+                                                        $val = $fila['precio']*($diff->d);
+                                                        echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
+                                                    }
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
                                                 }elseif(($diff->h)<=23){
-                                                    $val = $row['precio']*((($diff->d)*24)+($diff->h));
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='4'");
+                                                    while ($fila=$preci->fetch_array()) {
+                                                        $tot1 = $fila['precio']*($diff->h);
+                                                    }
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='5'");
+                                                    while ($fila=$preci->fetch_array()) {
+                                                        $tot2 = $fila['precio']*($diff->d);
+                                                    }
+                                                    $val = $tot1 + $tot2;
                                                     echo "Numero de días y horas: <div class='text-info'>".$diff->d." días y ".$diff->h." horas</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
-                                                }elseif(($diff->i)>1380){
-                                                    $val = $row['precio']*((($diff->d)*24)+24);
-                                                    echo "Numero de Horas: <div class='text-info'>".(($diff->d)+1)."</div>";
+                                                // }elseif(($diff->i)>1380){
+                                                //     $val = $row['precio']*((($diff->d)*24)+24);
+                                                //     echo "Numero de Horas: <div class='text-info'>".(($diff->d)+1)."</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    <!-- Valor Total: <div class="text-info"><?php // echo $val?></div> -->
                                             <?php
                                                 }
                                             }elseif ($row['tipo_vehiculo'] =="Carro") {
                                                 if (($diff->h)<1 && ($diff->i)<=59) {
-                                                    $val = $row['precio']*(($diff->d)*24);
-                                                    echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='3'");
+                                                    while ($fila=$preci->fetch_array()) {
+                                                        $val = $fila['precio']*($diff->d);
+                                                        echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
+                                                    }
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
                                                 }elseif(($diff->h)<=23){
-                                                    $val = $row['precio']*((($diff->d)*24)+($diff->h));
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='1'");
+                                                    while ($fila=$preci->fetch_array()) {
+                                                        $tot1 = $fila['precio']*($diff->h);
+                                                    }
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='3'");
+                                                    while ($fila=$preci->fetch_array()) {
+                                                        $tot2 = $fila['precio']*($diff->d);
+                                                    }
+                                                    $val = $tot1 + $tot2;
                                                     echo "Numero de días y horas: <div class='text-info'>".$diff->d." días y ".$diff->h." horas</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
-                                                }elseif(($diff->i)>1380){
-                                                    $val = $row['precio']*((($diff->d)*24)+24);
-                                                    echo "Numero de dias: <div class='text-info'>".(($diff->d)+1)."</div>";
+                                                // }elseif(($diff->i)>1380){
+                                                //     $val = $row['precio']*((($diff->d)*24)+24);
+                                                //     echo "Numero de dias: <div class='text-info'>".(($diff->d)+1)."</div>";
                                                     ?>
-                                            Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    <!-- Valor Total: <div class="text-info"><?php // echo $val?></div> -->
                                             <?php
                                                 }
                                             }

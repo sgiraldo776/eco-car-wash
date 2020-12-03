@@ -41,10 +41,11 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
                     <a href="../insumos/form_insumo.php"><button class="dropdown-item"
                             type="button">Insumos</button></a>
-                    <a href="../parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero
+                    <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero
                             Hora</button></a>
                     <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item"
                             type="button">Parqueadero Mes</button></a>
+                    <a href="../parqueadero/precios/precios.php"><button class="dropdown-item" type="button">Precios Parqueadero</button></a>
                     <a href="form_servicios.php"><button class="dropdown-item"
                             type="button">Servicios</button></a>
                     <div class="dropdown-divider"></div>
