@@ -52,6 +52,28 @@ h3 {
 
 /* Index */
 
+.bg-index {
+    padding-top: 8rem;
+    background-image: url(../img/bg-secindex.jpg);
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color:#FFFFFF;
+}
+
+.bg-index h1{
+    font-size: 5rem;
+    text-shadow: 4px 4px 5px #1A1A1A; 
+}
+
+
 .navbar {
     padding: 1rem;
 }

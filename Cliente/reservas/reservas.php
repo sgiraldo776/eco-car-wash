@@ -33,7 +33,6 @@
 </head>
 <body>
     <div class="container">
-        <form action="ingresar_reserva.php" method="POST" name="reservas">
         <div class="logo col-12">
             <a href="../../index.php">
                 <img src="../../img/logo.png" alt="">
@@ -42,7 +41,6 @@
             <div>
                 <h1>Reservas</h1>
             </div>
-
 
 
     <!--JS de bootstrap-->
