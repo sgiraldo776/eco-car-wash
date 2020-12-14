@@ -6,10 +6,11 @@
     } 
 
     $Tipo_Servicio = $_POST['Tipo_Servicio'];
+    $Servicio = $_POST['Servicio'];
     $Descripcion = $_POST['Descripcion'];
     $Valor = $_POST['Valor'];
 
-    $ins = $conn -> query("INSERT INTO tblservicios_ofertados (Tipo_Servicio, Descripcion, Valor) VALUES ('$Tipo_Servicio', '$Descripcion', '$Valor')");
+    $ins = $conn -> query("INSERT INTO tblservicios_ofertados (Tipo_Servicio, Servicio, Descripcion, Valor) VALUES ('$Tipo_Servicio', '$Servicio', '$Descripcion', '$Valor')");
 
     if ($ins) {
         echo "<script> 	location.href='form_servicios.php?msg=1'; </script>";

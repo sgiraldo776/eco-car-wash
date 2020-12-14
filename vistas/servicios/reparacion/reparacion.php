@@ -41,42 +41,70 @@
 </head>
 
 <body>
-
-    <section class="my-5">
+    <section>
         <div class="container">
-                <div class="col-12 text-center">
-                    <h1>Reparación</h1>
+            <div class="col-12 my-5 text-center">
+                <h1>Reparación</h1>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-md-4">
+                    <div class="col-12">
+                        <form action="ingresar_reparacion.php" method="post" name="add_form" class="col-12">
+
+                            <div class="form-group">
+                                <label class="my-1 mr-2">Mi Vehículo</label>
+                                <select class="custom-select my-1 mr-sm-2" name="vehiculo" id="vehiculo">
+                                    <option value="0">--seleccione--</option>
+                                    <?php 
+                                    $cliente=$_SESSION['id_cliente'];
+                                    $sel = $conn ->query("SELECT * FROM tblvehiculo WHERE Id_Cliente='$cliente'");
+                                    
+                                    while ($row=$sel->fetch_array()) {
+                                    ?>
+                                    <option value="<?php echo $row[0] ?>"><?php echo $row[0] ?> - <?php echo $row[4] ?></option>
+                                    <?php	
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="my-1 mr-2">Tipo de reparación</label>
+                                <select class="custom-select my-1 mr-sm-2" name="servicio" id="servicio">
+                                    <option value="0">--seleccione--</option>
+                                    <?php 
+                                    $sel = $conn ->query("SELECT * FROM tblservicios_ofertados WHERE Tipo_Servicio='Reparacion'");
+                                    
+                                    while ($row=$sel->fetch_array()) {
+                                    ?>
+                                    <option value="<?php echo $row[2] ?>"> <?php echo $row[2] ?></option>
+                                    <?php	
+                                    }
+                                    ?>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Descripción</label>
+                                <textarea class="form-control" name="descripcion" id="descropcion" maxlength="500" cols="30" rows="10" placeholder="Campo no obligatorio, salvo de seleccionar 'Otro'."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fecha de la Reparación</label>
+                                <input class="form-control" type="datetime-local" name="fecha" id="fecha">
+                            </div>
+
+                            <div class="form-group text-center mt-3 mb-5">
+                                <button type="button" class="btn btn-color enviar">Reservar</button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
-            <div class="col-12">
-                <form action="ingresar_reparacion.php" name="add_form" class="col-12">
-
-                    <div class="form-group">
-                        <label class="my-1 mr-2">Mi Vehículo</label>
-                        <select class="custom-select my-1 mr-sm-2" name="vehiculo" id="vehiculo">
-                            <option value="0">--seleccione--</option>
-                            <?php 
-                            $cliente=$_SESSION['id_cliente'];
-                            $sel = $conn ->query("SELECT * FROM tblvehiculo WHERE Id_Cliente='$cliente'");
-                            
-                      		while ($row=$sel->fetch_array()) {
-                            ?>
-                            <option value="<?php echo $row[0] ?>"> <?php echo $row[0] ?></option>
-                            <?php	
-                            }
-                            ?>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Fecha de la Reparación</label>
-                        <input class="form-control" type="datetime-local" name="fecha" id="fecha">
-                    </div>
-
-                    <div class="form-group text-center mt-3 mb-5">
-                        <button type="button" class="btn btn-color">Reservar</button>
-                    </div>
-
-                </form>
+                <div class="col-md-8">
+                    <?php include "../../../calendar/calendar.php";?>
+                </div>
             </div>
         </div>
     </section>
@@ -97,8 +125,8 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">

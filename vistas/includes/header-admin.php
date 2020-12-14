@@ -15,9 +15,9 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
+    <link rel="icon" type="image/png" href="<?php echo $URL;?>img/icono-pag.png">
 
-    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="<?php echo $URL;?>css/estilos.css">
 </head>
 
 <body>
