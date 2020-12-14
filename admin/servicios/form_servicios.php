@@ -64,7 +64,14 @@
         <form action="insertar_servicios.php" name="add_form" method="post">
             <div class="form-group">
                 <label> Tipo de servicio: </label>
-                <input type="text" id="Tipo_Servicio" name="Tipo_Servicio" class="form-control" placeholder="Tipo de servicio">
+                <select class="form-control" name="Tipo_Servicio" id="Tipo_Servicio">
+                    <option value="Reparacion">Reparación</option>
+                    <option value="Lavado">Lavado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label> Nombre del servicio: </label>
+                <input type="text" id="Servicio" name="Servicio" class="form-control" placeholder="Tipo de servicio">
             </div>
             <div class="form-group">
                 <label> Descripción del servicio: </label>
@@ -83,7 +90,7 @@
             <table class="table table-hover">
                 <thead class="thead">
                     <th>id</th>
-                    <th>Tipo de Servicio</th>
+                    <th>Servicio</th>
                     <th>Descripción</th>
                     <th>Valor</th>
                     <th></th>
@@ -95,7 +102,7 @@
                 ?>
                 <tr>
                     <td><?php echo $fila['Id_Servicio'] ?></td>
-                    <td><?php echo $fila['Tipo_Servicio'] ?></td>
+                    <td><?php echo $fila['Servicio'] ?></td>
                     <td><?php echo $fila['Descripcion'] ?></td>
                     <td><?php echo $fila['Valor'] ?></td>
                     <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>">EDITAR</a></td>
@@ -108,7 +115,11 @@
 
     <script type="text/javascript">
         function preguntar(id){
+<<<<<<< HEAD
         Swal
+=======
+            Swal
+>>>>>>> 13c198e100263c990c2a415eacb3f33cfcd6125e
             .fire({
                 title: "¿Eliminar servicio?",
                 text: "¿Estas seguro de eliminar el servicio ofertado?",

@@ -17,7 +17,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,54 +47,73 @@
                     <p>Mirá cual de nuestro lavados es el indicado para tí</p>
                 </div>
                 <div class="row">
-                    <p class="texto"><b>Lavado #1:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
-                        la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
+                    <?php
+                        $sel = $conn -> query("SELECT * FROM tblservicios_ofertados WHERE Tipo_Servicio = 'Lavado'");
 
-                    <p class="texto"><b>Lavado #2:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
-                        la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-
-                    <p class="texto"><b>Lavado #3:</b> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a
-                        la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
+                        while ($row = $sel -> fetch_assoc()) {
+                        ?>
+                            <p class="texto"><b><?php echo $row['Servicio'];?>:</b> <?php echo $row['Descripcion'];?></p>
+                        <?php
+                        }
+                    ?>
                 </div>
             </div>
-            <div class="col-12">
-                <form action="ingresar_lavado.php" name="add_form" class="col-12">
+        </div>
+    </section>
 
-                    <div class="form-group">
-                        <label class="my-1 mr-2">Tipo Lavado</label>
-                        <select class="custom-select my-1 mr-sm-2" name="lavado" id="lavado">
-                            <option value="0" selected>--seleccione--</option>
-                            <option value="1">Lavado #1</option>
-                            <option value="2">Lavado #2</option>
-                            <option value="3">Lavado #3</option>
-                        </select>
+    <section>
+        <div class="container">
+            <div class="row m-0 p-0">
+                <div class="col-md-4">
+                    <div class="col-12">
+                        <form action="ingresar_lavado.php" name="add_form" method="post" class="col-12">
 
-                        <label class="my-1 mr-2">Mi Vehículo</label>
-                        <select class="custom-select my-1 mr-sm-2" name="vehiculo" id="vehiculo">
-                            <option value="0">--seleccione--</option>
-                            <?php 
-                            $cliente=$_SESSION['id_cliente'];
-                            $sel = $conn ->query("SELECT * FROM tblvehiculo WHERE Id_Cliente='$cliente'");
-                            
-                      		while ($row=$sel->fetch_array()) {
-                            ?>
-                            <option value="<?php echo $row[0] ?>"> <?php echo $row[0] ?></option>
-                            <?php	
-                            }
-                            ?>
-                        </select>
+                            <div class="form-group">
+                                <label class="my-1 mr-2">Tipo Lavado</label>
+                                <select class="custom-select my-1 mr-sm-2" name="lavado" id="lavado">
+                                <option value="0">--seleccione--</option>
+                                    <?php
+                                    $sel = $conn -> query("SELECT * FROM tblservicios_ofertados WHERE Tipo_Servicio = 'Lavado'");
+                                    
+                                    while ($row=$sel->fetch_array()) {
+                                    ?>
+                                    <option value="<?php echo $row[2] ?>"> <?php echo $row[2] ?></option>
+                                    <?php	
+                                    }
+                                    ?>
+                                </select>
+
+                                <label class="my-1 mr-2">Mi Vehículo</label>
+                                <select class="custom-select my-1 mr-sm-2" name="vehiculo" id="vehiculo">
+                                    <option value="0">--seleccione--</option>
+                                    <?php 
+                                    $cliente=$_SESSION['id_cliente'];
+                                    $sel = $conn ->query("SELECT * FROM tblvehiculo WHERE Id_Cliente='$cliente'");
+                                    
+                                    while ($row=$sel->fetch_array()) {
+                                    ?>
+                                    <option value="<?php echo $row[0] ?>"> <?php echo $row[0] ?></option>
+                                    <?php	
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fecha del lavado</label>
+                                <input class="form-control" type="datetime-local" name="fecha" id="fecha">
+                            </div>
+
+                            <div class="form-group text-center mt-3 mb-5">
+                                <button type="button" class="btn btn-color">Reservar</button>
+                            </div>
+
+                        </form>
                     </div>
-
-                    <div class="form-group">
-                        <label>Fecha del lavado</label>
-                        <input class="form-control" type="datetime-local" name="fecha" id="fecha">
-                    </div>
-
-                    <div class="form-group text-center mt-3 mb-5">
-                        <button type="button" class="btn btn-color">Reservar</button>
-                    </div>
-
-                </form>
+                </div>
+                <div class="col-md-8">
+                    <?php include "../../../calendar/calendar.php";?>
+                </div>
             </div>
         </div>
     </section>
@@ -116,8 +134,8 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">

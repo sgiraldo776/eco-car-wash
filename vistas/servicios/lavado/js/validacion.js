@@ -13,7 +13,7 @@ $(document).ready(function(){
 });
 
 $(function(){
-    $(".btn-color").on('click', function(){
+    $(".enviar").on('click', function(){
         var formulario=document.add_form;
 
         if($('#lavado').val() != 0){
