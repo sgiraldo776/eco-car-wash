@@ -94,7 +94,8 @@
                 </div> 
 
     
-    </div> <!-- etiqueta contenedor -->
+    </div> 
+    
 
     <section class="">
         <br> <br>

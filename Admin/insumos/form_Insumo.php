@@ -193,7 +193,7 @@
 
         <script type="text/javascript">
         function preguntar(id){
-           Swal
+        Swal
             .fire({
                 title: "¿Eliminar insumo?",
                 text: "¿Estas seguro de eliminar el insumo?",
