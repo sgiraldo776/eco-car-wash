@@ -51,15 +51,20 @@
             echo('<iframe width="854" height="480" src="'.$row[2].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');	
             }
 
+        ?>
+        
+            <div class="text-center">
+        <?php
             if (isset($_SESSION['rol'])) {
                 if($_SESSION['rol']==1){
-                    echo ' <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    echo ' <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#exampleModal">
                     Cambiar Video
                     </button>';
                     
                 }
             }
         ?>
+        </div>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -96,8 +101,8 @@
     
     </div> <!-- etiqueta contenedor -->
 
-    <section class="">
-        <br> <br>
+    <section class="bg-index">
+        <h1>Nuestros servicios</h1>
     </section>
 
     <footer class="footer py-4">
