@@ -2,13 +2,13 @@
     include('../../../conexion.php');
     session_start();
         if(!isset($_SESSION['rol'])){
-            include '../../includes/header-inicio.php';
+            echo "<script> location.href='../../../Cliente/login/frm_login.php'; </script>";
         }else{
             if($_SESSION['rol'] !=1 ){
                 if($_SESSION['rol'] =2 ){
                     include '../../includes/header-usuario.php';
                 }else {
-                    include '../../includes/header-inicio.php';
+                    echo "<script> location.href='../../../Cliente/login/frm_login.php'; </script>";
                 }
             }else {
                 include '../../includes/header-admin.php';
