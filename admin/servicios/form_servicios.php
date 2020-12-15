@@ -105,8 +105,8 @@
                     <td><?php echo $fila['Servicio'] ?></td>
                     <td><?php echo $fila['Descripcion'] ?></td>
                     <td><?php echo $fila['Valor'] ?></td>
-                    <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>">EDITAR</a></td>
-                    <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Servicio']?>)">ELIMINAR</a></td>
+                    <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>"><button class="btn btn-primary">EDITAR</button></a></td>
+                    <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Servicio']?>)"><button class="btn btn-primary">ELIMINAR</button></a></td>
                 </tr>
                 <?php } ?>
             </table>
@@ -115,11 +115,7 @@
 
     <script type="text/javascript">
         function preguntar(id){
-<<<<<<< HEAD
-        Swal
-=======
             Swal
->>>>>>> 13c198e100263c990c2a415eacb3f33cfcd6125e
             .fire({
                 title: "¿Eliminar servicio?",
                 text: "¿Estas seguro de eliminar el servicio ofertado?",

@@ -27,7 +27,7 @@
 
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <title>Parqueadero Hora</title>
+    <title>Parqueadero hora</title>
 </head>
 
 <body>
@@ -40,12 +40,12 @@
                             </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
                         <a href="../../insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
-                        <a href="form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero Hora</button></a>
-                        <a href="../parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero Mes</button></a>
-                        <a href="../precios/precios.php"><button class="dropdown-item" type="button">Precios Parqueadero</button></a>
+                        <a href="form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero hora</button></a>
+                        <a href="../parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero mes</button></a>
+                        <a href="../precios/precios.php"><button class="dropdown-item" type="button">Precios parqueadero</button></a>
                         <a href="../../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
+                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                     </div>
                 </div>
                 </ul>
@@ -57,7 +57,7 @@
 
         <div class="container formularios col-12 mt-5 p-sm-5">
             <div class="stinky text-center mb-3">
-                <h2 class="">Ingresar Vehículo</h2>
+                <h2 class="">Ingresar vehículo</h2>
             </div>
             <div>
                 <form action="ingr-parqueadero-hra.php" name="add_form" method="post">
@@ -101,7 +101,7 @@
                         <tr>
                             <th scope="col">Placa</th>
                             <th scope="col">Tipo vehículo</th>
-                            <th scope="col">Hora de Ingreso</th>
+                            <th scope="col">Hora de ingreso</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -126,7 +126,7 @@
                             <td><?php echo $row[2] ?></td>
                             <td><?php echo $row[3] ?></td>
                             <td><button class="btn btn-success" data-toggle="modal"
-                                    data-target="#Modal1<?php echo $row['num_factura']; ?>">Retirar Vehículo</button>
+                                    data-target="#Modal1<?php echo $row['num_factura']; ?>">Retirar vehículo</button>
                             </td>
                         </tr>
                         <!-- Modal -->
@@ -135,17 +135,17 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Datos de la Facturación:</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Datos de la facturación:</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Placa del Vehículo: <div class="text-info"><?php echo $row['placa'] ?></div>
+                                        Placa del vehículo: <div class="text-info"><?php echo $row['placa'] ?></div>
                                         Tipo de vehículo: <div class="text-info"><?php echo $row['tipo_vehiculo'] ?>
                                         </div>
-                                        Hora de Ingreso: <div class="text-info"><?php echo $row['hora_ingreso'] ?></div>
-                                        Hora de Salida: <div class="text-info"><?php echo Date('Y-m-d h:i') ?></div>
+                                        Hora de ingreso: <div class="text-info"><?php echo $row['hora_ingreso'] ?></div>
+                                        Hora de salida: <div class="text-info"><?php echo Date('Y-m-d h:i') ?></div>
                                         <?php
                                         $fecha1= new DateTime($row['hora_ingreso']);
                                         $fecha2= new DateTime("now");
@@ -251,7 +251,7 @@
                                                     $val = $tot1 + $tot2;
                                                     echo "Numero de días y horas: <div class='text-info'>".$diff->d." días y ".$diff->h." horas</div>";
                                                     ?>
-                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
+                                                    Valor total: <div class="text-info"><?php echo $val?></div>
                                             <?php
                                                 // }elseif(($diff->i)>1380){
                                                 //     $val = $row['precio']*((($diff->d)*24)+24);
@@ -266,9 +266,9 @@
                                         
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-info" data-dismiss="modal">VOLVER</button>
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
                                         <a href="retirar-vehiculo.php?id=<?php echo $row['num_factura']; ?>"><button
-                                                type="button" class="btn btn-danger">Retirar Vehículo</button></a>
+                                                type="button" class="btn btn-danger">Retirar vehículo</button></a>
                                     </div>
                                 </div>
                             </div>

@@ -2,7 +2,7 @@
 
 //Los otros jaja
 $conn = new mysqli('localhost','root','','car_wash');
-$URL = "http://localhost/eco-car-wash/";
+$URL = "http://localhost/eco-car-wash";
 
 
     //Samir
