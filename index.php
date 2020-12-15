@@ -57,7 +57,7 @@
         <?php
             if (isset($_SESSION['rol'])) {
                 if($_SESSION['rol']==1){
-                    echo ' <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#exampleModal">
+                    echo ' <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Cambiar Video
                     </button>';
                     
@@ -101,9 +101,12 @@
     
     </div> <!-- etiqueta contenedor -->
 
-    <section class="bg-index">
+    <section class="bg-index my-5">
+    <a href="vistas/servicios/servicios.php">
         <h1>Nuestros servicios</h1>
+    </a>
     </section>
+    
 
     <footer class="footer py-4">
         <div class="container">

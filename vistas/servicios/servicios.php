@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <footer class="footer py-4">
+    <footer class="footer py-4 fixed-bottom">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-center text-center contac">

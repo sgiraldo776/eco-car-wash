@@ -68,6 +68,11 @@ h3 {
     color:#FFFFFF;
 }
 
+.bg-index a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 .bg-index h1{
     font-size: 5rem;
     text-shadow: 4px 4px 5px #1A1A1A; 

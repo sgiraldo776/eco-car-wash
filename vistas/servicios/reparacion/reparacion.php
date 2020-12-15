@@ -90,6 +90,10 @@
                                 <textarea class="form-control" name="descripcion" id="descropcion" maxlength="500" cols="30" rows="10" placeholder="Campo no obligatorio, salvo de seleccionar 'Otro'."></textarea>
                             </div>
 
+                            <div class="mb-3">
+                            <span>Horario de atención de 8:00  a 18:00</span>
+                            </div>
+
                             <div class="form-group">
                                 <label>Fecha de la Reparación</label>
                                 <input class="form-control" type="datetime-local" name="fecha" id="fecha">
