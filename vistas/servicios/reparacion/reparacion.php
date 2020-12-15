@@ -91,7 +91,7 @@
                             </div>
 
                             <div class="mb-3">
-                            <span>Horario de atención de 8:00  a 18:00</span>
+                            <small>Horario de atención de 8:00  a 18:00</small>
                             </div>
 
                             <div class="form-group">
