@@ -99,7 +99,8 @@
                 </div> 
 
     
-    </div> <!-- etiqueta contenedor -->
+    </div> 
+    
 
     <section class="bg-index my-5">
     <a href="vistas/servicios/servicios.php">

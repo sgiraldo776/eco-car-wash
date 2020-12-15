@@ -45,7 +45,7 @@
                             Hora</button></a>
                     <a href="form-parqueadero-mes.php"><button class="dropdown-item"
                             type="button">Parqueadero Mes</button></a>
-                    <a href="../precios/precios.php"><button class="dropdown-item" type="button">Precios Parqueadero</button></a>
+                    <a href="../precios/precios.php"><button class="dropdown-item" type="button">Precios parqueadero</button></a>
                     <a href="../../servicios/form_servicios.php"><button class="dropdown-item"
                             type="button">Servicios</button></a>
                     <div class="dropdown-divider"></div>
@@ -58,7 +58,7 @@
 
     <div class="container formularios col-12 mt-5 p-sm-5">
         <div class="stinky text-center mb-3">
-            <h2 class="">Ingresar Vehículo Para Mensualidad</h2>
+            <h2 class="">Ingresar vehículo Para mensualidad</h2>
         </div>
         <div>
             <form action="ingr-parqueadero-mes.php" name="add_form" method="POST">
@@ -79,7 +79,7 @@
                     <input class="form-control" type="email" id="correo" name="correo">
                 </div>
                 <div class="form-group">
-                    <label>Número Celular</label>
+                    <label>Número celular</label>
                     <input class="form-control" type="tel" id="celular" name="celular">
                 </div>
                 <div class="form-group">
@@ -104,7 +104,7 @@
                                     <button class="boton-buscar" type="submit" value="buscar">
                                     <img src="../../../img/buscar.svg"></button>
                                     <br>
-                                    <span>para listar de todos los veiculos dejar el campo vacio y darle buscar</span>
+                                    <span>para listar de todos los vehículos dejar el campo vacio y darle buscar</span>
                             </form>
                         </div>
                     </div>
@@ -116,9 +116,9 @@
                         <th scope="col">Correo</th>
                         <th scope="col">Celular</th>
                         <th scope="col">Placa</th>
-                        <th scope="col">Tipo de Vehículo</th>
-                        <th scope="col">Fecha inicio Mensualidad</th>
-                        <th scope="col">Precio Mensualidad</th>
+                        <th scope="col">Tipo de vehículo</th>
+                        <th scope="col">Fecha inicio mensualidad</th>
+                        <th scope="col">Precio mensualidad</th>
                         <th scope="col">Estado</th>
                     </tr>
                 </thead>
@@ -173,7 +173,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">¿Qué desea Hacer?</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">¿Qué desea hacer?</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -184,7 +184,7 @@
                                                 data-target="#Modal1<?php echo $contador?>">Cancelar
                                                 Mensualidad</button>
                                             <a href="renovar-mensualidad.php?id=<?php echo $row['num_factura']; ?>"><button
-                                                    class="btn btn-info">Renovar Mensualidad</button></a>
+                                                    class="btn btn-info">Renovar mensualidad</button></a>
                                         </div>
                                     </div>
                                 </div>

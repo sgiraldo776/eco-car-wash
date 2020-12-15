@@ -45,12 +45,12 @@
                             </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
                         <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
-                        <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero Hora</button></a>
-                        <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero Mes</button></a>
-                        <a href="../parqueadero/precios/precios.php"><button class="dropdown-item" type="button">Precios Parqueadero</button></a>
+                        <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero hora</button></a>
+                        <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero mes</button></a>
+                        <a href="../parqueadero/precios/precios.php"><button class="dropdown-item" type="button">Precios parqueadero</button></a>
                         <a href="../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
+                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
                 </div>
                 </ul>
@@ -116,7 +116,7 @@
                         <td>
                             <?php echo $fila['Vlr_Total'] ?>
                         </td>
-                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)">ELIMINAR</a></td>
+                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2<?php echo $cont; ?>" id="ingresar">Agregar Insumo</button></td>
 
@@ -193,7 +193,7 @@
 
         <script type="text/javascript">
         function preguntar(id){
-           Swal
+        Swal
             .fire({
                 title: "¿Eliminar insumo?",
                 text: "¿Estas seguro de eliminar el insumo?",
