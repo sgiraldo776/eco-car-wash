@@ -100,7 +100,7 @@
                             </div>
 
                             <div class="mb-3">
-                            <span>Horario de atención de 8:00  a 18:00</span>
+                            <small>Horario de atención de 8:00  a 18:00</small>
                             </div>
 
                             <div class="form-group">
@@ -109,7 +109,7 @@
                             </div>
 
                             <div class="form-group text-center mt-3 mb-5">
-                                <button type="button" class="btn btn-color">Reservar</button>
+                                <button type="button" class="btn btn-color enviar">Reservar</button>
                             </div>
 
                         </form>
