@@ -99,13 +99,17 @@
                                 </select>
                             </div>
 
+                            <div class="mb-3">
+                            <small>Horario de atención de 8:00  a 18:00</small>
+                            </div>
+
                             <div class="form-group">
                                 <label>Fecha del lavado</label>
                                 <input class="form-control" type="datetime-local" name="fecha" id="fecha">
                             </div>
 
                             <div class="form-group text-center mt-3 mb-5">
-                                <button type="button" class="btn btn-color">Reservar</button>
+                                <button type="button" class="btn btn-color enviar">Reservar</button>
                             </div>
 
                         </form>
@@ -118,7 +122,7 @@
         </div>
     </section>
 
-    <footer class="footer py-4">
+    <footer class="footer py-4 mt-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-center text-center contac">

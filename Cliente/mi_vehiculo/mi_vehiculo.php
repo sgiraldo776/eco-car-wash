@@ -77,8 +77,8 @@
                         <td>
                             <?php echo $fila[4] ?>
                         </td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Modificar vehiculo</button></td>
-                        <td><a href="#" onclick="preguntar('<?php echo $fila[0]?>')">ELIMINAR</a></td>
+                        <td><button type="button" class="btn btn-color" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Modificar vehiculo</button></td>
+                        <td><button type="button" class="btn btn-color" onclick="preguntar('<?php echo $fila[0]?>')">ELIMINAR</button></td>
                     </tr>
                     <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
                         <div class="modal-dialog modal-xl" role="document">

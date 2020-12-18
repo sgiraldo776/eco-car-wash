@@ -68,7 +68,7 @@ if(isset($_SESSION['rol'])){
                     </div>
                 </div>
 
-                <div class="align-items-center text-center">
+                <div class="align-items-center text-center mt-3">
                     <button type="submit" class="btn-color">Ingresar</button>
                 </div>
             </form>
