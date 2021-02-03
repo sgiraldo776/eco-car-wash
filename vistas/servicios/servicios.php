@@ -53,11 +53,11 @@
             <a href="reparacion/reparacion.php"><button class="btn btn-color">Reserva</button></a>
         </div>
 
-        <div class="card">
+        <!-- <div class="card">
             <img src="../../img/serv-03.jpg" alt="">
             <h2>Parqueo</h2>
             <a href="parqueo/parqueo.php"><button class="btn btn-color">Ver</button></a>
-        </div>
+        </div> -->
     </div>
 
     <footer class="footer py-4 fixed-bottom">

@@ -41,7 +41,46 @@
             <div>
                 <h1>Reservas</h1>
             </div>
-
+            <div class="tabla-admin mt-4">
+                <table class="table table-hover">
+                    <thead class="thead">
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Vehiculo</th>
+                        <th>Placa</th>
+                        <th>Descripcion</th>
+                        <th>Fecha</th>
+                    </thead>
+                    <?php 
+                    $cliente = $_SESSION['id_cliente'];
+                    $sel2 = $conn -> query("SELECT * FROM tblvehiculo WHERE Id_Cliente = $cliente");
+                    while($fila2 = $sel2 -> fetch_assoc()){
+                        $placa = $fila2['id_Vehiculo'];
+                        $sel = $conn ->query("SELECT * FROM tblreservas WHERE placa = '$placa'");
+                        while ($fila = $sel -> fetch_assoc()) {
+                        ?>
+                    <tr>
+                        <td>
+                            <?php echo $fila['title'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila['tipoVehiculo'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila['placa'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila['descripcion'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila['start'] ?>
+                        </td>
+                    </tr>
+                    <?php }
+                    }
+                    ?>
+                </table>
+            </div>
 
     <!--JS de bootstrap-->
     <script
