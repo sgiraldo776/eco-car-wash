@@ -116,9 +116,9 @@
                         <td>
                             <?php echo $fila['Vlr_Total'] ?>
                         </td>
-                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2<?php echo $cont; ?>" id="ingresar">Agregar Insumo</button></td>
+                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)"><button type="button" class="btn btn-color">Eliminar</button></a></td>
+                        <td><button type="button" class="btn btn-color" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
+                        <td><button type="button" class="btn btn-color" data-toggle="modal" data-target="#modal2<?php echo $cont; ?>" id="ingresar">Agregar Insumo</button></td>
 
                     </tr>
                     <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">

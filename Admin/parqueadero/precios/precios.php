@@ -27,7 +27,7 @@
 
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <title>Parqueadero Hora</title>
+    <title>Precios</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                         <a href="precios.php"><button class="dropdown-item" type="button">Precios Parqueadero</button></a>
                         <a href="../../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesiòn</button></a>
+                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                     </div>
                 </div>
                 </ul>

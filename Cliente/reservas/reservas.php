@@ -19,68 +19,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
-    <!--importacion boostrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- bootrap inportacion -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <!-- Styles -->
+        <link rel="stylesheet" href="../../css/estilos.css">
+        <!-- Ionic icons -->
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+        <!-- Sweet alerts -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        
+        <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
-    <link rel="stylesheet" href="../../css/estilos.css">
+        <title>Reservas</title>
 
 </head>
 <body>
-    <div class="container">
-        <div class="logo col-12">
-            <a href="../../index.php">
-                <img src="../../img/logo.png" alt="">
-            </a>
-        </div>
-            <div>
-                <h1>Reservas</h1>
+            <div class="container formularios col-12 p-sm-5">
+            <div class="text-center logo col-12">
+                <a href="../../index.php">
+                    <img src="../../img/logo.png" alt="" style="width: 60%">
+                </a>
             </div>
             <div class="tabla-admin mt-4">
                 <table class="table table-hover">
                     <thead class="thead">
-                        <th>Id</th>
-                        <th>Titulo</th>
-                        <th>Vehiculo</th>
                         <th>Placa</th>
-                        <th>Descripcion</th>
+                        <th>Titulo</th>
+                        <th>Descripción</th>
                         <th>Fecha</th>
+                        <th></th>
+                        <th></th>
                     </thead>
                     <?php 
-                    $cliente = $_SESSION['id_cliente'];
-                    $sel2 = $conn -> query("SELECT * FROM tblvehiculo WHERE Id_Cliente = $cliente");
-                    while($fila2 = $sel2 -> fetch_assoc()){
-                        $placa = $fila2['id_Vehiculo'];
-                        $sel = $conn ->query("SELECT * FROM tblreservas WHERE placa = '$placa'");
-                        while ($fila = $sel -> fetch_assoc()) {
+                        $cliente=$_SESSION['id_usuario'];
+                        $sel=$conn->query("SELECT * FROM tblreservas WHERE Id_Cliente='$cliente'");
+                        $cont=0;
+                        while ($fila = $sel -> fetch_array()) {
+                            $cont++;
                         ?>
                     <tr>
                         <td>
-                            <?php echo $fila['title'] ?>
+                            <?php echo $fila[3] ?>
                         </td>
                         <td>
-                            <?php echo $fila['tipoVehiculo'] ?>
+                            <?php echo $fila[1] ?>
                         </td>
                         <td>
-                            <?php echo $fila['placa'] ?>
+                            <?php echo $fila[4] ?>
                         </td>
                         <td>
-                            <?php echo $fila['descripcion'] ?>
+                            <?php echo $fila[5] ?>
                         </td>
-                        <td>
-                            <?php echo $fila['start'] ?>
-                        </td>
+                        <td><button type="button" class="btn btn-color" onclick="preguntar('<?php echo $fila[0]?>')">Cancelar reserva</button></td>
                     </tr>
-                    <?php }
-                    }
-                    ?>
+                    <?php } ?>
                 </table>
             </div>
+        </div>
+
+
+
+        <script type="text/javascript">
+        function preguntar(id){
+            Swal.fire({
+                title: "Cancelar reserva",
+                text: "¿Desea cancelar la reserva?",
+                icon: 'error',            
+                showCancelButton: true,
+                confirmButtonText: "Sí, cancelar reserva",
+                cancelButtonText: "No, volver",
+            })
+            .then(resultado => {
+                if (resultado.value) {
+                    window.location.href="eliminar_reserva.php?id="+id
+                } else {
+                    // Dijeron que no
+                    console.log("*NO se elimina*");
+                }
+            });
+
+        }
+        </script>
+
 
     <!--JS de bootstrap-->
     <script
@@ -99,7 +122,6 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-    <script type="text/javascript" src="js/validacion.js"></script>
     
 </body>
 </html>

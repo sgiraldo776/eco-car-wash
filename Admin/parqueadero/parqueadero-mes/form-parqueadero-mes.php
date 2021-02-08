@@ -26,7 +26,7 @@
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <title>Parqueadero Hora</title>
+    <title>Parqueadero Mes</title>
 </head>
 
 <body>

@@ -40,7 +40,7 @@
 
 <body>
 
-    <div class="contenedor-servicios">
+    <div class="contenedor-servicios mb-5">
         <div class="card">
             <img src="../../img/serv-04.jpg" alt="">
             <h2>Lavado</h2>
@@ -60,7 +60,7 @@
         </div> -->
     </div>
 
-    <footer class="footer py-4 fixed-bottom">
+    <footer class="footer py-4 mt-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-center text-center contac">
