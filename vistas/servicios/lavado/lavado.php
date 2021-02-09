@@ -98,14 +98,18 @@
                                     ?>
                                 </select>
                             </div>
-
-                            <div class="mb-3">
-                            <small>Horario de atención de 8:00  a 18:00</small>
+                            
+                            <div class="mb-3 text-danger">
+                                <small>Revise en el calendario que la hora elegida esté disponible utilizando los botones de navegación del mismo</small>
                             </div>
-
+                            
                             <div class="form-group">
-                                <label>Fecha del lavado</label>
-                                <input class="form-control" type="datetime-local" name="fecha" id="fecha">
+                                <label>Fecha del Lavado</label>
+                                <input class="form-control" type="date" name="fecha" id="fecha">
+                                <div class="mb-3 text-danger">
+                                    <small>Utilice las horas especificadas</small>
+                                    <input class="form-control" type="time" name="hora" id="hora" list="listahoras">
+                                </div>
                             </div>
 
                             <div class="form-group text-center mt-3 mb-5">
@@ -113,6 +117,16 @@
                             </div>
 
                         </form>
+                        <datalist id="listahoras">
+                            <option value="08:00">
+                            <option value="09:15">
+                            <option value="10:30">
+                            <option value="11:45">
+                            <option value="13:00">
+                            <option value="14:15">
+                            <option value="15:30">
+                            <option value="16:45">
+                        </datalist>
                     </div>
                 </div>
                 <div class="col-md-8">

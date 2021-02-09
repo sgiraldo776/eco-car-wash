@@ -12,10 +12,12 @@
         $descripcion = $_POST['descripcion'];
     }
     $fecha=$_POST['fecha'];
+    $hora=$_POST['hora'];
+    $cita=$fecha." ".$hora;
     $cliente=$_SESSION['id_cliente'];
 
     // $sql=$conn->query("INSERT INTO tblreservas (Id_Reserva, Fecha, Id_Cliente, Tipo_Lavado) VALUES (null, '$fecha', '$_SESSION[Id_Cliente]', '$servicio')");
-    $sql=$conn->query("INSERT INTO tblreservas (title, tipoVehiculo, placa, descripcion, start, color, textColor, Id_Cliente) VALUES ('Reparacion', (SELECT Tipo_Vehiculo FROM tblvehiculo WHERE id_Vehiculo='$vehiculo'), '$vehiculo', '$descripcion', '$fecha', '#4D4D4D', '#FFFFFF', '$cliente')");
+    $sql=$conn->query("INSERT INTO tblreservas (title, tipoVehiculo, placa, descripcion, start, color, textColor, Id_Cliente) VALUES ('Reparacion', (SELECT Tipo_Vehiculo FROM tblvehiculo WHERE id_Vehiculo='$vehiculo'), '$vehiculo', '$descripcion', '$cita', '#4D4D4D', '#FFFFFF', '$cliente')");
 
     if ($sql==TRUE){
         echo "<script> 	alert ('Ingresado Correctamente'); </script>";
