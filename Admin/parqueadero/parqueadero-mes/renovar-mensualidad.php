@@ -8,10 +8,19 @@
     if ($conn->connect_error) {
         die("Conección exitosa: " . $conn->connect_error);
     }
-    $fecha = Date('y-m-d h:i');
-    $id=$_GET['id'];
 
-    $up= $conn->query ("UPDATE tblparqueadero SET hora_ingreso='$fecha' WHERE num_factura='$id'");
+    
+    $id=$_GET['id'];
+    
+    $sel = $conn -> query("SELECT hora_ingreso from tblparqueadero WHERE num_factura='$id'");
+    while ($fila = $sel -> fetch_assoc()) {
+        $antfecha = $fila['hora_ingreso'];
+    }
+    $fecha = strtotime('+31 day', strtotime($antfecha));
+    $nuevafecha = date ( 'y-m-d h:i' , $fecha );
+    
+
+    $up= $conn->query ("UPDATE tblparqueadero SET hora_ingreso='$nuevafecha' WHERE num_factura='$id'");
     if($up == TRUE){
         echo "<script> 	location.href='form-parqueadero-mes.php?msg=3'; </script>";
     } else {
