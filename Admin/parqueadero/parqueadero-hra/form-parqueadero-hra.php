@@ -153,111 +153,71 @@
                                         
                                         if (($diff->d)<1) {
                                             if ($row['tipo_vehiculo'] =="Moto") {
-                                                if (($diff->h)<1 && ($diff->i)<=15) {
-                                                    echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='8'");
+                                                if (($diff->h)<1) {
+                                                    echo "Se cobra: <div class='text-info'> 1 Hora</div>";
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='4'");
                                                     while ($fila=$preci->fetch_array()) {
                                                     ?>
                                                     Valor Total: <div class="text-success"><?php echo $fila['precio']?></div>
                                             <?php
                                                     }
-                                                }elseif(($diff->h)>=1){
-                                                    $val = $row['precio']*$diff->h;
-                                                    echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
+                                                }else{
+                                                    $frac = ceil(((($diff->h)*60)+($diff->i))/15);
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='6'");
+                                                    while ($fila=$preci->fetch_array()){
+                                                        $val = $fila['precio']*$frac;
+                                                        $min = ($diff->i)-(($diff->h)*60);
+                                                    echo "Se cobra: <div class='text-info'>".$diff->h." hora con ".$diff->i." minutos</div>";
                                                     ?>
                                                     Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
-                                                }elseif(($diff->h)<1 && ($diff->i)>15){
-                                                    $val = $row['precio'];
-                                                    echo "Numero de Horas: <div class='text-info'>1</div>";
-                                                    ?>
-                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
-                                            <?php
+                                                    }
                                                 }
                                             }elseif ($row['tipo_vehiculo'] =="Carro") {
-                                                if (($diff->h)<1 && ($diff->i)<=15) {
-                                                    echo "Se cobra Fracción de: <div class='text-info'>".$diff->i." min.</div>";
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='7'");
+                                                if (($diff->h)<1) {
+                                                    echo "Se cobra: <div class='text-info'> 1 Hora</div>";
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='1'");
                                                     while ($fila=$preci->fetch_array()) {
                                                     ?>
                                                     Valor Total: <div class="text-success"><?php echo $fila['precio']?></div>
                                             <?php
                                                     }
-                                                }elseif(($diff->h)>=1){
-                                                    $val = $row['precio']*$diff->h;
-                                                    echo "Numero de Horas: <div class='text-info'>".$diff->h."</div>";
+                                                }else{
+                                                    $frac = ceil(((($diff->h)*60)+($diff->i))/15);
+                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='3'");
+                                                    while ($fila=$preci->fetch_array()){
+                                                        $val = $fila['precio']*$frac;
+                                                        $min = ($diff->i)-(($diff->h)*60);
+                                                    echo "Se cobra: <div class='text-info'>".$diff->h." hora con ".$diff->i." minutos</div>";
                                                     ?>
                                                     Valor Total: <div class="text-info"><?php echo $val?></div>
                                             <?php
-                                                }elseif(($diff->h)<1 && ($diff->i)>15){
-                                                    $val = $row['precio'];
-                                                    echo "Numero de Horas: <div class='text-info'>1</div>";
-                                                    ?>
-                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
-                                            <?php
+                                                    }
                                                 }
                                             }
                                         }else{
                                             if ($row['tipo_vehiculo'] =="Moto") {
-                                                if (($diff->h)<1 && ($diff->i)<=59) {
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='5'");
-                                                    while ($fila=$preci->fetch_array()) {
-                                                        $val = $fila['precio']*($diff->d);
-                                                        echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
-                                                    }
-                                                    ?>
+                                                $horas = (($diff->d)*24)+($diff->h);
+                                                $frac = ceil((($horas*60)+($diff->i))/15);
+                                                $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='6'");
+                                                while ($fila=$preci->fetch_array()){
+                                                    $val = $fila['precio']*$frac;
+                                                    $min = ($diff->i)-(($diff->h)*60);
+                                                    echo "Se cobra: <div class='text-info'>".$diff->d." dias con ".$diff->h." horas y ".$diff->i." minutos.</div>";
+                                                ?>
                                                     Valor Total: <div class="text-info"><?php echo $val?></div>
-                                            <?php
-                                                }elseif(($diff->h)<=23){
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='4'");
-                                                    while ($fila=$preci->fetch_array()) {
-                                                        $tot1 = $fila['precio']*($diff->h);
-                                                    }
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='5'");
-                                                    while ($fila=$preci->fetch_array()) {
-                                                        $tot2 = $fila['precio']*($diff->d);
-                                                    }
-                                                    $val = $tot1 + $tot2;
-                                                    echo "Numero de días y horas: <div class='text-info'>".$diff->d." días y ".$diff->h." horas</div>";
-                                                    ?>
-                                                    Valor Total: <div class="text-info"><?php echo $val?></div>
-                                            <?php
-                                                // }elseif(($diff->i)>1380){
-                                                //     $val = $row['precio']*((($diff->d)*24)+24);
-                                                //     echo "Numero de Horas: <div class='text-info'>".(($diff->d)+1)."</div>";
-                                                    ?>
-                                                    <!-- Valor Total: <div class="text-info"><?php // echo $val?></div> -->
                                             <?php
                                                 }
                                             }elseif ($row['tipo_vehiculo'] =="Carro") {
-                                                if (($diff->h)<1 && ($diff->i)<=59) {
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='3'");
-                                                    while ($fila=$preci->fetch_array()) {
-                                                        $val = $fila['precio']*($diff->d);
-                                                        echo "Numero de dias: <div class='text-info'>".$diff->d."</div>";
-                                                    }
-                                                    ?>
+                                                $horas = (($diff->d)*24)+($diff->h);
+                                                $frac = ceil((($horas*60)+($diff->i))/15);
+                                                $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='3'");
+                                                while ($fila=$preci->fetch_array()){
+                                                    $val = $fila['precio']*$frac;
+                                                    $min = ($diff->i)-(($diff->h)*60);
+                                                    echo "Se cobra: <div class='text-info'>".$diff->d." dias con ".$diff->h." horas y ".$diff->i." minutos.</div>";
+                                                ?>
                                                     Valor Total: <div class="text-info"><?php echo $val?></div>
-                                            <?php
-                                                }elseif(($diff->h)<=23){
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='1'");
-                                                    while ($fila=$preci->fetch_array()) {
-                                                        $tot1 = $fila['precio']*($diff->h);
-                                                    }
-                                                    $preci = $conn->query("SELECT precio FROM tbltipoparqueo WHERE id_parqueo='3'");
-                                                    while ($fila=$preci->fetch_array()) {
-                                                        $tot2 = $fila['precio']*($diff->d);
-                                                    }
-                                                    $val = $tot1 + $tot2;
-                                                    echo "Numero de días y horas: <div class='text-info'>".$diff->d." días y ".$diff->h." horas</div>";
-                                                    ?>
-                                                    Valor total: <div class="text-info"><?php echo $val?></div>
-                                            <?php
-                                                // }elseif(($diff->i)>1380){
-                                                //     $val = $row['precio']*((($diff->d)*24)+24);
-                                                //     echo "Numero de dias: <div class='text-info'>".(($diff->d)+1)."</div>";
-                                                    ?>
-                                                    <!-- Valor Total: <div class="text-info"><?php // echo $val?></div> -->
                                             <?php
                                                 }
                                             }
