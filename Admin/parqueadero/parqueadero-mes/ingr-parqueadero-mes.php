@@ -12,7 +12,7 @@
     $cliente=$_POST['cliente'];
     $tipo=$_POST['tipo'];
     if($tipo=="Moto"){
-        $tipo_parque=6;
+        $tipo_parque=5;
     }elseif ($tipo=="Carro"){
         $tipo_parque=2;
     }
