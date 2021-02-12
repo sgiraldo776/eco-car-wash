@@ -46,61 +46,26 @@
                     <div class="tar-img">
                         <img src="../../img/iconos-01.svg" alt="">
                     </div>
-                    <h3>¿Quiénes somos?</h3>
-                    <p>Ut malesuada blandit venenatis. Nulla volutpat iaculis libero, nec commodo sem vestibulum ut. Etiam nec malesuada velit. Phasellus convallis eros massa, vel dapibus nunc aliquet ac. In sit amet laoreet dui. Aenean ac consectetur nunc,
-                        ac tincidunt turpis. Donec porttitor non dolor ac tristique. Vivamus sed libero vel ligula volutpat bibendum eu ac metus. </p>
+                    <h3>Objetivo</h3>
+                    <p>Impactar a nuestros clientes a través de un servicio de limpieza y embellecimiento del vehículo</p>
                 </div>
                 <div class="tarjetas p-md-3 col-12 col-md-4">
                     <div class="tar-img">
                         <img src="../../img/iconos-02.svg" alt="">
                     </div>
                     <h3>Misión</h3>
-                    <p>Ut malesuada blandit venenatis. Nulla volutpat iaculis libero, nec commodo sem vestibulum ut. Etiam nec malesuada velit. Phasellus convallis eros massa, vel dapibus nunc aliquet ac. In sit amet laoreet dui. Aenean ac consectetur nunc,
-                        ac tincidunt turpis. Donec porttitor non dolor ac tristique. Vivamus sed libero vel ligula volutpat bibendum eu ac metus. </p>
+                    <p>Sorprender a nuestros clientes con la entrega de un vehículo limpio y lindo que exceda sus expectativas.</p>
                 </div>
                 <div class="tarjetas p-md-3 col-12 col-md-4">
                     <div class="tar-img">
                         <img src="../../img/iconos-03.svg" alt="">
                     </div>
                     <h3>Visión</h3>
-                    <p>Ut malesuada blandit venenatis. Nulla volutpat iaculis libero, nec commodo sem vestibulum ut. Etiam nec malesuada velit. Phasellus convallis eros massa, vel dapibus nunc aliquet ac. In sit amet laoreet dui. Aenean ac consectetur nunc,
-                        ac tincidunt turpis. Donec porttitor non dolor ac tristique. Vivamus sed libero vel ligula volutpat bibendum eu ac metus. </p>
+                    <p>Que nuestros clientes se sientan satisfechos, les guste nuestro servicio y nos visiten de forma periódica.</p>
                 </div>
             </div>
         </div>
     </main>
-
-
-    <!-- <section class="">
-        <div class="contenedor">
-            <div class="row justify-content-center col-12">
-                <div class="tarjetas col-md-6 col-lg-4">
-                    <div class="tar-img">
-                        <img src="img/iconos-01.svg" alt="">
-                    </div>
-                    <h3>¿Quienes somos?</h3>
-                    <p>Ut malesuada blandit venenatis. Nulla volutpat iaculis libero, nec commodo sem vestibulum ut. Etiam nec malesuada velit. Phasellus convallis eros massa, vel dapibus nunc aliquet ac. In sit amet laoreet dui. Aenean ac consectetur nunc,
-                        ac tincidunt turpis. Donec porttitor non dolor ac tristique. Vivamus sed libero vel ligula volutpat bibendum eu ac metus. </p>
-                </div>
-                <div class="tarjetas col-md-6 col-lg-4">
-                    <div class="tar-img">
-                        <img src="img/iconos-02.svg" alt="">
-                    </div>
-                    <h3>Misión</h3>
-                    <p>Ut malesuada blandit venenatis. Nulla volutpat iaculis libero, nec commodo sem vestibulum ut. Etiam nec malesuada velit. Phasellus convallis eros massa, vel dapibus nunc aliquet ac. In sit amet laoreet dui. Aenean ac consectetur nunc,
-                        ac tincidunt turpis. Donec porttitor non dolor ac tristique. Vivamus sed libero vel ligula volutpat bibendum eu ac metus. </p>
-                </div>
-                <div class="tarjetas col-md-6 col-lg-4">
-                    <div class="tar-img">
-                        <img src="img/iconos-03.svg" alt="">
-                    </div>
-                    <h3>Visión</h3>
-                    <p>Ut malesuada blandit venenatis. Nulla volutpat iaculis libero, nec commodo sem vestibulum ut. Etiam nec malesuada velit. Phasellus convallis eros massa, vel dapibus nunc aliquet ac. In sit amet laoreet dui. Aenean ac consectetur nunc,
-                        ac tincidunt turpis. Donec porttitor non dolor ac tristique. Vivamus sed libero vel ligula volutpat bibendum eu ac metus. </p>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <footer class="footer py-4">
         <div class="container">
@@ -113,7 +78,7 @@
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="col-lg-3 text-lg-left text-center copy">©Eco Car Wash</div>
+                <div class="col-lg-3 text-lg-left text-center copy">©Teconoparque-Eco Car Wash 2021</div>
             </div>
         </div>
     </footer>

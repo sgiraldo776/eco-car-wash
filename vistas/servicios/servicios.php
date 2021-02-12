@@ -71,7 +71,7 @@
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="col-lg-3 text-lg-left text-center copy">©Eco Car Wash</div>
+                <div class="col-lg-3 text-lg-left text-center copy">©Teconoparque-Eco Car Wash 2021</div>
             </div>
         </div>
     </footer>

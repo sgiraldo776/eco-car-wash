@@ -45,6 +45,7 @@
                         <a href="<?php echo $URL;?>/admin/insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
                         <a href="<?php echo $URL; ?>admin/parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueo/Hora</button></a>
                         <a href="<?php echo $URL; ?>/admin/parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueo/Mes</button></a>
+                        <a href="<?php echo $URL; ?>/admin/parqueadero/precios/precios.php"><button class="dropdown-item" type="button">Precios</button></a>
                         <a href="<?php echo $URL; ?>/admin/servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
                         <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
