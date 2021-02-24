@@ -64,19 +64,18 @@ h3 {
     align-items: center;
     margin: 0;
     padding: 0;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
-.bg-index a{
+.bg-index a {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-.bg-index h1{
+.bg-index h1 {
     font-size: 5rem;
-    text-shadow: 4px 4px 5px #1A1A1A; 
+    text-shadow: 4px 4px 5px #1A1A1A;
 }
-
 
 .navbar {
     padding: 1rem;
@@ -186,7 +185,20 @@ nav a:hover {
 }
 
 .copy {
-    color: #4D4D4D;
+    color: #4b4b4b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copy__img {
+    width: 60%;
+}
+
+@media (min-width: 991px) {
+    .copy__img {
+        width: 90%;
+    }
 }
 
 

@@ -18,13 +18,15 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Car Wash</title>
 
     <!--importacion boostrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
@@ -52,9 +54,9 @@
             }
 
         ?>
-        
-            <div class="text-center">
-        <?php
+
+        <div class="text-center">
+            <?php
             if (isset($_SESSION['rol'])) {
                 if($_SESSION['rol']==1){
                     echo ' <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -66,48 +68,49 @@
         ?>
         </div>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Cambiar Video</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="container">
-                                    <form action="admin/video/actu_video.php" method="post">
-                                        <div class="form-group">
-                                            <label>Nombre:</label>
-                                            <input class="form-control" type="text" name="nombre">
-                                        </div>
-                                        <fieldset>
-                                        <legend>vídeo</legend>
-                                        <p>Inserte la url del video del video que aparece en la parte superior de la pagina de youtube</p>
-                                        <div class="form-group">
-                                            <label>URL Vídeo:</label>
-                                            <input class="form-control" type="text" name="url">
-                                        </div>
-                                        </fieldset>
-                                        <button type="submit" class="btn btn-primary">Enviar</button>
-                                    </form>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cambiar Video</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form action="admin/video/actu_video.php" method="post">
+                                <div class="form-group">
+                                    <label>Nombre:</label>
+                                    <input class="form-control" type="text" name="nombre">
                                 </div>
-                            </div>
+                                <fieldset>
+                                    <legend>vídeo</legend>
+                                    <p>Inserte la url del video del video que aparece en la parte superior de la pagina
+                                        de youtube</p>
+                                    <div class="form-group">
+                                        <label>URL Vídeo:</label>
+                                        <input class="form-control" type="text" name="url">
+                                    </div>
+                                </fieldset>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </form>
                         </div>
                     </div>
-                </div> 
+                </div>
+            </div>
+        </div>
 
-    
-    </div> 
-    
+
+    </div>
+
 
     <section class="bg-index my-5">
-    <a href="vistas/servicios/servicios.php">
-        <h1>Nuestros servicios</h1>
-    </a>
+        <a href="vistas/servicios/servicios.php">
+            <h1>Nuestros servicios</h1>
+        </a>
     </section>
-    
+
 
     <footer class="footer py-4">
         <div class="container">
@@ -120,16 +123,28 @@
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="col-lg-3 text-lg-left text-center copy">©Teconoparque-Eco Car Wash <?php echo date('Y'); ?></div>
+                <div class="col-lg-3 text-lg-left text-center copy">
+                    <div class="copy__img">
+                        <img src="img/logo-tecno.png" alt="">
+                    </div>
+                    <div class="copy__texto">
+                        ©Eco Car Wash
+                        <?php echo date('Y'); ?>
+                    </div>
+                </div>
             </div>
+        </div>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
 
