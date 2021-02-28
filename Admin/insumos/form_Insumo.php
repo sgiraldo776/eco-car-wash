@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="form-group text-center mb-5">
-                    <button type="button" class="btn btn-color">Registrar</button>
+                    <button type="button" class="btn btn-color btn-registrar">Registrar</button>
                 </div>
 
             </form>

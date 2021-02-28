@@ -1,5 +1,5 @@
 $(function(){
-    $(".btn-color").on('click', function(){
+    $(".btn-servicio").on('click', function(){
         var formulario=document.add_form;
 
         if($('#Tipo_Servicio').val() != ""){

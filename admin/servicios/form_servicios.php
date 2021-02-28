@@ -83,7 +83,7 @@
                 <input type="text" class="form-control" id="Valor" name="Valor" placeholder="Valor del servicio">
             </div>            
             <div class="form-group text-center mb-5">
-                    <button type="button" class="btn btn-color">Registrar</button>
+                    <button type="button" class="btn btn-color btn-servicio">Registrar</button>
                 </div>
         </form>
 
@@ -106,7 +106,6 @@
                     <td><?php echo $fila['Servicio'] ?></td>
                     <td><?php echo $fila['Descripcion'] ?></td>
                     <td><?php echo $fila['Valor'] ?></td>
-                    <td><a href="frm_actu_padecimiento.php?padecimientoid=<?php echo $fila['padecimientoid'] ?>"><button class="btn btn-color">Editar</button></a></td>
                     <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Servicio']?>)"><button class="btn btn-color">Eliminar</button></a></td>
                 </tr>
                 <?php } ?>

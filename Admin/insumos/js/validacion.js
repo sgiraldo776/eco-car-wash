@@ -1,5 +1,5 @@
 $(function(){
-    $(".btn-color").on('click', function(){
+    $(".btn-registrar").on('click', function(){
         var formulario=document.add_form;
 
         if($('#cantidad').val() != ""){

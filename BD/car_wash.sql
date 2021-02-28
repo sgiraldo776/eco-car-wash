@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-02-2021 a las 14:47:23
+-- Tiempo de generación: 28-02-2021 a las 17:40:09
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.9
 
@@ -42,11 +42,7 @@ CREATE TABLE `tblcliente` (
 --
 
 INSERT INTO `tblcliente` (`id_cliente`, `Nom_Cliente`, `Ape_Cliente`, `Dir_Cliente`, `Cel_Cliente`, `Corr_Cliente`, `Ciudad_residencia`) VALUES
-(123456789, 'mauricio2', 'castaño2', 'Calle 21 #22-17', '300758745', 'jose@gmail.com', 'Rionegro'),
-(555566666, 'Pepe', 'Perez', 'Cra65 N 89-45', '454578963', 'pepe@pepe.com', 'Marinilla'),
-(1001229677, 'Sebastián', 'Vásque', 'Cra 32 N 31-23', '3117658672', 'sebitas4774@gmail.com', 'Marinilla'),
-(1036424415, 'mauricio', 'castaño', 'mauricio', '31455217', 'maurox952@gmail.com', ''),
-(2147483647, 'joselo', 'peres', 'Calle 21 #22-17', '3145558789', 'maurox9522@gmail.com', 'Rionegro');
+(1111, 'Admin', 'Admin', 'ND', '1111', 'admin@ecocar.com', 'ND');
 
 -- --------------------------------------------------------
 
@@ -78,14 +74,6 @@ CREATE TABLE `tblinsumo_repuesto` (
   `Vlr_Total` float(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `tblinsumo_repuesto`
---
-
-INSERT INTO `tblinsumo_repuesto` (`Id_Insumo`, `Cantidad`, `Descripcion`, `Vlr_Unitario`, `Vlr_Total`) VALUES
-(11, 4, 'pastas de fereno', 500.00, 2000.00),
-(14, 5, 'rines carro', 100000.00, 500000.00);
-
 -- --------------------------------------------------------
 
 --
@@ -103,16 +91,6 @@ CREATE TABLE `tblparqueadero` (
   `Correo` varchar(100) DEFAULT NULL,
   `Celular` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tblparqueadero`
---
-
-INSERT INTO `tblparqueadero` (`num_factura`, `Cliente`, `placa`, `tipo_vehiculo`, `hora_ingreso`, `hora_salida`, `id_parqueo`, `Correo`, `Celular`) VALUES
-(51, 'Juan', 'YMC-555', 'Carro', '2021-02-09 04:56:00', NULL, 2, 'pepe@pepe.com', '444455'),
-(52, NULL, 'CKK-111', 'Carro', '2021-02-10 13:04:00', NULL, 1, NULL, NULL),
-(54, 'Juan', 'YMC-555', 'Moto', '2021-02-09 14:41:00', NULL, 5, 'pepe@pepe.com', '444455'),
-(55, 'Paco', 'NNN-321', 'Moto', '2021-02-11 14:42:00', NULL, 5, 'sebitas4774@gmail.com', '444455');
 
 -- --------------------------------------------------------
 
@@ -156,19 +134,6 @@ CREATE TABLE `tblreservas` (
   `textColor` varchar(100) DEFAULT NULL,
   `Id_Cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tblreservas`
---
-
-INSERT INTO `tblreservas` (`Id_Reserva`, `title`, `tipoVehiculo`, `placa`, `descripcion`, `start`, `color`, `textColor`, `Id_Cliente`) VALUES
-(11, 'Reparacion', 'Automóvil', 'CNK-257', 'Cambiar las llantas de atrás', '2020-12-15 12:30:00', '#4D4D4D', '#FFFFFF', 1001229677),
-(12, 'Reparacion', 'Automóvil', 'CNK-257', 'Cambio de aceite', '2020-12-14 16:00:00', '#4D4D4D', '#FFFFFF', 1001229677),
-(18, 'Reparacion', 'Automóvil', 'NNN-321', 'Cambio de aceite', '2021-02-18 14:27:00', '#4D4D4D', '#FFFFFF', 555566666),
-(19, 'Lavado', 'Automóvil', 'YMC-555', 'Lavado estándar', '2021-02-18 17:45:00', '#1A4AD9', '#FFFFFF', 555566666),
-(20, 'Reparacion', 'Automóvil', 'YMC-555', 'Cambio de llantas', '2021-02-24 17:53:00', '#4D4D4D', '#FFFFFF', 555566666),
-(21, 'Reparacion', 'Automóvil', 'NNN-321', 'Cambio de aceite', '2021-02-25 09:00:00', '#4D4D4D', '#FFFFFF', 555566666),
-(22, 'Reparacion', 'Automóvil', 'YMC-555', 'Cambio de llantas', '2021-02-26 13:00:00', '#4D4D4D', '#FFFFFF', 555566666);
 
 -- --------------------------------------------------------
 
@@ -255,10 +220,7 @@ CREATE TABLE `tblusuario` (
 --
 
 INSERT INTO `tblusuario` (`Id_Usuario`, `Username`, `Password`, `Id_Cliente`, `Id_Rol`) VALUES
-(123456789, 'jose@gmail.com', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', 123456789, 2),
-(555566666, 'pepe@pepe.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 555566666, 2),
-(1001229677, 'sebitas4774@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 1001229677, 1),
-(2147483647, 'maurox9522@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 2147483647, 1);
+(1111, 'admin@ecocar.com', '7973400bd2a8e21ce727653884a3b89c8d7ee9cd4a80ecda52a2ee5068bf34c6', 1111, 1);
 
 -- --------------------------------------------------------
 
@@ -276,15 +238,6 @@ CREATE TABLE `tblvehiculo` (
   `Vencimiento_Tecno` date DEFAULT NULL,
   `Id_Cliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tblvehiculo`
---
-
-INSERT INTO `tblvehiculo` (`id_Vehiculo`, `Marca`, `Modelo`, `Color`, `Tipo_Vehiculo`, `Vencimiento_SOAT`, `Vencimiento_Tecno`, `Id_Cliente`) VALUES
-('CNK-257', 'Chevrolette', '2010', 'negro', 'Automóvil', '2021-01-21', '2021-01-27', 1001229677),
-('NNN-321', 'Chevrolette', '2020', 'Negro', 'Automóvil', '2021-02-25', '2021-03-03', 555566666),
-('YMC-555', 'Chevrolette', '2015', 'negro', 'Automóvil', '2021-02-23', '2021-02-15', 555566666);
 
 -- --------------------------------------------------------
 
